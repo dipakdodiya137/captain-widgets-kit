@@ -1,0 +1,45 @@
+@use '/src/style/variables.scss' as *;
+
+input[type='radio'].cwk-input-radio {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    border: 1px solid $cwk_border_color;
+    border-radius: 50%;
+    background-color: #fff;
+    width: 20px;
+    height: 20px;
+    appearance: none;
+    -webkit-appearance: none;
+    cursor: pointer;
+    padding: 2px;
+    margin: 0;
+
+    &:checked {
+        border-color: $primary_color;
+    }
+
+    &::before {
+        content: "";
+        width: 10px;
+        height: 10px;
+        border-radius: 50%;
+        background-color: transparent;
+    }
+
+
+
+    &:checked::before {
+        background-color: $primary_color;
+    }
+
+    &:focus {
+        outline: none;
+        box-shadow: none;
+    }
+
+    &:disabled {
+        opacity: 0.7;
+        cursor: not-allowed;
+    }
+}

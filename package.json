@@ -1,0 +1,49 @@
+{
+  "name": "codepatchaddons",
+  "version": "1.0.0",
+  "description": "Enhance your WordPress site with Code patch – A powerful plugin to easily add custom CSS, JavaScript, and PHP logic with a React-based editor.",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "build": "wp-scripts build",
+    "start": "wp-scripts start"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/monsteraddons/craft-patch-addon.git"
+  },
+  "keywords": [
+    "wordpress",
+    "plugin",
+    "customizer",
+    "code",
+    "codefraymaddons"
+  ],
+  "author": "codefraymaddons",
+  "license": "GPL-3.0-or-later",
+  "bugs": {
+    "url": "https://github.com/monsteraddons/craft-patch-addon/issues"
+  },
+  "homepage": "https://github.com/monsteraddons/craft-patch-addon/#readme",
+  "devDependencies": {
+    "@wordpress/scripts": "^19.2.4",
+    "baseline-browser-mapping": "^2.9.11"
+  },
+  "dependencies": {
+    "@codemirror/lang-css": "^6.3.1",
+    "@codemirror/lang-html": "^6.4.11",
+    "@codemirror/lang-javascript": "^6.2.4",
+    "@codemirror/lang-php": "^6.0.2",
+    "@codemirror/state": "^6.5.2",
+    "@codemirror/theme-one-dark": "^6.1.3",
+    "@codemirror/view": "^6.38.5",
+    "@reduxjs/toolkit": "^2.8.2",
+    "@uiw/react-codemirror": "^4.25.2",
+    "@wordpress/i18n": "^5.26.0",
+    "axios": "^1.7.3",
+    "react": "^18.3.1",
+    "react-dom": "^18.3.1",
+    "react-redux": "^9.2.0",
+    "react-router-dom": "^6.26.0"
+  }
+}

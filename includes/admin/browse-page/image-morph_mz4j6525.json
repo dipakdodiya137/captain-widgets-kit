@@ -1,0 +1,336 @@
+{
+    "widget_info": {
+        "name": "Image Morph",
+        "description": "Creating a modern, stylish image shape that enhances visual appeal and responsiveness using custom CSS clip-path in the Elementor Image Widget.",
+        "publish_type": "Publish",
+        "key_words": "",
+        "version": "1.0.0",
+        "id": "mz4j6525",
+        "craftpa_version": "",
+        "selected_plugin": {
+            "original_slug": "elementor",
+            "plugin_name": "Elementor",
+            "plugin_slug": "elementor\/elementor.php"
+        },
+        "selected_widget": {
+            "id": "image",
+            "name": "Image",
+            "external_sec_id": "section_image"
+        },
+        "effect_type": "widget",
+        "created_at": "2026-02-11T06:34:08.421Z"
+    },
+    "section": {
+        "content": [
+            {
+                "name": "Image Morph",
+                "key": "section-9uwwub25",
+                "controllers": [
+                    {
+                        "type": "normalhover",
+                        "label": "Normal\/Hover",
+                        "name": "normalhover_td0m9225",
+                        "defaultValue": "normal",
+                        "nha_type": "hover",
+                        "tabTitle": "normal",
+                        "description": "That will allow you to add the custom clip-path for both Normal and Hover Image widget.",
+                        "nha_array": [
+                            {
+                                "value": "normal",
+                                "label": "Normal"
+                            },
+                            {
+                                "value": "hover",
+                                "label": "Hover"
+                            }
+                        ],
+                        "fields": [
+                            {
+                                "type": "textarea",
+                                "label": "Clip Path",
+                                "name": "textarea_44rdvs25",
+                                "description": "",
+                                "placeHolder": "",
+                                "defaultValue": "",
+                                "controlClass": "",
+                                "ai_support": false,
+                                "showlabel": true,
+                                "labelBlock": false,
+                                "dynamic": false,
+                                "selectors": ".craft-el-image img",
+                                "selector_type": "basic",
+                                "selectors_advanced": "",
+                                "selector_value": "",
+                                "property_value": "{{VALUE}}",
+                                "separator": "default",
+                                "rows": "3",
+                                "conditions": false,
+                                "condition_value": {
+                                    "relation": "or",
+                                    "values": [
+                                        {
+                                            "name": "",
+                                            "operator": "==",
+                                            "value": ""
+                                        }
+                                    ]
+                                },
+                                "key": "normal"
+                            },
+                            {
+                                "type": "rawhtml",
+                                "label": "Raw Html",
+                                "name": "rawhtml_5xy55q25",
+                                "description": "",
+                                "defaultValue": "<p style=\"font-size: 11px; font-style: italic; line-height: 1.4; color: #818A96;\">\n  Enter the full clip-path property! See the copy-paste examples at\n  <a href=\"https:\/\/bennettfeely.com\/clippy\/\" target=\"_blank\">Clippy<\/a>\n<\/p>",
+                                "showlabel": false,
+                                "labelBlock": true,
+                                "separator": "default",
+                                "controlClass": "",
+                                "conditions": false,
+                                "condition_value": {
+                                    "relation": "or",
+                                    "values": [
+                                        {
+                                            "name": "",
+                                            "operator": "==",
+                                            "value": ""
+                                        }
+                                    ]
+                                },
+                                "key": "normal"
+                            },
+                            {
+                                "type": "textarea",
+                                "label": "Clip Path",
+                                "name": "textarea_1389zw25",
+                                "description": "",
+                                "placeHolder": "",
+                                "defaultValue": "",
+                                "controlClass": "",
+                                "ai_support": false,
+                                "showlabel": true,
+                                "labelBlock": false,
+                                "dynamic": false,
+                                "selectors": ".craft-el-image img:hover",
+                                "selector_type": "basic",
+                                "selectors_advanced": "",
+                                "selector_value": "",
+                                "property_value": "{{VALUE}}",
+                                "separator": "default",
+                                "rows": "3",
+                                "conditions": false,
+                                "condition_value": {
+                                    "relation": "or",
+                                    "values": [
+                                        {
+                                            "name": "",
+                                            "operator": "==",
+                                            "value": ""
+                                        }
+                                    ]
+                                },
+                                "key": "hover"
+                            },
+                            {
+                                "type": "rawhtml",
+                                "label": "Raw Html",
+                                "name": "rawhtml_i13rv325",
+                                "description": "",
+                                "defaultValue": "<p style=\"font-size: 11px; font-style: italic; line-height: 1.4; color: #818A96;\">\n  Enter the full clip-path property! See the copy-paste examples at\n  <a href=\"https:\/\/bennettfeely.com\/clippy\/\" target=\"_blank\">Clippy<\/a>\n<\/p>",
+                                "showlabel": false,
+                                "labelBlock": true,
+                                "separator": "default",
+                                "controlClass": "",
+                                "conditions": false,
+                                "condition_value": {
+                                    "relation": "or",
+                                    "values": [
+                                        {
+                                            "name": "",
+                                            "operator": "==",
+                                            "value": ""
+                                        }
+                                    ]
+                                },
+                                "key": "hover"
+                            }
+                        ],
+                        "showlabel": true,
+                        "controlClass": "",
+                        "conditions": false,
+                        "condition_value": {
+                            "relation": "or",
+                            "values": [
+                                {
+                                    "name": "",
+                                    "operator": "==",
+                                    "value": ""
+                                }
+                            ]
+                        },
+                        "class": ""
+                    },
+                    {
+                        "type": "switcher",
+                        "label": "Hover Animate?",
+                        "name": "switcher_no3es525",
+                        "description": "",
+                        "defaultValue": false,
+                        "controlClass": "",
+                        "showlabel": true,
+                        "labelBlock": false,
+                        "separator": "default",
+                        "label_on": "Yes",
+                        "label_off": "No",
+                        "return_value": "Yes",
+                        "responsive": false,
+                        "conditions": false,
+                        "condition_value": {
+                            "relation": "or",
+                            "values": [
+                                {
+                                    "name": "",
+                                    "operator": "==",
+                                    "value": ""
+                                }
+                            ]
+                        }
+                    },
+                    {
+                        "type": "slider",
+                        "label": "Animation duration",
+                        "name": "slider_h0d8g325",
+                        "placeHolder": "",
+                        "defaultValue": {
+                            "value": "0.3",
+                            "unit": "px"
+                        },
+                        "separator": "default",
+                        "controlClass": "",
+                        "size_units": [
+                            {
+                                "type": "px",
+                                "checked": true,
+                                "min": 0,
+                                "max": "1",
+                                "step": "0.1"
+                            },
+                            {
+                                "type": "%",
+                                "checked": false,
+                                "min": 0,
+                                "max": 10,
+                                "step": 1
+                            },
+                            {
+                                "type": "em",
+                                "checked": false,
+                                "min": 0,
+                                "max": 10,
+                                "step": 1
+                            },
+                            {
+                                "type": "rem",
+                                "checked": false,
+                                "min": 0,
+                                "max": 10,
+                                "step": 1
+                            },
+                            {
+                                "type": "deg",
+                                "checked": false,
+                                "min": 0,
+                                "max": 10,
+                                "step": 1
+                            },
+                            {
+                                "type": "vh",
+                                "checked": false,
+                                "min": 0,
+                                "max": 10,
+                                "step": 1
+                            }
+                        ],
+                        "show_unit": true,
+                        "showlabel": true,
+                        "labelBlock": true,
+                        "conditions": true,
+                        "dynamic": false,
+                        "selectors": "",
+                        "selector_type": "advanced",
+                        "selectors_advanced": "'{{WRAPPER}}.craft-el-image img' => 'transition: clip-path {{SIZE}}s ease 0s'",
+                        "selector_value": "",
+                        "property_value": "",
+                        "condition_value": {
+                            "relation": "or",
+                            "values": [
+                                {
+                                    "name": "switcher_no3es525",
+                                    "operator": "==",
+                                    "value": "Yes"
+                                }
+                            ]
+                        },
+                        "responsive": true
+                    },
+                    {
+                        "type": "divider",
+                        "label": "Divider",
+                        "name": "divider_r0l0f325",
+                        "controlClass": "",
+                        "conditions": true,
+                        "condition_value": {
+                            "relation": "or",
+                            "values": [
+                                {
+                                    "name": "switcher_no3es525",
+                                    "operator": "==",
+                                    "value": "Yes"
+                                }
+                            ]
+                        }
+                    },
+                    {
+                        "type": "animation",
+                        "label": "Entrance Animation",
+                        "name": "animation_k6vb9a25",
+                        "description": "",
+                        "defaultValue": "",
+                        "showlabel": true,
+                        "labelBlock": true,
+                        "separator": "default",
+                        "conditions": true,
+                        "condition_value": {
+                            "relation": "or",
+                            "values": [
+                                {
+                                    "name": "switcher_no3es525",
+                                    "operator": "==",
+                                    "value": "Yes"
+                                }
+                            ]
+                        }
+                    }
+                ]
+            }
+        ],
+        "style": [],
+        "advanced": [],
+        "active_section": null,
+        "active_tab": "content",
+        "active_controller": null,
+        "controller_collapsed": false,
+        "section_collapsed": false,
+        "editor_collapsed": false,
+        "active_field": null,
+        "layout": []
+    },
+    "external_link": "",
+    "widget_code": {
+        "php": "$element_id = $element->get_id();\n\n$element->add_render_attribute( '_wrapper', 'class', 'craft-el-image' );",
+        "js": "",
+        "php_after": "",
+        "selected_lang": "php"
+    }
+}

@@ -1,0 +1,55 @@
+@use '/src/style/variables.scss' as *;
+
+.cwk-accordion-container {
+    display: flex;
+    flex-direction: column;
+    gap: 20px;
+
+    .cwk-accordion-header {
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+        font-size: 14px;
+        cursor: pointer;
+
+        .cwk-accordion-header-icon {
+            display: flex;
+            cursor: pointer;
+
+            i {
+                color: $cwk_black_color;
+                font-size: 12px;
+                transition: $transition;
+            }
+
+        }
+    }
+
+    .cwk-accordion-content {
+        max-height: 0px;
+        overflow: hidden;
+        transition: all 0.5s linear;
+    }
+
+    &.cwk-accordion-content-show {
+
+        .cwk-accordion-header-icon {
+            transform: rotate(-180deg);
+        }
+
+        .cwk-accordion-content {
+            max-height: 300px;
+            overflow-y: auto;
+
+            &::-webkit-scrollbar {
+                width: 5px;
+            }
+
+            &::-webkit-scrollbar-thumb {
+                background-color: $cwk_border_color;
+                border-radius: $rs_normal;
+            }
+        }
+    }
+
+}

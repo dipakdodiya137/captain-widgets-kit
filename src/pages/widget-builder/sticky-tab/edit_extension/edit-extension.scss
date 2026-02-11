@@ -1,0 +1,61 @@
+@use '/src/style/variables.scss' as *;
+
+.cwk-edit-extension {
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+    width: 100%;
+
+    .cwk-edit-extension-title {
+        font-size: 16px;
+        font-weight: 600;
+        color: $cwk_black_color;
+        width: fit-content;
+
+        &.cwk-edit-extension-label {
+            cursor: pointer;
+        }
+
+    }
+
+    .cwk-edit-extension-wrapper {
+        display: flex;
+        flex-direction: column;
+        gap: 10px;
+
+        .cwk-edit-extension-plugins-list {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 10px;
+
+            .cwk-edit-extension-label {
+                display: flex;
+                align-items: center;
+                gap: 10px;
+                width: fit-content;
+                background: $cwk_border_color;
+                padding: 8px;
+                border-radius: 6px;
+                cursor: pointer;
+
+                &.cwk-edit-extension-label-disabled {
+                    opacity: 0.7;
+                    cursor: not-allowed;
+                }
+
+            }
+
+            .cwk-edit-extension-text {
+                font-size: 14px;
+                color: $cwk_black_color;
+            }
+        }
+    }
+
+    .cwk-edit-extension-footer {
+        display: flex;
+        justify-content: flex-end;
+        align-items: center;
+    }
+
+}

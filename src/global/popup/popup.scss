@@ -1,0 +1,114 @@
+@use '/src/style/variables.scss' as *;
+
+.cwk-popup-outer {
+    position: fixed;
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    justify-content: center;
+    top: 0;
+    left: -50px;
+    width: 100%;
+    height: 100%;
+    padding-left: 160px;
+    background: $cwk_overlay_bg;
+    z-index: 999;
+
+    .cwk-popup-content {
+        position: relative;
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        gap: 20px;
+        width: 30%;
+        background: $cwk_white_color;
+        border-radius: 10px;
+        padding: 24px;
+
+        .cwk-popup-close {
+            position: absolute;
+            display: flex;
+            top: 20px;
+            right: 20px;
+            cursor: pointer;
+
+            i {
+                color: $cwk_black_color;
+                font-size: 12px;
+                font-weight: 600;
+            }
+
+        }
+
+    }
+
+    .cwk-popup-header {
+        display: flex;
+        flex-direction: column;
+        align-items: flex-start;
+        width: 100%;
+        gap: 10px;
+
+        .cwk-popup-header-title {
+            color: $cwk_black_color;
+            font-size: 20px;
+            line-height: 26px;
+            font-weight: 600;
+        }
+
+        .cwk-popup-header-desc {
+            color: $cwk_black_color;
+            opacity: 0.5;
+            font-size: 14px;
+            font-weight: 400;
+        }
+    }
+
+    .cwk-popup-body {
+        display: flex;
+        flex-direction: row;
+        align-items: center;
+        justify-content: center;
+        width: 100%;
+        height: 100%;
+    }
+
+}
+
+
+@media(max-width:1200px) {
+    .cwk-popup-outer {
+        .cwk-popup-content {
+            width: 50%;
+            min-width: 60%;
+        }
+    }
+}
+
+@media (max-width: 960px) {
+    .cwk-popup-outer {
+        padding-left: 36px;
+    }
+}
+
+@media (max-width: 782px) {
+    .cwk-popup-outer {
+        padding-left: 0px;
+    }
+}
+
+@media(max-width:576px) {
+    .cwk-popup-outer .cwk-popup-content {
+        margin: auto 15px;
+        width: 80%;
+        min-width: 90%;
+
+    }
+
+    .cwk-popup-body {
+        .cwk-trsprnt-btn {
+            width: 100%;
+        }
+    }
+
+}

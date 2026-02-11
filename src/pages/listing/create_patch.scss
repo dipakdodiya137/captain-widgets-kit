@@ -1,0 +1,116 @@
+@use '/src/style/variables.scss' as *;
+
+
+.cwk-create-patch {
+    display: flex;
+    flex-direction: column;
+    gap: 15px;
+    width: 100%;
+
+    .cwk-create-details {
+        display: flex;
+        gap: 5px;
+        width: 100%;
+
+        .cwk-selected-type {
+            text-transform: capitalize;
+        }
+
+        .cwk-input-field {
+            padding: 10px 15px;
+        }
+
+        .cwk-dropdown-header {
+            padding: 10px 15px;
+        }
+
+    }
+
+    .cwk-create-footer {
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        gap: 10px;
+    }
+
+    .cwk-plugin-list-item {
+        border: 1px solid $cwk_border_color;
+        padding: 5px 10px;
+        border-radius: $rs_small;
+        font-size: 14px;
+        font-weight: 600;
+        color: $cwk_black_color;
+        transition: $transition;
+        cursor: pointer;
+
+        &:hover {
+            background-color: $cwk_white_hover;
+        }
+
+        &.cwk-plugin-list-item-selected {
+            background-color: $cwk_white_hover;
+            border-color: $primary_color;
+            color: $primary_color;
+        }
+    }
+
+    .cwk-widget-select-dropdown {
+        .cwk-dropdown-content {
+            max-height: 100%;
+            overflow-y: visible;
+        }
+
+        .cwk-create-dropdown-wrapper {
+            display: flex;
+            width: 100%;
+            flex-direction: column;
+            gap: 10px;
+            padding: 5px 0;
+        }
+
+        .cwk-plugin-list {
+            max-height: 200px;
+            overflow-y: auto;
+
+            &::-webkit-scrollbar {
+                width: 5px;
+            }
+
+            &::-webkit-scrollbar-thumb {
+                background-color: $cwk_border_color;
+                border-radius: $rs_normal;
+            }
+
+        }
+
+    }
+
+
+    .cwk-plugin-list {
+        display: flex;
+        flex-wrap: wrap;
+        gap: 10px;
+        width: 100%;
+
+        &.cwk-patch-plugins {
+            flex-direction: column;
+            flex-wrap: nowrap;
+
+            .cwk-plugin-list-item {
+                border: none;
+            }
+
+        }
+
+    }
+
+    .cwk-widget-select-container {
+        width: 100%;
+    }
+
+    .cwk-widget-select-disable {
+        pointer-events: none;
+        opacity: 0.5;
+    }
+
+}

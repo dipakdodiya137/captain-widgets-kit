@@ -1,0 +1,91 @@
+@use '/src/style/variables.scss' as *;
+
+.cwk-sticky-tab {
+    position: fixed;
+    display: flex;
+    transform: translateX(-50%);
+    justify-content: space-between;
+    align-items: center;
+    gap: 5px;
+    padding: 5px;
+    background-color: $cwk_white_color;
+    border: 1px solid $cwk_border_color;
+    border-radius: $rs_small;
+    z-index: 1;
+
+    .cwk-sticky-tab-icon {
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        cursor: move;
+
+        i {
+            font-size: 16px;
+            color: $cwk_black_color;
+        }
+
+    }
+
+    .cwk-sticky-tab-title {
+        font-size: 16px;
+        font-weight: 600;
+        color: $cwk_black_color;
+        background-color: $cwk_white_color;
+        padding: 5px 10px;
+        min-width: 95px;
+        text-align: center;
+        border-radius: $rs_small;
+        transition: $transition;
+        cursor: pointer;
+
+        // &::after {
+        //     position: absolute;
+        //     content: '';
+        //     bottom: -2px;
+        //     left: 50%;
+        //     display: block;
+        //     width: 10px;
+        //     height: 2px;
+        //     background-color: $primary_color;
+        //     box-shadow: 0px 0px 7px 1px $primary_color;
+        //     opacity: 0;
+        //     transition: $transition;
+        // }
+
+        &.cwk-sticky-tab-title-active {
+            position: relative;
+            background-color: $primary_color;
+            color: $cwk_white_color;
+
+            &::after {
+                opacity: 1;
+            }
+        }
+
+        &.cwk-sticky-tab-title-disabled {
+            opacity: 0.7;
+            cursor: not-allowed;
+        }
+
+    }
+
+    .cwk-sticky-tab-divider {
+        width: 1px;
+        height: 20px;
+        background-color: #a8a8a8;
+        margin: 0 5px;
+    }
+
+    .cwk-sticky-tab-action {
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        cursor: pointer;
+
+        i {
+            font-size: 16px;
+            color: $cwk_black_color;
+        }
+    }
+
+}

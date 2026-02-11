@@ -1,0 +1,24 @@
+{
+    "name": "codefraymaddons/code-fraym",
+    "description": "Enhance Your Website with Ease! Effortlessly add custom CSS, JavaScript, and PHP to your site using a powerful, user-friendly editor.",
+    "type": "wordpress-plugin",
+    "license": "GPL-3.0-or-later",
+    "autoload": {
+        "psr-4": {
+            "codefraymaddons\\": "includes/"
+        }
+    },
+    "authors": [
+        {
+            "name": "codefraymaddons",
+            "email": "codefraymaddons@gmail.com",
+            "homepage": "https://profiles.wordpress.org/codefraymaddons"
+        }
+    ],
+    "require": {},
+    "extra": {
+        "wordpress-plugin": {
+            "text-domain": "code-fraym"
+        }
+    }
+}

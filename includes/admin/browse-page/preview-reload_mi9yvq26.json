@@ -1,0 +1,51 @@
+{
+    "widget_info": {
+        "name": "Preview Reload",
+        "description": "Added a button inside an Elementor container that reloads the Elementor preview on click.",
+        "publish_type": "Publish",
+        "key_words": "",
+        "version": "1.0.0",
+        "id": "mi9yvq26",
+        "cwk_version": "",
+        "selected_plugin": {
+            "original_slug": "elementor",
+            "plugin_name": "Elementor",
+            "plugin_slug": "elementor/elementor.php"
+        },
+        "selected_widget": [],
+        "effect_type": "container",
+        "created_at": "2026-02-04T14:27:31.611Z"
+    },
+    "section": {
+        "content": [],
+        "style": [],
+        "advanced": [],
+        "active_section": 0,
+        "active_tab": "layout",
+        "active_controller": null,
+        "controller_collapsed": false,
+        "section_collapsed": false,
+        "editor_collapsed": false,
+        "active_field": null,
+        "layout": [
+            {
+                "name": "Preview Reload",
+                "key": "section-1utfgu26",
+                "controllers": [
+                    {
+                        "type": "preview",
+                        "label": "Preview",
+                        "name": "preview_m74lfd26"
+                    }
+                ]
+            }
+        ]
+    },
+    "external_link": "",
+    "widget_code": {
+        "php": "$settings = $element->get_settings_for_display();",
+        "js": "",
+        "css": "",
+        "selected_lang": "php"
+    }
+}

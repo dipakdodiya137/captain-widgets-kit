@@ -1,0 +1,144 @@
+@use '/src/style/variables.scss' as *;
+
+.cwk-editor-panel {
+    position: relative;
+    display: flex;
+    flex-direction: column;
+    height: 100%;
+    width: 100%;
+    background: #020202;
+    border-radius: 10px;
+    padding: 10px;
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.5);
+    font-size: 16px;
+    overflow: hidden;
+    margin-left: auto;
+    transition: $transition;
+
+    &.cwk-code-editor-collapsed {
+        width: 0px;
+        min-width: 0px;
+
+    }
+
+    .cwk-editor-panel-btns {
+        display: flex;
+        align-items: center;
+        justify-content: space-between;
+        gap: 10px;
+        padding: 10px;
+
+        .cwk-editor-btn-group {
+            display: flex;
+            align-items: center;
+            justify-content: flex-start;
+            gap: 10px;
+        }
+
+        .cwk-primary-button {
+            position: absolute;
+            right: 10px;
+            bottom: 10px;
+            padding: 10px 20px;
+            z-index: 99;
+        }
+
+        .cwk-editor-lang-btn {
+            display: flex;
+            align-items: center;
+            gap: 10px;
+            color: #ffff;
+            padding: 5px 10px;
+            border-radius: $rs_small;
+            background: transparent;
+            border: 1px solid #333;
+            cursor: pointer;
+            transition: $transition;
+
+            &.cwk-editor-lang-btn-active {
+                background: #333;
+            }
+
+            &:hover {
+                background: #333;
+            }
+        }
+
+
+        .cwk-editor-lang-add-wrapper {
+            display: flex;
+            padding-left: 10px;
+            border-left: 1px solid #333;
+
+            .cwk-editor-lang-add {
+                font-size: 8px;
+                border: 1px solid #ffff;
+                color: #ffff;
+                display: flex;
+                border-radius: 50%;
+                padding: 3px;
+                cursor: pointer;
+            }
+        }
+
+    }
+
+    .cwk-widget-type-wrapper {
+        display: flex;
+        flex-direction: column;
+        width: 100%;
+        gap: 10px;
+    }
+
+    .cwk-delete-patch {
+        display: flex;
+        width: 100%;
+        justify-content: flex-end;
+        align-items: center;
+        gap: 10px;
+    }
+
+    .cwk-add-language-wrapper {
+        display: flex;
+        flex-direction: column;
+        gap: 20px;
+        width: 100%;
+
+        .cwk-add-language-list {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 10px;
+
+            .cwk-add-language-title {
+                padding: 10px;
+                font-size: 16px;
+                font-weight: 600;
+                color: $cwk_black_color;
+                border-radius: $rs_small;
+                border: 1px solid transparent;
+                transition: $transition;
+                cursor: pointer;
+
+                &:hover {
+                    background-color: $cwk_white_hover;
+                }
+
+                &.cwk-add-language-title-active {
+                    background-color: $cwk_white_hover;
+                    border-color: $primary_color;
+                    color: $primary_color;
+                }
+
+            }
+        }
+
+        .cwk-add-language-footer {
+            display: flex;
+            width: 100%;
+            justify-content: flex-end;
+            align-items: center;
+        }
+
+    }
+
+}

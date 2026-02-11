@@ -1,0 +1,22 @@
+@use '/src/style/variables.scss' as *;
+
+.cwk-loader-spin {
+    width: 10px;
+    height: 10px;
+    border: 2px solid $cwk_white_color;
+    border-bottom-color: transparent;
+    border-radius: 50%;
+    animation: cwk-spin 1s linear infinite;
+
+
+    @keyframes cwk-spin {
+        0% {
+            transform: rotate(0deg);
+        }
+
+        100% {
+            transform: rotate(360deg);
+        }
+    }
+
+}

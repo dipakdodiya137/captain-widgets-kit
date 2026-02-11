@@ -1,0 +1,272 @@
+@use '/src/style/variables.scss' as *;
+
+.cwk-controller-layout {
+    display: flex;
+    flex-direction: column;
+    gap: 20px;
+    height: 100%;
+    width: 320px;
+    min-width: 320px;
+    background: $cwk_white_color;
+    border-radius: $rs_large;
+    border: 1px solid $cwk_border_color;
+    padding: 10px;
+    overflow: hidden;
+    transition: $transition;
+
+    &.cwk-controller-layout-collapsed {
+        width: 0px;
+        min-width: 0px;
+        overflow: hidden;
+
+        div,
+        span,
+        label {
+            white-space: nowrap;
+        }
+    }
+
+    &.cwk-controller-layout-expaned {
+        width: 100%;
+    }
+
+    .cwk-controller-layout-header-wrapper {
+        display: flex;
+        align-items: center;
+        gap: 10px;
+
+        .cwk-controller-layout-collapse {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            background: $cwk_grey_color;
+            padding: 5px;
+            border-radius: $rs_medium;
+            cursor: pointer;
+        }
+    }
+
+    .cwk-controller-layout-header {
+        display: flex;
+        gap: 10px;
+        background: $primary_color;
+        border-radius: $rs_medium;
+        padding: 8px;
+        width: 100%;
+        overflow-x: auto;
+
+        &::-webkit-scrollbar {
+            height: 3px;
+        }
+
+        &::-webkit-scrollbar-thumb {
+            background-color: $cwk_border_color;
+            border-radius: $rs_normal;
+        }
+
+        .cwk-controller-action-btn {
+            display: flex;
+            padding: 5px;
+            width: 100%;
+            justify-content: center;
+            align-items: center;
+            font-weight: 600;
+            font-size: 16px;
+            border-radius: $rs_small;
+            color: $cwk_white_color;
+            border: 1px solid transparent;
+            cursor: pointer;
+            transition: $transition;
+
+            &.cwk-controller-action-btn-active {
+                background: $cwk_white_color;
+                color: $primary_color;
+            }
+
+            &.cwk-controller-action-btn-disable {
+                opacity: 0.7;
+                cursor: not-allowed;
+            }
+
+        }
+
+    }
+
+    .cwk-add-layout {
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        gap: 10px;
+        border: 1px dashed $cwk_border_color;
+        border-radius: $rs_medium;
+        padding: 20px;
+        cursor: pointer;
+        transition: $transition;
+
+        &:hover,
+        &.cwk-add-layout-show {
+            background-color: #f5f5f582;
+            border-color: $primary_color;
+        }
+
+    }
+
+    .cwk-controller-drop {
+        height: 5px;
+        width: 100%;
+        background: transparent;
+        transition: all 0.1s linear;
+
+        &.cwk-controller-drop-show {
+            height: 15px;
+            background: $primary_color;
+        }
+
+    }
+
+    .cwk-section-listing {
+        display: flex;
+        flex-direction: column;
+        gap: 5px;
+
+        .cwk-section-accordion {
+            display: flex;
+            flex-direction: column;
+            border: 1px solid $cwk_border_color;
+            border-radius: $rs_small;
+            overflow: hidden;
+
+            .cwk-section-header {
+                display: flex;
+                justify-content: space-between;
+                align-items: center;
+                padding: 5px;
+                background: $cwk_grey_color;
+                color: $cwk_black_color;
+                transition: $transition;
+                cursor: default;
+            }
+
+            .cwk-section-name {
+                display: flex;
+                width: fit-content;
+                border: none;
+                outline: none;
+                font-size: 14px;
+                font-weight: 500;
+                background: transparent;
+                color: $cwk_black_color;
+                transition: $transition;
+
+                &:focus,
+                &:target {
+                    border: none;
+                    outline: none;
+                    box-shadow: none;
+                }
+            }
+
+            .cwk-section-icons {
+                display: flex;
+                justify-content: center;
+                align-items: center;
+                gap: 10px;
+
+                .cwk-accordion-header-icon {
+                    i {
+                        font-size: 14px;
+                    }
+                }
+
+            }
+
+            .cwk-section-del-icon,
+            .cwk-accordion-header-icon,
+            .cwk-info-header-icon {
+                display: flex;
+                transition: $transition;
+                cursor: pointer;
+
+                i {
+                    color: $cwk_black_color;
+                    font-size: 16px;
+                }
+
+            }
+
+            .cwk-info-header-tooltip {
+                display: flex;
+
+                .cwk-tooltip-text {
+                    width: 200px;
+                }
+            }
+
+            .cwk-section-content {
+                display: flex;
+                flex-direction: column;
+                gap: 10px;
+                padding: 5px;
+            }
+
+            .cwk-add-controller {
+                display: flex;
+                justify-content: center;
+                align-items: center;
+                gap: 5px;
+                cursor: pointer;
+                border: 1px dashed $cwk_border_color;
+                border-radius: $rs_medium;
+                padding: 5px;
+                transition: $transition;
+
+                &:hover,
+                &.cwk-add-controller-show {
+                    background-color: #f5f5f582;
+                    border-color: $primary_color;
+                }
+            }
+
+            &.cwk-section-accordion-active {
+                .cwk-accordion-header-icon {
+                    transform: rotate(180deg);
+                }
+            }
+
+        }
+    }
+
+    .cwk-section-container {
+        display: flex;
+        flex-direction: column;
+        height: 100%;
+        gap: 10px;
+        padding: 0 5px;
+        overflow-y: auto;
+        overflow-x: hidden;
+
+        &::-webkit-scrollbar {
+            width: 3px;
+        }
+
+        &::-webkit-scrollbar-thumb {
+            background-color: $cwk_border_color;
+            border-radius: $rs_normal;
+        }
+
+    }
+
+}
+
+@media (max-width: 1440px) {
+    .cwk-controller-layout {
+        width: 290px;
+        min-width: 290px;
+    }
+}
+
+@media (max-width: 1240px) {
+    .cwk-controller-layout {
+        width: 100%;
+    }
+}

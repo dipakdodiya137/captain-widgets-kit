@@ -1,0 +1,29 @@
+@use '/src/style/variables.scss' as *;
+
+.cwk-not-found {
+    display: flex;
+    flex-direction: column;
+    width: 100%;
+    justify-content: center;
+    align-items: center;
+    gap: 10px;
+
+    .cwk-not-found-img {
+        height: 300px;
+        width: 300px;
+        object-fit: cover;
+    }
+
+    .cwk-not-found-text {
+        font-size: 16px;
+        font-weight: 600;
+        color: $cwk_black_color;
+    }
+
+    .cwk-not-found-description {
+        font-size: 14px;
+        color: $cwk_black_color;
+        opacity: 0.7;
+    }
+
+}

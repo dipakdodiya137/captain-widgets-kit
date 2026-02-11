@@ -1,0 +1,249 @@
+@use '/src/style/variables.scss' as *;
+
+.cwk-patch-card-container {
+    position: relative;
+    display: flex;
+    flex-direction: column;
+    max-width: 700px;
+
+    .cwk-patch-card {
+        position: relative;
+        display: flex;
+        height: 100%;
+        flex-direction: column;
+        border: 1px solid $cwk_border_color;
+        border-radius: $rs_normal;
+        overflow: hidden;
+        box-shadow: 2px 4px 5px 0px #0000001a;
+
+        .cwk-patch-card-effect-type-wrapper {
+            display: flex;
+            align-items: center;
+            gap: 10px;
+
+            .cwk-patch-card-effect-type {
+                color: $cwk_black_color;
+                font-size: 14px;
+                padding: 5px 15px;
+                border-radius: $rs_small;
+                border: 1px solid $cwk_border_color;
+                white-space: nowrap;
+                width: fit-content;
+                text-transform: capitalize;
+            }
+        }
+
+        .cwk-patch-card-header {
+            display: flex;
+            height: 100%;
+            flex-direction: column;
+            gap: 10px;
+            align-items: flex-start;
+            padding: 15px;
+
+            .cwk-patch-card-header-description {
+                color: $cwk_black_color;
+                font-size: 12px;
+                font-weight: 600;
+                opacity: 0.5;
+                text-overflow: ellipsis;
+                overflow: hidden;
+                display: -webkit-box;
+                -webkit-line-clamp: 3;
+                -webkit-box-orient: vertical;
+            }
+
+            .cwk-patch-card-title-wrapper {
+                display: flex;
+                width: 100%;
+                align-items: center;
+                justify-content: space-between;
+                gap: 10px;
+
+                .cwk-patch-card-title {
+                    display: flex;
+                    align-items: center;
+                    justify-content: center;
+                    font-size: 16px;
+                    font-weight: 600;
+                    color: $cwk_black_color;
+                }
+
+                .cwk-card-plugin-wrapper {
+                    display: flex;
+                    align-items: center;
+                    justify-content: center;
+                    gap: 10px;
+                }
+
+            }
+
+            .cwk-card-plugin {
+                display: flex;
+                background-color: #ffffff;
+
+                .cwk-card-plugin-icon {
+                    width: 25px;
+                    height: 25px;
+                }
+            }
+
+        }
+
+        .cwk-patch-card-footer {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            flex-wrap: wrap;
+            padding: 10px 15px;
+            background-color: $cwk_grey_color;
+            border-top: 1px dashed $cwk_border_color;
+
+            &.cwk-patch-card-footer-browse {
+                justify-content: flex-end;
+            }
+
+            .cwk-patch-download-loader {
+                cursor: default;
+            }
+
+            .cwk-patch-download-btn,
+            .cwk-patch-download-loader {
+                display: flex;
+                align-items: center;
+                background-color: $cwk_white_color;
+                border: 1px solid $cwk_border_color;
+                padding: 5px;
+                border-radius: $rs_small;
+                transition: $transition;
+                cursor: pointer;
+
+                .cwk-loader-spin {
+                    border-color: $cwk_black_color;
+                    border-bottom-color: transparent;
+                }
+
+                &:hover {
+                    background-color: $cwk_white_hover;
+                }
+            }
+
+            .cwk-patch-card-footer-actions {
+                display: flex;
+                align-items: center;
+                gap: 10px;
+
+                .cwk-patch-card-footer-button {
+                    text-decoration: none;
+                    color: $cwk_black_color;
+                    font-size: 16px;
+                    cursor: pointer;
+
+                    &:focus {
+                        border: none;
+                        outline: none;
+                        box-shadow: none;
+                    }
+
+                }
+            }
+
+        }
+    }
+
+    .cwk-delete-patch {
+        display: flex;
+        width: 100%;
+        justify-content: flex-end;
+        align-items: center;
+        gap: 10px;
+    }
+
+    .cwk-download-patch {
+        display: flex;
+        flex-direction: column;
+        width: 100%;
+        gap: 10px;
+        padding: 15px;
+        background-color: $cwk_grey_color;
+        border-radius: $rs_small;
+        border: 1px solid $cwk_border_color;
+
+        .cwk-download-patch-status {
+            display: flex;
+            align-items: center;
+            gap: 10px;
+        }
+
+        .cwk-download-patch-status-icon {
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            width: 20px;
+            height: 20px;
+
+            .cwk-loader-spin {
+                border-color: $cwk_black_color;
+                border-bottom-color: transparent;
+            }
+
+        }
+
+        .cwk-download-patch-status-text {
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 14px;
+            font-weight: 600;
+            color: $cwk_black_color;
+        }
+    }
+
+    .cwk-download-success-content {
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        width: 100%;
+        gap: 20px;
+        padding: 15px;
+
+        .cwk-download-success-icon {
+            display: flex;
+        }
+
+        .cwk-download-success-actions {
+            display: flex;
+            gap: 20px;
+            align-items: center;
+            justify-content: center;
+        }
+
+    }
+
+    &.cwk-patch-card-skeleton {
+
+        .cwk-patch-card-effect-type-wrapper .cwk-patch-card-effect-type,
+        .cwk-patch-card-header .cwk-patch-card-title,
+        .cwk-patch-card-header .cwk-patch-card-header-description,
+        .cwk-patch-card-footer .cwk-patch-card-footer-actions .cwk-patch-card-footer-button {
+            background: $skeleton_bg;
+            animation: $animation;
+            border-radius: $rs_small;
+            color: transparent;
+            pointer-events: none;
+            border: none !important;
+
+            img,
+            input,
+            svg {
+                visibility: hidden;
+            }
+
+            span,
+            label {
+                color: transparent !important;
+            }
+        }
+    }
+
+}

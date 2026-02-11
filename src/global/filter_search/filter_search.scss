@@ -1,0 +1,27 @@
+@use '/src/style/variables.scss' as *;
+
+
+.cwk-filter-search-container {
+    display: flex;
+    width: 100%;
+    background-color: $cwk_input_bg;
+    border-radius: $rs_small;
+    padding: 5px 10px;
+    border: 1px solid $cwk_border_color;
+
+    .cwk-filter-search-icon {
+        display: flex;
+        align-items: center;
+        justify-content: center;
+    }
+
+    input[type='text'].cwk-input-field {
+        width: 100%;
+        border: none;
+        outline: none;
+        background-color: transparent;
+        font-size: 14px;
+        color: $cwk_black_color;
+    }
+
+}

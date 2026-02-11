@@ -1,0 +1,48 @@
+@use '/src/style/variables.scss' as *;
+
+.cwk-widget-builder {
+    display: flex;
+    flex-direction: column;
+    gap: 20px;
+
+    .cwk-widget-builder-content {
+        display: flex;
+        height: calc(100vh - 90px);
+        width: 100%;
+        gap: 20px;
+
+        &.cwk-widget-builder-loading {
+            justify-content: center;
+            align-items: center;
+
+            .cwk-loader-spin {
+                height: 80px;
+                width: 80px;
+                border: 4px solid $primary_color;
+                border-bottom-color: transparent;
+            }
+        }
+
+        .cwk-widget-builder-content-inner {
+            display: flex;
+            gap: 20px;
+            height: 100%;
+        }
+
+    }
+
+}
+
+@media (max-width: 1240px) {
+    .cwk-widget-builder {
+        .cwk-widget-builder-content {
+            flex-wrap: wrap;
+
+            .cwk-widget-builder-content-inner {
+                margin-bottom: 20px;
+                width: 100%;
+            }
+
+        }
+    }
+}

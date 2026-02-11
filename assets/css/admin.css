@@ -1,0 +1,13 @@
+#toplevel_page_captain-widgets-kit div.wp-menu-image {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+#toplevel_page_captain-widgets-kit .wp-menu-image img {
+    width: 20px;
+    top: -3px;
+    position: relative;
+}
+#adminmenu li#toplevel_page_captain-widgets-kit.current a.menu-top{
+    background: #085F63;
+}

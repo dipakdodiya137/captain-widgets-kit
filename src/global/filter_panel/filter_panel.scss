@@ -1,0 +1,59 @@
+@use '/src/style/variables.scss' as *;
+
+.cwk-filter-panel {
+    display: flex;
+    width: 0px;
+    min-width: 0px;
+    border-right: 1px solid $cwk_border_color;
+    transition: $transition;
+
+    &.cwk-filter-panel-show {
+        width: 280px;
+        min-width: 280px;
+    }
+
+    &:not(.cwk-filter-panel-show) {
+        overflow: hidden;
+
+        div,
+        span,
+        label {
+            white-space: nowrap;
+        }
+    }
+}
+
+@media (max-width: 1024px) {
+    .cwk-filter-panel {
+        display: flex;
+        position: fixed;
+        background: $cwk_overlay_bg;
+        z-index: 9;
+        height: 100%;
+        top: 0;
+        left: 0;
+        transition: none;
+        opacity: 0;
+        visibility: hidden;
+
+        .cwk-filter-content {
+            background: $cwk_white_color;
+            width: 320px;
+            margin: auto;
+            height: fit-content;
+            border-radius: $rs_large;
+            padding-bottom: 10px;
+        }
+
+        &.cwk-filter-panel-show {
+            opacity: 1;
+            visibility: visible;
+            width: 100%;
+
+            .cwk-filter-content {
+                width: 320px;
+            }
+
+        }
+    }
+}

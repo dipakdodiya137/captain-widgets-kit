@@ -1,0 +1,205 @@
+@use '/src/style/variables.scss' as *;
+
+.cwk-controller-listing {
+    display: flex;
+    flex-direction: column;
+    gap: 20px;
+    height: 100%;
+    width: 320px;
+    min-width: 320px;
+    background: $cwk_white_color;
+    border-radius: $rs_large;
+    border: 1px solid $cwk_border_color;
+    padding: 10px;
+    overflow: hidden;
+    transition: $transition;
+
+    &.cwk-controller-listing-collapsed {
+        width: 0px;
+        min-width: 0px;
+        overflow: hidden;
+
+        div,
+        span,
+        label {
+            white-space: nowrap;
+        }
+    }
+
+    &.cwk-controller-listing-expaned {
+        width: 100%;
+    }
+
+    .cwk-controller-listing-header-wrapper {
+        display: flex;
+        align-items: center;
+        gap: 10px;
+
+        .cwk-controller-layout-collapse {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            background: $cwk_grey_color;
+            padding: 5px;
+            border-radius: $rs_medium;
+            cursor: pointer;
+        }
+    }
+
+    .cwk-controller-listing-header {
+        display: flex;
+        gap: 10px;
+        background: $primary_color;
+        border-radius: $rs_medium;
+        padding: 8px;
+        width: 100%;
+
+        .cwk-controller-action-btn {
+            display: flex;
+            padding: 5px;
+            width: 100%;
+            justify-content: center;
+            align-items: center;
+            font-weight: 600;
+            font-size: 16px;
+            border-radius: $rs_small;
+            color: $cwk_white_color;
+            border: 1px solid transparent;
+            cursor: pointer;
+            transition: $transition;
+
+            &.cwk-controller-action-btn-active {
+                background: $cwk_white_color;
+                color: $primary_color;
+            }
+
+            &.cwk-controller-action-btn-disable {
+                opacity: 0.7;
+                cursor: not-allowed;
+            }
+
+        }
+
+    }
+
+    .cwk-controller-listing-content {
+        display: flex;
+        flex-direction: column;
+        height: 100%;
+        gap: 10px;
+        padding: 0 5px;
+        overflow-y: auto;
+        overflow-x: hidden;
+
+        &::-webkit-scrollbar {
+            width: 3px;
+        }
+
+        &::-webkit-scrollbar-thumb {
+            background-color: $cwk_border_color;
+            border-radius: $rs_normal;
+        }
+
+        .cwk-controller-header {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            width: 100%;
+            font-size: 14px;
+            font-weight: 500;
+            color: $cwk_black_color;
+            transition: $transition;
+        }
+
+        .cwk-filter-search-container {
+            width: unset;
+            padding: 3px 10px;
+        }
+
+        .cwk-accordion-container {
+            .cwk-accordion-header {
+                font-size: 16px;
+                font-weight: 600;
+            }
+
+            &.cwk-accordion-content-show .cwk-accordion-content {
+                max-height: 100vh;
+                overflow-x: hidden;
+            }
+        }
+
+        .cwk-controller-listing-accordion {
+            border-bottom: 1px solid $cwk_border_color;
+            padding: 10px;
+        }
+
+        .cwk-controller-content {
+            display: grid;
+            grid-template-columns: repeat(2, 1fr);
+            gap: 10px;
+
+            .cwk-controller-content-item {
+                display: flex;
+                align-items: center;
+                gap: 10px;
+                border-radius: $rs_small;
+                border: 1px solid $cwk_border_color;
+                padding: 10px;
+                transition: $transition;
+                cursor: grab;
+
+                &:hover {
+                    // box-shadow: $inner_shadow;
+                    border-color: $primary_color;
+
+                    .cwk-controller-icon {
+                        i {
+                            color: $primary_color;
+                        }
+                    }
+
+                    .cwk-controller-label {
+                        color: $primary_color;
+                    }
+                }
+            }
+
+            .cwk-controller-icon {
+                display: flex;
+                justify-content: center;
+                align-items: center;
+                height: 25px;
+                width: 25px;
+                min-height: 25px;
+                min-width: 25px;
+
+                i {
+                    color: $cwk_black_color;
+                    font-size: 20px;
+                    transition: $transition;
+                }
+            }
+
+            .cwk-controller-label {
+                text-align: center;
+                font-size: 14px;
+                font-weight: 500;
+                color: $cwk_black_color;
+                transition: $transition;
+            }
+        }
+    }
+}
+
+@media (max-width: 1440px) {
+    .cwk-controller-listing {
+        width: 290px;
+        min-width: 290px;
+    }
+}
+
+@media (max-width: 1240px) {
+    .cwk-controller-listing {
+        width: 100%;
+    }
+}

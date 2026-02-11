@@ -1,0 +1,39 @@
+@use '/src/style/variables.scss' as *;
+
+
+input[type=checkbox].cwk-checkbox {
+    border-radius: 6px;
+    margin: 0;
+    min-height: 20px;
+    min-width: 20px;
+    outline: none;
+    box-shadow: none;
+    border: 1px solid $cwk_border_color;
+
+    &:checked {
+        align-items: center;
+        background-color: $primary_color;
+        display: flex;
+        justify-content: center;
+
+        &::before {
+            border: 2px solid #fff;
+            border-left: 0;
+            border-top: 0;
+            content: "";
+            height: 9px;
+            margin-bottom: 0;
+            margin-left: 0;
+            transform: rotate(40deg);
+            width: 4px;
+        }
+
+    }
+
+    &:focus {
+        border: 1px solid $cwk_border_color;
+        outline: none;
+        box-shadow: none;
+    }
+
+}

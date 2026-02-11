@@ -1,0 +1,44 @@
+$mg_fonts : 'Arial, sans-serif';
+
+$rs_small : 6px;
+$rs_medium : 8px;
+$rs_normal : 10px;
+$rs_large : 15px;
+
+$cwk_white_color : var(--cwk_white_color);
+$cwk_white_hover : var(--cwk_white_hover);
+$cwk_black_color : var(--cwk_black_color);
+$cwk_border_color : var(--cwk_border_color);
+$cwk_grey_color : var(--cwk_grey_color);
+$cwk_grey_bg : var(--cwk_grey_bg);
+$cwk_overlay_bg : var(--cwk_overlay_bg);
+$cwk_component_bg : var(--cwk_component_bg);
+$cwk_input_bg : var(--cwk_input_bg);
+$switcher_shadow : var(--switcher_shadow);
+$theme_cr : #085F63;
+$background_blue : #085F63;
+$text_blue : #085F63;
+
+/********************* primary button *********************/
+
+$primary_btn_color : #4A745B;
+$primary_btn_color_hover : #2f573f;
+
+/********************* skeleton effect *********************/
+$animation: cwk-skeleton-effect 1.5s infinite ease-in-out;
+$skeleton_bg: var(--skeleton_bg);
+$skeleton_start: var(--skeleton_start);
+$skeleton_end: var(--skeleton_end);
+
+$primary_color : #4A745B;
+
+$mouse_hover : #f35b00;
+
+$txt_white : #ffffff;
+
+$inner_shadow : inset 5px 4px 6px 0px #00000036;
+$transition : all 0.3s linear;
+
+// #c22076 pink
+// #1a8149 green
+// #040483 blue

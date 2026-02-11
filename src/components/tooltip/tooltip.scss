@@ -1,0 +1,42 @@
+@use '/src/style/variables.scss' as *;
+
+.cwk-tooltip-container {
+    position: relative;
+    display: flex;
+
+    .cwk-tooltip-content {
+        display: flex;
+        cursor: pointer;
+    }
+
+    .cwk-tooltip-text {
+        position: fixed;
+        display: flex;
+        opacity: 0;
+        visibility: hidden;
+        width: max-content;
+        background-color: $cwk_black_color;
+        color: $cwk_white_color;
+        border: 1px solid $cwk_border_color;
+        border-radius: $rs_small;
+        padding: 5px 7px;
+        z-index: 9;
+        font-size: 14px;
+        transition: $transition;
+    }
+
+    &:hover {
+        .cwk-tooltip-text {
+            opacity: 1;
+            visibility: visible;
+            transform: translateY(-10px);
+        }
+    }
+
+    // .cwk-tooltip-content:hover + .cwk-tooltip-text {
+    //     opacity: 1;
+    //     visibility: visible;
+    //     transform: translateY(-10px);
+    // }
+
+}

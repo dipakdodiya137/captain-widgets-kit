@@ -1,0 +1,336 @@
+{
+    "widget_info": {
+        "name": "Animated Border 4",
+        "description": "On hover, a thin bottom-right border appears, creating a modern effect that enhances the button’s visibility and interaction.",
+        "publish_type": "Publish",
+        "key_words": "",
+        "version": "1.0.0",
+        "id": "584igq25",
+        "craftpa_version": "",
+        "selected_plugin": {
+            "original_slug": "elementor",
+            "plugin_name": "Elementor",
+            "plugin_slug": "elementor\/elementor.php"
+        },
+        "selected_widget": {
+            "id": "button",
+            "name": "Button",
+            "external_sec_id": "section_button"
+        },
+        "effect_type": "widget",
+        "created_at": "2026-02-11T06:28:20.765Z"
+    },
+    "section": {
+        "content": [
+            {
+                "name": "Animated Border 4",
+                "key": "section-zvtx8425",
+                "controllers": [
+                    {
+                        "type": "switcher",
+                        "label": "Enable Animated Border 4",
+                        "name": "switcher_2yk6e525",
+                        "description": "",
+                        "defaultValue": false,
+                        "controlClass": "",
+                        "showlabel": true,
+                        "labelBlock": false,
+                        "separator": "default",
+                        "label_on": "Yes",
+                        "label_off": "No",
+                        "return_value": "Yes",
+                        "responsive": false,
+                        "conditions": false,
+                        "condition_value": {
+                            "relation": "or",
+                            "values": [
+                                {
+                                    "name": "",
+                                    "operator": "==",
+                                    "value": ""
+                                }
+                            ]
+                        }
+                    },
+                    {
+                        "type": "color",
+                        "label": "Color",
+                        "name": "color_s8iadi25",
+                        "description": "",
+                        "defaultValue": "#fb00ff",
+                        "showlabel": true,
+                        "labelBlock": false,
+                        "separator": "default",
+                        "alpha": true,
+                        "global": true,
+                        "selectors": "",
+                        "selector_type": "advanced",
+                        "selectors_advanced": "'{{WRAPPER}}.craft-animated-border-four .elementor-button::after' => 'background-color: {{VALUE}}'",
+                        "selector_value": "",
+                        "controlClass": "",
+                        "conditions": true,
+                        "condition_value": {
+                            "relation": "or",
+                            "values": [
+                                {
+                                    "name": "switcher_2yk6e525",
+                                    "operator": "==",
+                                    "value": "Yes"
+                                }
+                            ]
+                        }
+                    },
+                    {
+                        "type": "slider",
+                        "label": "Height",
+                        "name": "slider_be7sz925",
+                        "placeHolder": "",
+                        "defaultValue": {
+                            "value": "2",
+                            "unit": "px"
+                        },
+                        "separator": "default",
+                        "controlClass": "",
+                        "size_units": [
+                            {
+                                "type": "px",
+                                "checked": true,
+                                "min": 0,
+                                "max": "50",
+                                "step": 1
+                            },
+                            {
+                                "type": "%",
+                                "checked": false,
+                                "min": 0,
+                                "max": 10,
+                                "step": 1
+                            },
+                            {
+                                "type": "em",
+                                "checked": false,
+                                "min": 0,
+                                "max": 10,
+                                "step": 1
+                            },
+                            {
+                                "type": "rem",
+                                "checked": false,
+                                "min": 0,
+                                "max": 10,
+                                "step": 1
+                            },
+                            {
+                                "type": "deg",
+                                "checked": false,
+                                "min": 0,
+                                "max": 10,
+                                "step": 1
+                            },
+                            {
+                                "type": "vh",
+                                "checked": false,
+                                "min": 0,
+                                "max": 10,
+                                "step": 1
+                            }
+                        ],
+                        "show_unit": true,
+                        "showlabel": true,
+                        "labelBlock": true,
+                        "conditions": true,
+                        "dynamic": false,
+                        "selectors": "",
+                        "selector_type": "advanced",
+                        "selectors_advanced": "'{{WRAPPER}}.craft-animated-border-four .elementor-button::after' => 'height: {{SIZE}}{{UNIT}}'",
+                        "selector_value": "",
+                        "property_value": "",
+                        "condition_value": {
+                            "relation": "or",
+                            "values": [
+                                {
+                                    "name": "switcher_2yk6e525",
+                                    "operator": "==",
+                                    "value": "Yes"
+                                }
+                            ]
+                        },
+                        "responsive": true
+                    },
+                    {
+                        "type": "slider",
+                        "label": "Width",
+                        "name": "slider_otdahg25",
+                        "placeHolder": "",
+                        "defaultValue": {
+                            "value": "50",
+                            "unit": "px"
+                        },
+                        "separator": "default",
+                        "controlClass": "",
+                        "size_units": [
+                            {
+                                "type": "px",
+                                "checked": true,
+                                "min": 0,
+                                "max": "300",
+                                "step": 1
+                            },
+                            {
+                                "type": "%",
+                                "checked": false,
+                                "min": 0,
+                                "max": "100",
+                                "step": 1
+                            },
+                            {
+                                "type": "em",
+                                "checked": false,
+                                "min": 0,
+                                "max": 10,
+                                "step": 1
+                            },
+                            {
+                                "type": "rem",
+                                "checked": false,
+                                "min": 0,
+                                "max": 10,
+                                "step": 1
+                            },
+                            {
+                                "type": "deg",
+                                "checked": false,
+                                "min": 0,
+                                "max": 10,
+                                "step": 1
+                            },
+                            {
+                                "type": "vh",
+                                "checked": false,
+                                "min": 0,
+                                "max": 10,
+                                "step": 1
+                            }
+                        ],
+                        "show_unit": true,
+                        "showlabel": true,
+                        "labelBlock": true,
+                        "conditions": true,
+                        "dynamic": false,
+                        "selectors": "",
+                        "selector_type": "advanced",
+                        "selectors_advanced": "'{{WRAPPER}}.craft-animated-border-four .elementor-button:hover::after' => 'width: {{SIZE}}{{UNIT}}'",
+                        "selector_value": "",
+                        "property_value": "",
+                        "condition_value": {
+                            "relation": "or",
+                            "values": [
+                                {
+                                    "name": "switcher_2yk6e525",
+                                    "operator": "==",
+                                    "value": "Yes"
+                                }
+                            ]
+                        },
+                        "responsive": true
+                    },
+                    {
+                        "type": "slider",
+                        "label": "Transition Effect",
+                        "name": "slider_8htsyg25",
+                        "placeHolder": "",
+                        "defaultValue": {
+                            "value": "0.3",
+                            "unit": "px"
+                        },
+                        "separator": "default",
+                        "controlClass": "",
+                        "size_units": [
+                            {
+                                "type": "px",
+                                "checked": true,
+                                "min": 0,
+                                "max": "1",
+                                "step": "0.3"
+                            },
+                            {
+                                "type": "%",
+                                "checked": false,
+                                "min": 0,
+                                "max": 10,
+                                "step": 1
+                            },
+                            {
+                                "type": "em",
+                                "checked": false,
+                                "min": 0,
+                                "max": 10,
+                                "step": 1
+                            },
+                            {
+                                "type": "rem",
+                                "checked": false,
+                                "min": 0,
+                                "max": 10,
+                                "step": 1
+                            },
+                            {
+                                "type": "deg",
+                                "checked": false,
+                                "min": 0,
+                                "max": 10,
+                                "step": 1
+                            },
+                            {
+                                "type": "vh",
+                                "checked": false,
+                                "min": 0,
+                                "max": 10,
+                                "step": 1
+                            }
+                        ],
+                        "show_unit": true,
+                        "showlabel": true,
+                        "labelBlock": true,
+                        "conditions": true,
+                        "dynamic": false,
+                        "selectors": "",
+                        "selector_type": "advanced",
+                        "selectors_advanced": "'{{WRAPPER}}.craft-animated-border-four .elementor-button::after' => 'transition: width {{SIZE}}s ease-in-out'",
+                        "selector_value": "",
+                        "property_value": "",
+                        "condition_value": {
+                            "relation": "or",
+                            "values": [
+                                {
+                                    "name": "switcher_2yk6e525",
+                                    "operator": "==",
+                                    "value": "Yes"
+                                }
+                            ]
+                        },
+                        "responsive": true
+                    }
+                ]
+            }
+        ],
+        "style": [],
+        "advanced": [],
+        "active_section": null,
+        "active_tab": "content",
+        "active_controller": null,
+        "controller_collapsed": false,
+        "section_collapsed": false,
+        "editor_collapsed": false,
+        "active_field": null,
+        "layout": []
+    },
+    "external_link": "",
+    "widget_code": {
+        "php": "$element_id = $element->get_id();\n$dd_style = isset( $settings['switcher_2yk6e525'] ) ? $settings['switcher_2yk6e525'] : '';\n\nif( $dd_style == 'Yes' ){\n  $element->add_render_attribute( '_wrapper', 'class', 'cwk-animated-border-four' );\n  $element->add_render_attribute( 'button', 'style', 'position: relative;' );\n}",
+        "js": "",
+        "php_after": "",
+        "selected_lang": "php",
+        "css": ".cwk-animated-border-four .elementor-button::after {\n  content: \"\";\n  display: block;\n  position: absolute;\n  width: 0;\n  left: 0;\n  bottom: 0;\n}"
+    }
+}
