@@ -20,6 +20,11 @@ Using a combination of HTML, CSS, JavaScript, and PHP, the plugin provides addit
 
 The plugin is lightweight, developer-friendly, and follows WordPress coding standards to ensure compatibility and performance.
 
+== Development Repository ==
+
+You can view the complete source code here:
+https://github.com/dipakdodiya137/captain-widgets-kit
+
 == Features ==
 
 * Extend default Elementor widgets with additional controls
