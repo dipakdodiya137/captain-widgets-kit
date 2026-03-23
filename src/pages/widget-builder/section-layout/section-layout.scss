@@ -1,20 +1,20 @@
 @use '/src/style/variables.scss' as *;
 
-.cwk-controller-layout {
+.captwiki-controller-layout {
     display: flex;
     flex-direction: column;
     gap: 20px;
     height: 100%;
     width: 320px;
     min-width: 320px;
-    background: $cwk_white_color;
+    background: $captwiki_white_color;
     border-radius: $rs_large;
-    border: 1px solid $cwk_border_color;
+    border: 1px solid $captwiki_border_color;
     padding: 10px;
     overflow: hidden;
     transition: $transition;
 
-    &.cwk-controller-layout-collapsed {
+    &.captwiki-controller-layout-collapsed {
         width: 0px;
         min-width: 0px;
         overflow: hidden;
@@ -26,27 +26,27 @@
         }
     }
 
-    &.cwk-controller-layout-expaned {
+    &.captwiki-controller-layout-expaned {
         width: 100%;
     }
 
-    .cwk-controller-layout-header-wrapper {
+    .captwiki-controller-layout-header-wrapper {
         display: flex;
         align-items: center;
         gap: 10px;
 
-        .cwk-controller-layout-collapse {
+        .captwiki-controller-layout-collapse {
             display: flex;
             justify-content: center;
             align-items: center;
-            background: $cwk_grey_color;
+            background: $captwiki_grey_color;
             padding: 5px;
             border-radius: $rs_medium;
             cursor: pointer;
         }
     }
 
-    .cwk-controller-layout-header {
+    .captwiki-controller-layout-header {
         display: flex;
         gap: 10px;
         background: $primary_color;
@@ -60,11 +60,11 @@
         }
 
         &::-webkit-scrollbar-thumb {
-            background-color: $cwk_border_color;
+            background-color: $captwiki_border_color;
             border-radius: $rs_normal;
         }
 
-        .cwk-controller-action-btn {
+        .captwiki-controller-action-btn {
             display: flex;
             padding: 5px;
             width: 100%;
@@ -73,17 +73,17 @@
             font-weight: 600;
             font-size: 16px;
             border-radius: $rs_small;
-            color: $cwk_white_color;
+            color: $captwiki_white_color;
             border: 1px solid transparent;
             cursor: pointer;
             transition: $transition;
 
-            &.cwk-controller-action-btn-active {
-                background: $cwk_white_color;
+            &.captwiki-controller-action-btn-active {
+                background: $captwiki_white_color;
                 color: $primary_color;
             }
 
-            &.cwk-controller-action-btn-disable {
+            &.captwiki-controller-action-btn-disable {
                 opacity: 0.7;
                 cursor: not-allowed;
             }
@@ -92,62 +92,62 @@
 
     }
 
-    .cwk-add-layout {
+    .captwiki-add-layout {
         display: flex;
         justify-content: center;
         align-items: center;
         gap: 10px;
-        border: 1px dashed $cwk_border_color;
+        border: 1px dashed $captwiki_border_color;
         border-radius: $rs_medium;
         padding: 20px;
         cursor: pointer;
         transition: $transition;
 
         &:hover,
-        &.cwk-add-layout-show {
+        &.captwiki-add-layout-show {
             background-color: #f5f5f582;
             border-color: $primary_color;
         }
 
     }
 
-    .cwk-controller-drop {
+    .captwiki-controller-drop {
         height: 5px;
         width: 100%;
         background: transparent;
         transition: all 0.1s linear;
 
-        &.cwk-controller-drop-show {
+        &.captwiki-controller-drop-show {
             height: 15px;
             background: $primary_color;
         }
 
     }
 
-    .cwk-section-listing {
+    .captwiki-section-listing {
         display: flex;
         flex-direction: column;
         gap: 5px;
 
-        .cwk-section-accordion {
+        .captwiki-section-accordion {
             display: flex;
             flex-direction: column;
-            border: 1px solid $cwk_border_color;
+            border: 1px solid $captwiki_border_color;
             border-radius: $rs_small;
             overflow: hidden;
 
-            .cwk-section-header {
+            .captwiki-section-header {
                 display: flex;
                 justify-content: space-between;
                 align-items: center;
                 padding: 5px;
-                background: $cwk_grey_color;
-                color: $cwk_black_color;
+                background: $captwiki_grey_color;
+                color: $captwiki_black_color;
                 transition: $transition;
                 cursor: default;
             }
 
-            .cwk-section-name {
+            .captwiki-section-name {
                 display: flex;
                 width: fit-content;
                 border: none;
@@ -155,7 +155,7 @@
                 font-size: 14px;
                 font-weight: 500;
                 background: transparent;
-                color: $cwk_black_color;
+                color: $captwiki_black_color;
                 transition: $transition;
 
                 &:focus,
@@ -166,13 +166,13 @@
                 }
             }
 
-            .cwk-section-icons {
+            .captwiki-section-icons {
                 display: flex;
                 justify-content: center;
                 align-items: center;
                 gap: 10px;
 
-                .cwk-accordion-header-icon {
+                .captwiki-accordion-header-icon {
                     i {
                         font-size: 14px;
                     }
@@ -180,55 +180,55 @@
 
             }
 
-            .cwk-section-del-icon,
-            .cwk-accordion-header-icon,
-            .cwk-info-header-icon {
+            .captwiki-section-del-icon,
+            .captwiki-accordion-header-icon,
+            .captwiki-info-header-icon {
                 display: flex;
                 transition: $transition;
                 cursor: pointer;
 
                 i {
-                    color: $cwk_black_color;
+                    color: $captwiki_black_color;
                     font-size: 16px;
                 }
 
             }
 
-            .cwk-info-header-tooltip {
+            .captwiki-info-header-tooltip {
                 display: flex;
 
-                .cwk-tooltip-text {
+                .captwiki-tooltip-text {
                     width: 200px;
                 }
             }
 
-            .cwk-section-content {
+            .captwiki-section-content {
                 display: flex;
                 flex-direction: column;
                 gap: 10px;
                 padding: 5px;
             }
 
-            .cwk-add-controller {
+            .captwiki-add-controller {
                 display: flex;
                 justify-content: center;
                 align-items: center;
                 gap: 5px;
                 cursor: pointer;
-                border: 1px dashed $cwk_border_color;
+                border: 1px dashed $captwiki_border_color;
                 border-radius: $rs_medium;
                 padding: 5px;
                 transition: $transition;
 
                 &:hover,
-                &.cwk-add-controller-show {
+                &.captwiki-add-controller-show {
                     background-color: #f5f5f582;
                     border-color: $primary_color;
                 }
             }
 
-            &.cwk-section-accordion-active {
-                .cwk-accordion-header-icon {
+            &.captwiki-section-accordion-active {
+                .captwiki-accordion-header-icon {
                     transform: rotate(180deg);
                 }
             }
@@ -236,7 +236,7 @@
         }
     }
 
-    .cwk-section-container {
+    .captwiki-section-container {
         display: flex;
         flex-direction: column;
         height: 100%;
@@ -250,7 +250,7 @@
         }
 
         &::-webkit-scrollbar-thumb {
-            background-color: $cwk_border_color;
+            background-color: $captwiki_border_color;
             border-radius: $rs_normal;
         }
 
@@ -259,14 +259,14 @@
 }
 
 @media (max-width: 1440px) {
-    .cwk-controller-layout {
+    .captwiki-controller-layout {
         width: 290px;
         min-width: 290px;
     }
 }
 
 @media (max-width: 1240px) {
-    .cwk-controller-layout {
+    .captwiki-controller-layout {
         width: 100%;
     }
 }

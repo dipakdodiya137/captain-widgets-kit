@@ -1,68 +1,68 @@
 @use '/src/style/variables.scss' as *;
 
-.cwk-setting-page {
+.captwiki-setting-page {
     display: flex;
     flex-direction: column;
     gap: 15px;
     flex-grow: 1;
-    background-color: $cwk_white_color;
-    border: 1px solid $cwk_border_color;
+    background-color: $captwiki_white_color;
+    border: 1px solid $captwiki_border_color;
     border-radius: $rs_large;
     padding: 15px;
 
-    .cwk-setting-item {
+    .captwiki-setting-item {
         display: grid;
         grid-template-columns: repeat(auto-fit, minmax(340px, 1fr));
         gap: 15px;
     }
 
-    .cwk-setting-card {
+    .captwiki-setting-card {
         display: flex;
         justify-content: space-between;
         align-items: center;
         padding: 15px;
         gap: 15px;
         border-radius: $rs_normal;
-        background-color: $cwk_grey_color;
-        border: 1px solid $cwk_border_color;
+        background-color: $captwiki_grey_color;
+        border: 1px solid $captwiki_border_color;
 
-        .cwk-setting-card-content {
+        .captwiki-setting-card-content {
             display: flex;
             flex-direction: column;
             gap: 5px;
         }
 
-        .cwk-setting-card-title {
+        .captwiki-setting-card-title {
             font-size: 16px;
             font-weight: 600;
-            color: $cwk_black_color;
+            color: $captwiki_black_color;
         }
 
-        .cwk-setting-card-desc {
+        .captwiki-setting-card-desc {
             font-size: 14px;
             font-weight: 600;
-            color: $cwk_black_color;
+            color: $captwiki_black_color;
             opacity: 0.5;
         }
 
-        .cwk-setting-card-icon {
+        .captwiki-setting-card-icon {
             display: flex;
             justify-content: center;
             align-items: center;
-            background-color: $cwk_white_color;
-            border: 1px solid $cwk_border_color;
+            background-color: $captwiki_white_color;
+            border: 1px solid $captwiki_border_color;
             border-radius: 50%;
             padding: 10px;
             cursor: pointer;
             transition: $transition;
 
             i {
-                color: $cwk_black_color;
+                color: $captwiki_black_color;
                 font-size: 16px;
             }
 
             &:hover {
-                background-color: $cwk_white_hover;
+                background-color: $captwiki_white_hover;
             }
 
         }

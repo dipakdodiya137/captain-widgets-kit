@@ -139,7 +139,7 @@ export const controller_array = {
         "showlabel": true,
         "labelBlock": false,
         "separator": "default",
-        "align_option": [{ "align_label": "label", "align_value": "value", "align_icon": "ecwk-i-text-align-left", "align_title": "", "align_svg": "" },],
+        "align_option": [{ "align_label": "label", "align_value": "value", "align_icon": "captwiki-i-text-align-left", "align_title": "", "align_svg": "" },],
         "toggle": false,
         "controlClass": "",
         "responsive": false,

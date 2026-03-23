@@ -38,25 +38,25 @@ const Dropdown = ({ title = '', content, className = '' }) => {
     };
 
     const toggleDropdown = (e) => {
-        const dropdownContainer = e.target.closest('.cwk-dropdown-container');
+        const dropdownContainer = e.target.closest('.captwiki-dropdown-container');
 
         if (!dropdownContainer) return;
 
-        dropdownContainer.classList.toggle('cwk-dropdown-content-show');
+        dropdownContainer.classList.toggle('captwiki-dropdown-content-show');
 
         getContentStyle();
     };
 
     return (
-        <div className={`cwk-dropdown-container ${className}`} ref={headerRef} onClick={toggleDropdown}>
-            <div className='cwk-dropdown-header'>
+        <div className={`captwiki-dropdown-container ${className}`} ref={headerRef} onClick={toggleDropdown}>
+            <div className='captwiki-dropdown-header'>
                 {title}
-                <span className='cwk-dropdown-header-icon'>
-                    <i className='cwk-i-arrow-down'></i>
+                <span className='captwiki-dropdown-header-icon'>
+                    <i className='captwiki-i-arrow-down'></i>
                 </span>
             </div>
             <div
-                className='cwk-dropdown-content'
+                className='captwiki-dropdown-content'
                 ref={contentRef}
                 style={{ width: contentWidth, top: contentPosition.top }}
             >

@@ -1,14 +1,14 @@
 @use '/src/style/variables.scss' as *;
 
-.captwiki-primary-button {
+.captwiki-secondary-button {
     display: flex;
     justify-content: center;
     align-items: center;
     gap: 5px;
-    background-color: $primary_btn_color;
-    color: #ffffff;
+    background-color: #00ff6730;
+    color: $primary_btn_color;
     padding: 10px 15px;
-    border: none;
+    border: 1px solid $primary_btn_color;
     border-radius: $rs_medium;
     font-size: 14px;
     font-weight: 500;
@@ -16,7 +16,7 @@
     transition: $transition;
 
     &:hover {
-        background-color: $primary_btn_color_hover;
+        background-color: #28b76252;
     }
 
     &:disabled {

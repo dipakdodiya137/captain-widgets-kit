@@ -1,14 +1,14 @@
 @use '/src/style/variables.scss' as *;
 
 
-input[type=checkbox].cwk-checkbox {
+input[type=checkbox].captwiki-checkbox {
     border-radius: 6px;
     margin: 0;
     min-height: 20px;
     min-width: 20px;
     outline: none;
     box-shadow: none;
-    border: 1px solid $cwk_border_color;
+    border: 1px solid $captwiki_border_color;
 
     &:checked {
         align-items: center;
@@ -31,7 +31,7 @@ input[type=checkbox].cwk-checkbox {
     }
 
     &:focus {
-        border: 1px solid $cwk_border_color;
+        border: 1px solid $captwiki_border_color;
         outline: none;
         box-shadow: none;
     }

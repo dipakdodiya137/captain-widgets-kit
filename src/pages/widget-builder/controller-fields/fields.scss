@@ -1,18 +1,18 @@
 @use '/src/style/variables.scss' as *;
 
-.cwk-controller-fields-wrapper {
+.captwiki-controller-fields-wrapper {
     position: relative;
     display: flex;
     flex-direction: column;
 
-    .cwk-multiple-content {
-        .cwk-fields-content {
+    .captwiki-multiple-content {
+        .captwiki-fields-content {
             border-bottom: none;
         }
     }
 
-    .cwk-accordion-container {
-        border-bottom: 1px solid $cwk_border_color;
+    .captwiki-accordion-container {
+        border-bottom: 1px solid $captwiki_border_color;
         padding: 15px 0;
         transition: $transition;
 
@@ -20,38 +20,38 @@
             border-bottom: none;
         }
 
-        &.cwk-accordion-content-show {
+        &.captwiki-accordion-content-show {
             padding: 15px 0 0 0;
 
-            .cwk-accordion-content {
+            .captwiki-accordion-content {
                 max-height: 1000vh;
             }
 
-            .cwk-fields-accordion-header .cwk-accordion-header-icon {
+            .captwiki-fields-accordion-header .captwiki-accordion-header-icon {
                 rotate: 180deg;
             }
         }
 
-        .cwk-fields-accordion-header {
+        .captwiki-fields-accordion-header {
             display: flex;
             width: fit-content;
             align-items: center;
             gap: 10px;
 
-            .cwk-accordion-header-icon {
+            .captwiki-accordion-header-icon {
                 rotate: -90deg;
             }
 
-            .cwk-i-arrow-down {
+            .captwiki-i-arrow-down {
                 font-size: 12px;
-                color: $cwk_black_color;
+                color: $captwiki_black_color;
                 transition: $transition;
             }
 
-            .cwk-fields-accordion-header-label {
+            .captwiki-fields-accordion-header-label {
                 font-size: 14px;
                 font-weight: 600;
-                color: $cwk_black_color;
+                color: $captwiki_black_color;
             }
 
         }
@@ -59,10 +59,10 @@
 
 
 
-    .cwk-fields-content {
+    .captwiki-fields-content {
         display: flex;
         justify-content: space-between;
-        border-bottom: 1px solid $cwk_border_color;
+        border-bottom: 1px solid $captwiki_border_color;
         align-items: center;
         width: 100%;
         padding: 10px 0;
@@ -71,11 +71,11 @@
             border-bottom: none;
         }
 
-        &.cwk-fields-content-column {
+        &.captwiki-fields-content-column {
             flex-direction: column;
             gap: 15px;
 
-            .cwk-fields-input {
+            .captwiki-fields-input {
                 width: 100%;
             }
 
@@ -83,49 +83,49 @@
 
     }
 
-    .cwk-tooltip-container {
-        .cwk-tooltip-text {
+    .captwiki-tooltip-container {
+        .captwiki-tooltip-text {
             max-width: 240px;
         }
     }
 
-    .cwk-fields-label-container {
+    .captwiki-fields-label-container {
         display: flex;
         align-items: center;
         gap: 5px;
         border: none;
         outline: none;
         background-color: transparent;
-        color: $cwk_black_color;
+        color: $captwiki_black_color;
         font-size: 12px;
         font-weight: 600;
         padding: 0;
         width: 100%;
     }
 
-    .cwk-fields-input-container {
+    .captwiki-fields-input-container {
         display: flex;
         justify-content: end;
         gap: 5px;
         width: 100%;
 
-        &.cwk-fields-label-container-dropdown {
+        &.captwiki-fields-label-container-dropdown {
             width: 90%;
         }
 
-        &.cwk-fields-input-container-slider {
-            .cwk-fields-input {
+        &.captwiki-fields-input-container-slider {
+            .captwiki-fields-input {
                 width: 70px;
             }
         }
 
-        &.cwk-fields-selectors-advanced {
+        &.captwiki-fields-selectors-advanced {
             flex-direction: column;
             border-radius: $rs_small;
             gap: 0;
             overflow: hidden;
 
-            .cwk-fields-selectors-advanced-php {
+            .captwiki-fields-selectors-advanced-php {
                 font-size: 14px;
                 font-weight: 600;
                 color: #ababab;
@@ -153,21 +153,21 @@
 
     }
 
-    .cwk-align-icons-wrapper {
+    .captwiki-align-icons-wrapper {
         display: flex;
         flex-wrap: wrap;
         align-items: center;
         justify-content: center;
         gap: 2px;
 
-        .cwk-align-icon {
+        .captwiki-align-icon {
             display: flex;
             align-items: center;
             justify-content: center;
             width: 20px;
             height: 20px;
-            border: 1px solid $cwk_border_color;
-            background-color: $cwk_white_color;
+            border: 1px solid $captwiki_border_color;
+            background-color: $captwiki_white_color;
             border-radius: $rs_small;
             padding: 2px;
             transition: $transition;
@@ -178,13 +178,13 @@
             }
 
             &:hover {
-                background-color: $cwk_white_hover;
+                background-color: $captwiki_white_hover;
             }
         }
 
     }
 
-    .cwk-fields-unit-wrapper {
+    .captwiki-fields-unit-wrapper {
         display: flex;
         align-items: center;
         justify-content: space-between;
@@ -192,31 +192,31 @@
         width: 100%;
     }
 
-    .cwk-options-header-item {
+    .captwiki-options-header-item {
         width: 80px;
         white-space: nowrap;
         overflow: hidden;
         border: none;
         outline: none;
         background-color: transparent;
-        color: $cwk_black_color;
+        color: $captwiki_black_color;
         padding: 0;
     }
 
-    .cwk-dropdown-header-icon {
+    .captwiki-dropdown-header-icon {
         svg {
             height: 20px;
             width: 20px;
         }
     }
 
-    .cwk-normalHover-label {
+    .captwiki-normalhover-label {
         display: flex;
         align-items: center;
         gap: 5px;
-        border: 1px solid $cwk_border_color;
+        border: 1px solid $captwiki_border_color;
         background-color: transparent;
-        color: $cwk_black_color;
+        color: $captwiki_black_color;
         padding: 5px 15px;
         font-size: 12px;
         border-radius: $rs_small;
@@ -224,47 +224,47 @@
         transition: $transition;
 
         &:hover {
-            background-color: $cwk_grey_color;
+            background-color: $captwiki_grey_color;
         }
 
     }
 
-    .cwk-fields-type-wrapper {
+    .captwiki-fields-type-wrapper {
         display: flex;
         align-items: center;
         gap: 5px;
         border: none;
         outline: none;
         background-color: transparent;
-        color: $cwk_black_color;
+        color: $captwiki_black_color;
         font-size: 12px;
         font-weight: 600;
         padding: 0;
         cursor: pointer;
     }
 
-    .cwk-fields-options-container {
+    .captwiki-fields-options-container {
         display: flex;
         flex-direction: column;
         align-items: center;
         justify-content: space-between;
         gap: 5px;
 
-        .cwk-fields-options-header {
+        .captwiki-fields-options-header {
             display: flex;
             align-items: center;
             justify-content: space-between;
             gap: 5px;
             width: 100%;
 
-            .cwk-fields-options-header-item {
-                color: $cwk_black_color;
+            .captwiki-fields-options-header-item {
+                color: $captwiki_black_color;
                 opacity: 0.7;
                 width: 100%;
             }
         }
 
-        .cwk-size-unit-label {
+        .captwiki-size-unit-label {
             align-items: center;
             display: flex;
             gap: 10px;
@@ -272,29 +272,29 @@
             cursor: pointer;
         }
 
-        .cwk-fields-options-item {
+        .captwiki-fields-options-item {
             display: flex;
             align-items: center;
             justify-content: space-between;
             gap: 5px;
         }
 
-        .cwk-fields-options-item-delete {
+        .captwiki-fields-options-item-delete {
             display: flex;
             align-items: center;
             justify-content: center;
-            background-color: $cwk_grey_color;
+            background-color: $captwiki_grey_color;
             padding: 5px;
-            border: 1px solid $cwk_border_color;
+            border: 1px solid $captwiki_border_color;
             border-radius: $rs_small;
             cursor: pointer;
 
             i {
-                color: $cwk_black_color;
+                color: $captwiki_black_color;
                 font-size: 12px;
             }
 
-            &.cwk-fields-options-item-delete-disabled {
+            &.captwiki-fields-options-item-delete-disabled {
                 opacity: 0.5;
                 cursor: not-allowed;
                 pointer-events: none;
@@ -304,13 +304,13 @@
 
     }
 
-    .cwk-fields-options-add {
+    .captwiki-fields-options-add {
         display: flex;
         align-items: center;
         justify-content: center;
         padding: 5px 15px;
         align-self: flex-end;
-        border: 1px dashed $cwk_border_color;
+        border: 1px dashed $captwiki_border_color;
         border-radius: $rs_small;
         cursor: pointer;
         transition: $transition;
@@ -322,37 +322,37 @@
 
     }
 
-    .cwk-fields-unit-contaner {
+    .captwiki-fields-unit-contaner {
         display: flex;
         flex-direction: column;
         align-items: start;
         gap: 5px;
         width: 70px;
 
-        .cwk-fields-unit-item {
+        .captwiki-fields-unit-item {
             font-size: 12px;
             font-weight: 400;
-            color: $cwk_black_color;
+            color: $captwiki_black_color;
             opacity: 0.7;
         }
 
     }
 
-    .cwk-fields-input {
-        border: 1px solid $cwk_border_color;
+    .captwiki-fields-input {
+        border: 1px solid $captwiki_border_color;
         border-radius: $rs_small;
         padding: 0px 10px;
         font-size: 14px;
         width: 145px;
-        color: $cwk_black_color;
-        background-color: $cwk_input_bg;
+        color: $captwiki_black_color;
+        background-color: $captwiki_input_bg;
         outline: none;
         box-shadow: none;
 
         &:focus,
         &:target,
         &:active {
-            border: 1px solid $cwk_border_color;
+            border: 1px solid $captwiki_border_color;
             outline: none;
             box-shadow: none;
         }
@@ -377,41 +377,41 @@
         }
     }
 
-    .cwk-dropdown-header {
-        background-color: $cwk_input_bg;
+    .captwiki-dropdown-header {
+        background-color: $captwiki_input_bg;
         border-radius: $rs_small;
         text-transform: capitalize;
         padding: 3px 10px;
     }
 
-    .cwk-dp-container {
+    .captwiki-dp-container {
         display: flex;
         flex-direction: column;
         gap: 5px;
         width: 100%;
 
-        .cwk-dp-item {
+        .captwiki-dp-item {
             padding: 5px;
             border-radius: $rs_small;
             cursor: pointer;
             transition: $transition;
 
             &:hover {
-                background-color: $cwk_input_bg;
+                background-color: $captwiki_input_bg;
             }
         }
 
     }
 
-    .cwk-controller-copy-icon {
+    .captwiki-controller-copy-icon {
         display: flex;
         justify-content: center;
         align-items: center;
-        border: 1px solid $cwk_border_color;
+        border: 1px solid $captwiki_border_color;
         border-radius: $rs_small;
         padding: 2px 4px;
-        color: $cwk_black_color;
-        background-color: $cwk_input_bg;
+        color: $captwiki_black_color;
+        background-color: $captwiki_input_bg;
         cursor: pointer;
     }
 

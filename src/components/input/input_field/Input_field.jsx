@@ -4,7 +4,7 @@ import './Input_field.scss';
 const Input_field = ({ placeholder = '', value = '', changeEvent, id = '', onKeyDown = null, onFocus = null, onBlur = null, onClick = null }) => {
     return (
         <input
-            className='cwk-input-field'
+            className='captwiki-input-field'
             id={id}
             type='text'
             placeholder={placeholder}

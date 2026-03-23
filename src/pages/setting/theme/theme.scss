@@ -1,13 +1,13 @@
 @use '/src/style/variables.scss' as *;
 
 
-.cwk-theme-wrapper {
+.captwiki-theme-wrapper {
     display: flex;
     flex-direction: column;
     gap: 20px;
     width: 100%;
 
-    .cwk-theme-container {
+    .captwiki-theme-container {
         display: flex;
         flex-wrap: wrap;
         width: 100%;
@@ -15,23 +15,23 @@
         align-items: center;
         gap: 10px;
 
-        .cwk-theme-title {
+        .captwiki-theme-title {
             font-size: 16px;
             font-weight: 600;
-            color: $cwk_black_color;
+            color: $captwiki_black_color;
         }
 
-        .cwk-theme-dropdown {
+        .captwiki-theme-dropdown {
             display: flex;
             width: 200px;
 
-            .cwk-dropdown-header {
+            .captwiki-dropdown-header {
                 text-transform: capitalize;
             }
 
         }
 
-        .cwk-theme-content {
+        .captwiki-theme-content {
             display: flex;
             flex-direction: column;
             width: 90%;
@@ -39,23 +39,23 @@
             gap: 5px;
         }
 
-        .cwk-plugin-themes {
+        .captwiki-plugin-themes {
             display: flex;
             width: 100%;
             padding: 5px 10px;
             border-radius: $rs_small;
-            color: $cwk_black_color;
+            color: $captwiki_black_color;
             cursor: pointer;
             transition: $transition;
 
             &:hover {
-                background-color: $cwk_white_hover;
+                background-color: $captwiki_white_hover;
             }
         }
 
     }
 
-    .cwk-theme-save{
+    .captwiki-theme-save{
         display: flex;
         justify-content: flex-end;
         align-items: center;

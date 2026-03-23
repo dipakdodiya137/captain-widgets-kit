@@ -21,8 +21,8 @@ const filter_panel = ({ collapse, filterContent }) => {
     const toggleFilter = () => {
         if (filterRef.current) {
 
-            if (filterRef.current.classList.contains('cwk-filter-panel-show')) {
-                filterRef.current.classList.remove('cwk-filter-panel-show');
+            if (filterRef.current.classList.contains('captwiki-filter-panel-show')) {
+                filterRef.current.classList.remove('captwiki-filter-panel-show');
 
                 setTimeout(() => {
                     filterRef.current.style.display = 'none';
@@ -33,7 +33,7 @@ const filter_panel = ({ collapse, filterContent }) => {
                 filterRef.current.style.display = 'flex';
 
                 setTimeout(() => {
-                    filterRef.current.classList.add('cwk-filter-panel-show');
+                    filterRef.current.classList.add('captwiki-filter-panel-show');
                 }, 0);
             }
 
@@ -41,13 +41,13 @@ const filter_panel = ({ collapse, filterContent }) => {
     }
 
     const closeFilter = (e) => {
-        if (!e.target.closest('.cwk-filter-content') && mediaQuery.matches) {
+        if (!e.target.closest('.captwiki-filter-content') && mediaQuery.matches) {
             toggleFilter();
         }
     }
 
     return (
-        <div className={`cwk-filter-panel ${!mediaQuery.matches ? 'cwk-filter-panel-show' : ''}`} ref={filterRef} onClick={(e) => closeFilter(e)}>
+        <div className={`captwiki-filter-panel ${!mediaQuery.matches ? 'captwiki-filter-panel-show' : ''}`} ref={filterRef} onClick={(e) => closeFilter(e)}>
             {filterContent}
         </div>
     )

@@ -1,66 +1,93 @@
 @use '/src/style/variables.scss' as *;
 
 
-.cwk-create-patch {
+.captwiki-create-patch {
     display: flex;
     flex-direction: column;
     gap: 15px;
     width: 100%;
 
-    .cwk-create-details {
+    .captwiki-create-details {
         display: flex;
         gap: 5px;
         width: 100%;
 
-        .cwk-selected-type {
+        .captwiki-selected-type {
             text-transform: capitalize;
         }
 
-        .cwk-input-field {
+        .captwiki-input-field {
             padding: 10px 15px;
         }
 
-        .cwk-dropdown-header {
+        .captwiki-dropdown-header {
             padding: 10px 15px;
         }
 
     }
 
-    .cwk-create-footer {
+    .captwiki-create-warning {
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+        padding: 5px 10px;
+        background-color: #ff70022e;
+        border: 1px solid $captwiki_border_color;
+        border-radius: $rs_small;
+
+        .captwiki-create-warning-text{
+            color: $captwiki_black_color;
+            font-size: 14px;
+            font-weight: 500;
+        }
+
+        .captwiki-secondary-button {
+            padding: 5px 15px;
+
+            .captwiki-loader-spin {
+                border-color: $primary_color;
+                border-bottom-color: transparent;
+            }
+
+        }
+
+    }
+
+    .captwiki-create-footer {
         display: flex;
         justify-content: center;
         align-items: center;
         gap: 10px;
     }
 
-    .cwk-plugin-list-item {
-        border: 1px solid $cwk_border_color;
+    .captwiki-plugin-list-item {
+        border: 1px solid $captwiki_border_color;
         padding: 5px 10px;
         border-radius: $rs_small;
         font-size: 14px;
         font-weight: 600;
-        color: $cwk_black_color;
+        color: $captwiki_black_color;
         transition: $transition;
         cursor: pointer;
 
         &:hover {
-            background-color: $cwk_white_hover;
+            background-color: $captwiki_white_hover;
         }
 
-        &.cwk-plugin-list-item-selected {
-            background-color: $cwk_white_hover;
+        &.captwiki-plugin-list-item-selected {
+            background-color: $captwiki_white_hover;
             border-color: $primary_color;
             color: $primary_color;
         }
     }
 
-    .cwk-widget-select-dropdown {
-        .cwk-dropdown-content {
+    .captwiki-widget-select-dropdown {
+        .captwiki-dropdown-content {
             max-height: 100%;
             overflow-y: visible;
         }
 
-        .cwk-create-dropdown-wrapper {
+        .captwiki-create-dropdown-wrapper {
             display: flex;
             width: 100%;
             flex-direction: column;
@@ -68,7 +95,7 @@
             padding: 5px 0;
         }
 
-        .cwk-plugin-list {
+        .captwiki-plugin-list {
             max-height: 200px;
             overflow-y: auto;
 
@@ -77,7 +104,7 @@
             }
 
             &::-webkit-scrollbar-thumb {
-                background-color: $cwk_border_color;
+                background-color: $captwiki_border_color;
                 border-radius: $rs_normal;
             }
 
@@ -86,17 +113,17 @@
     }
 
 
-    .cwk-plugin-list {
+    .captwiki-plugin-list {
         display: flex;
         flex-wrap: wrap;
         gap: 10px;
         width: 100%;
 
-        &.cwk-patch-plugins {
+        &.captwiki-patch-plugins {
             flex-direction: column;
             flex-wrap: nowrap;
 
-            .cwk-plugin-list-item {
+            .captwiki-plugin-list-item {
                 border: none;
             }
 
@@ -104,11 +131,11 @@
 
     }
 
-    .cwk-widget-select-container {
+    .captwiki-widget-select-container {
         width: 100%;
     }
 
-    .cwk-widget-select-disable {
+    .captwiki-widget-select-disable {
         pointer-events: none;
         opacity: 0.5;
     }

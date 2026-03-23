@@ -1,21 +1,21 @@
 @use '/src/style/variables.scss' as *;
 
-.cwk-widget-builder {
+.captwiki-widget-builder {
     display: flex;
     flex-direction: column;
     gap: 20px;
 
-    .cwk-widget-builder-content {
+    .captwiki-widget-builder-content {
         display: flex;
         height: calc(100vh - 90px);
         width: 100%;
         gap: 20px;
 
-        &.cwk-widget-builder-loading {
+        &.captwiki-widget-builder-loading {
             justify-content: center;
             align-items: center;
 
-            .cwk-loader-spin {
+            .captwiki-loader-spin {
                 height: 80px;
                 width: 80px;
                 border: 4px solid $primary_color;
@@ -23,10 +23,15 @@
             }
         }
 
-        .cwk-widget-builder-content-inner {
+        .captwiki-widget-builder-content-inner {
             display: flex;
             gap: 20px;
             height: 100%;
+
+            &.captwiki-wb-content-inner-expaned {
+                width: 100%;
+            }
+
         }
 
     }
@@ -34,11 +39,11 @@
 }
 
 @media (max-width: 1240px) {
-    .cwk-widget-builder {
-        .cwk-widget-builder-content {
+    .captwiki-widget-builder {
+        .captwiki-widget-builder-content {
             flex-wrap: wrap;
 
-            .cwk-widget-builder-content-inner {
+            .captwiki-widget-builder-content-inner {
                 margin-bottom: 20px;
                 width: 100%;
             }

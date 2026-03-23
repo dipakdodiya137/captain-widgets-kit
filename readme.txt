@@ -8,17 +8,33 @@ Stable tag: 0.0.1
 License: GPLv3
 License URI: https://www.gnu.org/licenses/gpl-3.0.html
 
-Extend Elementor widgets with advanced controls and flexible customization options using HTML, CSS, JavaScript, and PHP.
+Extend Elementor widgets with advanced controls and flexible customization options directly inside the Elementor editor.
 
 == Description ==
 
-Extend Elementor widgets with advanced controls and customization options.
+Captain Widgets Kit extends Elementor widgets by adding advanced controls and customization options directly inside the Elementor editor.
 
-This plugin enhances existing Elementor widgets by adding extra controllers and flexible features directly inside the Elementor editor. It allows users to customize widget appearance and behavior without modifying Elementor core files or creating custom widgets from scratch.
+This plugin allows users to enhance existing Elementor widgets without modifying core files or building custom widgets from scratch. It introduces additional settings that integrate seamlessly with Elementor’s interface, improving design flexibility and workflow efficiency.
 
-Using a combination of HTML, CSS, JavaScript, and PHP, the plugin provides additional settings that integrate seamlessly with Elementor’s native interface. These extra controls help improve design flexibility and enable more advanced customization workflows.
+Key features include:
 
-The plugin is lightweight, developer-friendly, and follows WordPress coding standards to ensure compatibility and performance.
+- Additional styling and layout controls for Elementor widgets
+- Extended customization options within the Elementor editor
+- Seamless integration with existing Elementor widgets
+- Lightweight and performance-focused architecture
+- Developer-friendly structure following WordPress coding standards
+
+The plugin is designed to be easy to use, even for beginners. After activation, the extra controls automatically appear within supported Elementor widgets, allowing users to customize their design visually.
+
+No coding knowledge is required to use the plugin.
+
+== Installation ==
+
+1. Upload the plugin files to the `/wp-content/plugins/captain-widgets-kit` directory, or install the plugin through the WordPress plugins screen.
+2. Activate the plugin through the 'Plugins' screen in WordPress.
+3. Make sure Elementor is installed and activated.
+4. Open the Elementor editor on any page.
+5. Edit any supported widget to access additional controls provided by the plugin.
 
 == Development Repository ==
 
@@ -30,7 +46,6 @@ https://github.com/dipakdodiya137/captain-widgets-kit
 * Extend default Elementor widgets with additional controls
 * Add advanced customization options inside the Elementor editor
 * No modification of Elementor core files required
-* Built using HTML, CSS, JavaScript, and PHP
 * Seamless integration with existing Elementor widgets
 * Clean and performance-focused implementation
 

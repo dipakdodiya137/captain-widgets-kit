@@ -16,10 +16,10 @@ const Variable_panel = () => {
 
     const toggleVariablePanel = () => {
 
-        const variable_content = variable_ref.current.querySelector('.cwk-variable-panel-content');
+        const variable_content = variable_ref.current.querySelector('.captwiki-variable-panel-content');
 
-        if (variable_ref.current.classList.contains('cwk-variable-panel-show')) {
-            variable_ref.current.classList.remove('cwk-variable-panel-show');
+        if (variable_ref.current.classList.contains('captwiki-variable-panel-show')) {
+            variable_ref.current.classList.remove('captwiki-variable-panel-show');
 
             setTimeout(() => {
                 variable_content.style.display = 'none';
@@ -28,7 +28,7 @@ const Variable_panel = () => {
             variable_content.style.display = 'flex';
 
             setTimeout(() => {
-                variable_ref.current.classList.add('cwk-variable-panel-show');
+                variable_ref.current.classList.add('captwiki-variable-panel-show');
             }, 0);
         }
     }
@@ -66,10 +66,10 @@ const Variable_panel = () => {
         }
 
         return (
-            <div className='cwk-variable-panel-content'>
+            <div className='captwiki-variable-panel-content'>
                 {variable_list?.length > 0 && variable_list.map((item, index) => {
                     return (
-                        <span className='cwk-variable-content-item' key={index} onClick={() => { insertVariable(item.name) }}>{`{{${item?.name}}}`}</span>
+                        <span className='captwiki-variable-content-item' key={index} onClick={() => { insertVariable(item.name) }}>{`{{${item?.name}}}`}</span>
                     )
                 })}
             </div>
@@ -78,11 +78,11 @@ const Variable_panel = () => {
     }
 
     return (
-        <div className='cwk-variable-panel' ref={variable_ref}>
-            <div className='cwk-variable-panel-header' onClick={() => toggleVariablePanel()}>
-                <span className='cwk-variable-panel-header-title'>{__('Variables', 'captain-widgets-kit')}</span>
-                <span className='cwk-variable-panel-header-icon'>
-                    <i className='cwk-i-arrow-down'></i>
+        <div className='captwiki-variable-panel' ref={variable_ref}>
+            <div className='captwiki-variable-panel-header' onClick={() => toggleVariablePanel()}>
+                <span className='captwiki-variable-panel-header-title'>{__('Variables', 'captain-widgets-kit')}</span>
+                <span className='captwiki-variable-panel-header-icon'>
+                    <i className='captwiki-i-arrow-down'></i>
                 </span>
             </div>
             {variable_list()}

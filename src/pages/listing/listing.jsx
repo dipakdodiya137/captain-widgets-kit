@@ -43,11 +43,11 @@ const Listing = () => {
 
         setLoading(true);
         let form = new FormData();
-        form.append('action', 'cwk_dashboard_ajax_call');
+        form.append('action', 'captwiki_dashboard_ajax_call');
         form.append('type', 'get_patch_list');
-        form.append('nonce', cwk_data.cwk_nonce);
+        form.append('nonce', captwiki_data.captwiki_nonce);
 
-        let response = await axios.post(cwk_data.ajax_url, form);
+        let response = await axios.post(captwiki_data.ajax_url, form);
         if (response.data.success) {
             setPatchData(response.data.data);
             setPatchList(response.data.data);
@@ -155,8 +155,8 @@ const Listing = () => {
         const pluginAcoordion = (type) => {
             if ('header' === type) {
                 return (
-                    <div className='cwk-accordion-header'>
-                        <span className='cwk-accordion-header-label'>{__('Plugins', 'captain-widgets-kit')}</span>
+                    <div className='captwiki-accordion-header'>
+                        <span className='captwiki-accordion-header-label'>{__('Plugins', 'captain-widgets-kit')}</span>
                     </div>
                 )
             } else if ('content' === type) {
@@ -165,11 +165,11 @@ const Listing = () => {
 
                 if (plugin_lest?.length > 0) {
                     return (
-                        <div className='cwk-accordion-content'>
+                        <div className='captwiki-accordion-content'>
                             {plugin_lest?.map((plugin, index) => {
                                 return (
-                                    <label className='cwk-accordion-content-label' key={index}>
-                                        <span className='cwk-accordion-content-text'>{plugin}</span>
+                                    <label className='captwiki-accordion-content-label' key={index}>
+                                        <span className='captwiki-accordion-content-text'>{plugin}</span>
                                         <Checkbox value={plugin} checked={filterArgsRef?.current?.plugins?.includes(plugin)} onChange={(e) => updateFilter('plugins', plugin)} />
                                     </label>
                                 )
@@ -178,9 +178,9 @@ const Listing = () => {
                     )
                 } else {
                     return (
-                        <div className='cwk-accordion-content'>
-                            <label className='cwk-accordion-content-label'>
-                                <span className='cwk-accordion-content-text'>{__('Elementor', 'captain-widgets-kit')}</span>
+                        <div className='captwiki-accordion-content'>
+                            <label className='captwiki-accordion-content-label'>
+                                <span className='captwiki-accordion-content-text'>{__('Elementor', 'captain-widgets-kit')}</span>
                                 <Checkbox value='Elementor' checked={filterArgsRef?.current?.plugins?.includes('Elementor')} onChange={(e) => updateFilter('plugins', 'Elementor')} />
                             </label>
                         </div>
@@ -192,27 +192,27 @@ const Listing = () => {
         const typeAcoordion = (type) => {
             if ('header' === type) {
                 return (
-                    <div className='cwk-accordion-header'>
-                        <span className='cwk-accordion-header-label'>{__('Type', 'captain-widgets-kit')}</span>
+                    <div className='captwiki-accordion-header'>
+                        <span className='captwiki-accordion-header-label'>{__('Type', 'captain-widgets-kit')}</span>
                     </div>
                 )
             } else if ('content' === type) {
                 return (
-                    <div className='cwk-accordion-content'>
-                        <label className='cwk-accordion-content-label'>
-                            <span className='cwk-accordion-content-text'>{__('Widget', 'captain-widgets-kit')}</span>
+                    <div className='captwiki-accordion-content'>
+                        <label className='captwiki-accordion-content-label'>
+                            <span className='captwiki-accordion-content-text'>{__('Widget', 'captain-widgets-kit')}</span>
                             <Radio value='widget' checked={filterArgsRef?.current?.type === 'widget'} onChange={(e) => updateFilter('type', e.target?.value)} />
                         </label>
-                        <label className='cwk-accordion-content-label'>
-                            <span className='cwk-accordion-content-text'>{__('Container', 'captain-widgets-kit')}</span>
+                        <label className='captwiki-accordion-content-label'>
+                            <span className='captwiki-accordion-content-text'>{__('Container', 'captain-widgets-kit')}</span>
                             <Radio value='container' checked={filterArgsRef?.current?.type === 'container'} onChange={(e) => updateFilter('type', e.target?.value)} />
                         </label>
-                        <label className='cwk-accordion-content-label'>
-                            <span className='cwk-accordion-content-text'>{__('Section', 'captain-widgets-kit')}</span>
+                        <label className='captwiki-accordion-content-label'>
+                            <span className='captwiki-accordion-content-text'>{__('Section', 'captain-widgets-kit')}</span>
                             <Radio value='section' checked={filterArgsRef?.current?.type === 'section'} onChange={(e) => updateFilter('type', e.target?.value)} />
                         </label>
-                        <label className='cwk-accordion-content-label'>
-                            <span className='cwk-accordion-content-text'>{__('Column', 'captain-widgets-kit')}</span>
+                        <label className='captwiki-accordion-content-label'>
+                            <span className='captwiki-accordion-content-text'>{__('Column', 'captain-widgets-kit')}</span>
                             <Radio value='column' checked={filterArgsRef?.current?.type === 'column'} onChange={(e) => updateFilter('type', e.target?.value)} />
                         </label>
                     </div>
@@ -234,25 +234,25 @@ const Listing = () => {
         const alphabetAcoordion = (type) => {
             if ('header' === type) {
                 return (
-                    <div className='cwk-accordion-header'>
-                        <span className='cwk-accordion-header-label'>{__('Alphabets', 'captain-widgets-kit')}</span>
+                    <div className='captwiki-accordion-header'>
+                        <span className='captwiki-accordion-header-label'>{__('Alphabets', 'captain-widgets-kit')}</span>
                     </div>
                 )
             }
             else if ('content' === type) {
                 return (
-                    <div className='cwk-accordion-alpabet-content'>
+                    <div className='captwiki-accordion-alpabet-content'>
                         {alphabets.map((alphabet, index) => {
                             return (
-                                <label className='cwk-accordion-content-label' htmlFor={`cwk-alphabet-${alphabet?.value}`} key={index}>
+                                <label className='captwiki-accordion-content-label' htmlFor={`captwiki-alphabet-${alphabet?.value}`} key={index}>
                                     <input type="radio"
-                                        id={`cwk-alphabet-${alphabet?.value}`}
+                                        id={`captwiki-alphabet-${alphabet?.value}`}
                                         value={alphabet?.value}
                                         checked={filterArgsRef?.current?.alphabet?.includes(alphabet?.value)}
                                         onChange={(e) => updateFilter('alphabet', alphabet?.value)}
                                         style={{ display: 'none' }}
                                     />
-                                    <span className={`cwk-accordion-content-text ${filterArgsRef?.current?.alphabet?.includes(alphabet?.value) ? 'cwk-accordion-content-text-active' : ''}`}>{alphabet?.label}</span>
+                                    <span className={`captwiki-accordion-content-text ${filterArgsRef?.current?.alphabet?.includes(alphabet?.value) ? 'captwiki-accordion-content-text-active' : ''}`}>{alphabet?.label}</span>
                                 </label>
                             )
                         })}
@@ -262,29 +262,29 @@ const Listing = () => {
         }
 
         return (
-            <div className='cwk-filter-content'>
-                <hr className='cwk-filter-panel-divider' />
+            <div className='captwiki-filter-content'>
+                <hr className='captwiki-filter-panel-divider' />
                 <Accordion
                     header={pluginAcoordion('header')}
                     content={pluginAcoordion('content')}
                     open={true}
                 />
-                <hr className='cwk-filter-panel-divider' />
+                <hr className='captwiki-filter-panel-divider' />
                 <Accordion
                     header={typeAcoordion('header')}
                     content={typeAcoordion('content')}
                     open={true}
                 />
-                <hr className='cwk-filter-panel-divider' />
+                <hr className='captwiki-filter-panel-divider' />
                 <Accordion
                     header={alphabetAcoordion('header')}
                     content={alphabetAcoordion('content')}
                     open={true}
                 />
-                <hr className='cwk-filter-panel-divider' />
+                <hr className='captwiki-filter-panel-divider' />
                 {(Array.isArray(Object.values(url_filter(filterArgsRef?.current))) && Object.values(url_filter(filterArgsRef?.current)).length > 0) && (
                     <Primary_button
-                        text={(<>{__('Reset Filters', 'captain-widgets-kit')}<i className='cwk-i-close'></i></>)}
+                        text={(<>{__('Reset Filters', 'captain-widgets-kit')}<i className='captwiki-i-close'></i></>)}
                         onClick={() => resetFilters()}
                     />
                 )}
@@ -296,7 +296,7 @@ const Listing = () => {
 
         if (loading) {
             return (
-                <div className='cwk-patch-list'>
+                <div className='captwiki-patch-list'>
                     {getArray(10).map((nnn, index) => {
                         return (
                             <Fragment key={index}>
@@ -308,7 +308,7 @@ const Listing = () => {
             )
         } else if (patchList.length > 0) {
             return (
-                <div className='cwk-patch-list'>
+                <div className='captwiki-patch-list'>
                     {patchList.map((data, index) => {
                         return (
                             <Fragment key={index}>
@@ -327,10 +327,10 @@ const Listing = () => {
             )
         } else {
             return (
-                <div className='cwk-listing-not-found'>
+                <div className='captwiki-listing-not-found'>
                     <NotFound text={__('No Extensions Found', 'captain-widgets-kit')} description={__('You haven\'t added any extensions yet. Create new or explore available extensions.', 'captain-widgets-kit')} />
                     {patchList.length === 0 &&
-                        <div className='cwk-listing-not-found-actions'>
+                        <div className='captwiki-listing-not-found-actions'>
                             <Primary_button text={__('Create New', 'captain-widgets-kit')} onClick={() => { setShowPopup(true) }} />
                             <Primary_button text={__('Explore Extentions', 'captain-widgets-kit')} onClick={() => { navigate('/') }} />
                         </div>
@@ -343,16 +343,16 @@ const Listing = () => {
 
     const headerPanel = () => {
         return (
-            <div className='cwk-header-panel'>
-                <div className='cwk-header-filter-handler' onClick={() => setFilterCollapse(!filterCollapse)}>
-                    <span className='cwk-header-filter-icon'>
+            <div className='captwiki-header-panel'>
+                <div className='captwiki-header-filter-handler' onClick={() => setFilterCollapse(!filterCollapse)}>
+                    <span className='captwiki-header-filter-icon'>
                         <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 16 15" width="20" height="20" aria-hidden="true">
                             <path d="M15.8,2H6.9C6.7,0.7,5.4-0.2,4,0.1C3,0.3,2.2,1,2,2H0.2C0.1,2,0,2.1,0,2.3v0.5 C0,2.9,0.1,3,0.2,3H2C2.3,4.4,3.6,5.2,5,5c1-0.2,1.8-1,1.9-2h8.8C15.9,3,16,2.9,16,2.8V2.3C16,2.1,15.9,2,15.8,2z M4.5,4C3.7,4,3,3.3,3,2.5S3.7,1,4.5,1S6,1.7,6,2.5S5.3,4,4.5,4z"></path>
                             <path d="M15.8,12H8.9C8.7,10.7,7.4,9.8,6,10.1c-1,0.2-1.8,1-1.9,1.9H0.2C0.1,12,0,12.1,0,12.3v0.5 C0,12.9,0.1,13,0.2,13h3.8C4.3,14.4,5.6,15.2,7,15c1-0.2,1.8-1,1.9-1.9h6.8c0.1,0,0.2-0.1,0.2-0.2v-0.5C16,12.1,15.9,12,15.8,12z M6.5,14C5.7,14,5,13.3,5,12.5S5.7,11,6.5,11S8,11.7,8,12.5S7.3,14,6.5,14z"></path>
                             <path d="M0,7.3v0.5C0,7.9,0.1,8,0.2,8h8.8c0.3,1.4,1.6,2.2,2.9,1.9c1-0.2,1.8-1,1.9-1.9h1.8 C15.9,8,16,7.9,16,7.8V7.3C16,7.1,15.9,7,15.8,7h-1.8c-0.3-1.3-1.6-2.2-2.9-1.9C10,5.3,9.2,6,9.1,7H0.2C0.1,7,0,7.1,0,7.3z M10,7.5 C10,6.7,10.7,6,11.5,6S13,6.7,13,7.5S12.3,9,11.5,9S10,8.3,10,7.5z"></path>
                         </svg>
                     </span>
-                    <span className='cwk-header-filter-label'>{__('Filters', 'captain-widgets-kit')}</span>
+                    <span className='captwiki-header-filter-label'>{__('Filters', 'captain-widgets-kit')}</span>
                 </div>
                 <Filter_search
                     searchValue={searchValue}
@@ -361,9 +361,9 @@ const Listing = () => {
                 />
                 <Primary_button
                     text={
-                        <span className='cwk-add-new-patch-btn'>
+                        <span className='captwiki-add-new-patch-btn'>
                             {__('Create', 'captain-widgets-kit')}
-                            <i className='cwk-i-plus'></i>
+                            <i className='captwiki-i-plus'></i>
                         </span>
                     }
                     onClick={() => { setShowPopup(true) }}
@@ -373,9 +373,9 @@ const Listing = () => {
     }
 
     return (
-        <div className='cwk-listing-page'>
+        <div className='captwiki-listing-page'>
             {headerPanel()}
-            <div className='cwk-listing-page-content'>
+            <div className='captwiki-listing-page-content'>
                 <Filter_panel collapse={filterCollapse} filterContent={filterContent()} />
                 {listContent()}
             </div>
@@ -383,7 +383,7 @@ const Listing = () => {
             {showPopup &&
                 <Popup_structure
                     title={__('Create Extension', 'captain-widgets-kit')}
-                    className='cwk-create-patch-popup'
+                    className='captwiki-create-patch-popup'
                     body={
                         <Create_patch
                             fetchData={() => { fetchData() }}

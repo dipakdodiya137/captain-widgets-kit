@@ -41,15 +41,15 @@ const Editor = () => {
         }
 
         if (section_data?.editor_collapsed) {
-            editorRef.current.classList.add('cwk-code-editor-collapsed');
+            editorRef.current.classList.add('captwiki-code-editor-collapsed');
             setTimeout(() => {
                 editorRef.current.style.display = 'none';
             }, 300);
         } else {
             editorRef.current.style.display = 'flex';
             setTimeout(() => {
-                if (editorRef.current.classList.contains('cwk-code-editor-collapsed')) {
-                    editorRef.current.classList.remove('cwk-code-editor-collapsed');
+                if (editorRef.current.classList.contains('captwiki-code-editor-collapsed')) {
+                    editorRef.current.classList.remove('captwiki-code-editor-collapsed');
                 }
             }, 0);
         }
@@ -83,13 +83,13 @@ const Editor = () => {
             setDeletePatchLoader(true);
 
             let form = new FormData();
-            form.append('action', 'cwk_dashboard_ajax_call');
-            form.append('nonce', cwk_data.cwk_nonce);
+            form.append('action', 'captwiki_dashboard_ajax_call');
+            form.append('nonce', captwiki_data.captwiki_nonce);
             form.append('type', 'delete_single_patch');
             form.append('folder', foldername);
             form.append('file', foldername + '.json');
 
-            let response = await axios.post(cwk_data.ajax_url, form);
+            let response = await axios.post(captwiki_data.ajax_url, form);
 
             if (response.data.success) {
                 navigate('/listing');
@@ -102,7 +102,7 @@ const Editor = () => {
         }
 
         return (
-            <div className='cwk-delete-patch'>
+            <div className='captwiki-delete-patch'>
                 <Primary_button text='Delete' onClick={() => { deletePatch() }} loader={deletePatchLoader} disabled={deletePatchLoader} />
             </div>
         )
@@ -134,14 +134,14 @@ const Editor = () => {
         }
 
         return (
-            <div className='cwk-add-language-wrapper'>
-                <div className='cwk-add-language-list'>
+            <div className='captwiki-add-language-wrapper'>
+                <div className='captwiki-add-language-list'>
                     {lang_array.map((item, index) => {
                         if (!(added_languages.includes(item.value))) {
                             return (
                                 <span
                                     key={index}
-                                    className={`cwk-add-language-title ${selected_lang.includes(item.value) ? 'cwk-add-language-title-active' : ''}`}
+                                    className={`captwiki-add-language-title ${selected_lang.includes(item.value) ? 'captwiki-add-language-title-active' : ''}`}
                                     onClick={() => handleAddLanguage(item.value)}>
                                     {item.label}
                                 </span>
@@ -149,7 +149,7 @@ const Editor = () => {
                         }
                     })}
                 </div>
-                <div className='cwk-add-language-footer'>
+                <div className='captwiki-add-language-footer'>
                     <Primary_button text='Save' onClick={() => { handleAddLanguage('', 'save') }} />
                 </div>
             </div>
@@ -203,21 +203,21 @@ const Editor = () => {
     }
 
     return (
-        <div className='cwk-editor-panel' ref={editorRef}>
-            <div className='cwk-editor-panel-btns'>
-                <div className='cwk-editor-btn-group'>
+        <div className='captwiki-editor-panel' ref={editorRef}>
+            <div className='captwiki-editor-panel-btns'>
+                <div className='captwiki-editor-btn-group'>
                     {added_languages?.map((language, index) => {
                         return (
-                            <div key={index} className={`cwk-editor-lang-btn ${codeTypeValidate(language) ? 'cwk-editor-lang-btn-active' : ''}`} onClick={() => handleCodeChange('selected_lang', language)}>
-                                <span className='cwk-editor-lang-btn-text'>{language.toUpperCase()}</span>
+                            <div key={index} className={`captwiki-editor-lang-btn ${codeTypeValidate(language) ? 'captwiki-editor-lang-btn-active' : ''}`} onClick={() => handleCodeChange('selected_lang', language)}>
+                                <span className='captwiki-editor-lang-btn-text'>{language.toUpperCase()}</span>
                             </div>
                         )
                     })}
                     {
                         lang_array?.filter((item) => !(added_languages.includes(item.value)))?.length > 0 &&
-                        <div className='cwk-editor-lang-add-wrapper'>
-                            <span className='cwk-editor-lang-add' onClick={() => handlePopupData('add_php_lang')}>
-                                <i className='cwk-i-plus'></i>
+                        <div className='captwiki-editor-lang-add-wrapper'>
+                            <span className='captwiki-editor-lang-add' onClick={() => handlePopupData('add_php_lang')}>
+                                <i className='captwiki-i-plus'></i>
                             </span>
                         </div>
                     }

@@ -10,7 +10,7 @@ const Tooltip = ({ content, tooltipText, right = false, left = false }) => {
         if (!tooltipRef.current) return;
 
         const containerRect = tooltipRef.current.getBoundingClientRect();
-        const tooltipEl = tooltipRef.current.querySelector('.cwk-tooltip-text');
+        const tooltipEl = tooltipRef.current.querySelector('.captwiki-tooltip-text');
         const tooltipRect = tooltipEl.getBoundingClientRect();
 
         let top = containerRect.top - tooltipRect.height + 5;
@@ -52,13 +52,13 @@ const Tooltip = ({ content, tooltipText, right = false, left = false }) => {
 
     return (
         <div
-            className='cwk-tooltip-container'
+            className='captwiki-tooltip-container'
             ref={tooltipRef}
             onMouseEnter={getTooltipPosition}
         >
-            <span className='cwk-tooltip-content'>{content}</span>
+            <span className='captwiki-tooltip-content'>{content}</span>
             <span
-                className='cwk-tooltip-text'
+                className='captwiki-tooltip-text'
                 style={{ top: tooltipPosition.top, left: tooltipPosition.left }}
             >
                 {tooltipText}

@@ -4,7 +4,7 @@ import { upload_controllers } from './upload_controllers';
 
 const ElementorFile = async (section_data, widget_info, widget_code = {}, type = 'create') => {
 
-	var version_num = cwk_data.CWK_PD_VERSION;
+	var version_num = captwiki_data.captwiki_version;
 
 	const handleFileName = (filename) => {
 		let newFileName = filename.toLowerCase()?.replace(/ /g, '-');
@@ -33,9 +33,9 @@ const ElementorFile = async (section_data, widget_info, widget_code = {}, type =
 					}
 					upload_data += `
 				$element->start_controls_section("${inner_section?.key}", [
-					"label" => esc_html__("${inner_section?.name}", "${cwk_data.text_domain}"),
+					"label" => esc_html__("${inner_section?.name}", "${captwiki_data.text_domain}"),
 					"tab" => Controls_Manager::${panel.tabName},
-					'classes' => 'cwk-el-section',
+					'classes' => 'captwiki-el-section',
 				]);`
 
 					if (Array.isArray(inner_section.controllers) && inner_section.controllers.length > 0) {
@@ -62,14 +62,14 @@ const ElementorFile = async (section_data, widget_info, widget_code = {}, type =
 			}
 
 			if (widget_info?.effect_type == 'widget') {
-				return `add_filter( 'elementor/widget/render_content', [ $this, 'cwk_render_content' ], 10, 2 );`
+				return `add_filter( 'elementor/widget/render_content', [ $this, 'captwiki_render_content' ], 10, 2 );`
 			} else if (widget_info?.effect_type == 'container') {
 				return '';
-				// return `add_filter( 'elementor/frontend/container/after_render', [ $this, 'cwk_render_content' ], 10 );`
+				// return `add_filter( 'elementor/frontend/container/after_render', [ $this, 'captwiki_render_content' ], 10 );`
 			} else if (widget_info?.effect_type == 'section') {
-				return `add_filter( 'elementor/element/section/before_render', [ $this, 'cwk_render_content' ], 10, 1 );`
+				return `add_filter( 'elementor/element/section/before_render', [ $this, 'captwiki_render_content' ], 10, 1 );`
 			} else if (widget_info?.effect_type == 'column') {
-				return `add_filter( 'elementor/element/column/before_render', [ $this, 'cwk_render_content' ], 10, 1 );`
+				return `add_filter( 'elementor/element/column/before_render', [ $this, 'captwiki_render_content' ], 10, 1 );`
 			}
 
 		} else if ('after' == type) {
@@ -78,13 +78,13 @@ const ElementorFile = async (section_data, widget_info, widget_code = {}, type =
 			}
 
 			if (widget_info?.effect_type == 'widget') {
-				return `add_action( 'elementor/frontend/widget/after_render', [ $this, 'cwk_after_render' ], 10, 1 );`;
+				return `add_action( 'elementor/frontend/widget/after_render', [ $this, 'captwiki_after_render' ], 10, 1 );`;
 			} else if (widget_info?.effect_type == 'container') {
-				return `add_action( "elementor/frontend/container/after_render", [$this, 'cwk_after_render'], 10, 1);`;
+				return `add_action( "elementor/frontend/container/after_render", [$this, 'captwiki_after_render'], 10, 1);`;
 			} else if (widget_info?.effect_type == 'section') {
-				return `add_action( "elementor/frontend/section/after_render", [$this, 'cwk_after_render'], 10, 1);`;
+				return `add_action( "elementor/frontend/section/after_render", [$this, 'captwiki_after_render'], 10, 1);`;
 			} else if (widget_info?.effect_type == 'column') {
-				return `add_action( "elementor/frontend/column/after_render", [$this, 'cwk_after_render'], 10, 1);`;
+				return `add_action( "elementor/frontend/column/after_render", [$this, 'captwiki_after_render'], 10, 1);`;
 			} else {
 				return '';
 			}
@@ -95,13 +95,13 @@ const ElementorFile = async (section_data, widget_info, widget_code = {}, type =
 			}
 
 			if (widget_info?.effect_type == 'widget') {
-				return `add_action( 'elementor/frontend/widget/before_render', [ $this, 'cwk_before_render' ], 10, 1 );`;
+				return `add_action( 'elementor/frontend/widget/before_render', [ $this, 'captwiki_before_render' ], 10, 1 );`;
 			} else if (widget_info?.effect_type == 'container') {
-				return `add_action( "elementor/frontend/container/before_render", [$this, 'cwk_before_render'], 10, 1);`;
+				return `add_action( "elementor/frontend/container/before_render", [$this, 'captwiki_before_render'], 10, 1);`;
 			} else if (widget_info?.effect_type == 'section') {
-				return `add_action( "elementor/frontend/section/before_render", [$this, 'cwk_before_render'], 10, 1);`;
+				return `add_action( "elementor/frontend/section/before_render", [$this, 'captwiki_before_render'], 10, 1);`;
 			} else if (widget_info?.effect_type == 'column') {
-				return `add_action( "elementor/frontend/column/before_render", [$this, 'cwk_before_render'], 10, 1);`;
+				return `add_action( "elementor/frontend/column/before_render", [$this, 'captwiki_before_render'], 10, 1);`;
 			} else {
 				return '';
 			}
@@ -132,7 +132,7 @@ const ElementorFile = async (section_data, widget_info, widget_code = {}, type =
 			}
 
 			let effect_code = `
-			public function cwk_render_content( $content, $element ) {
+			public function captwiki_render_content( $content, $element ) {
 
 				${return_check()}
 
@@ -151,7 +151,7 @@ const ElementorFile = async (section_data, widget_info, widget_code = {}, type =
 			}
 
 			let effect_code = `
-			public function cwk_after_render( $element ) {
+			public function captwiki_after_render( $element ) {
 
 				${return_check()}
 
@@ -167,7 +167,7 @@ const ElementorFile = async (section_data, widget_info, widget_code = {}, type =
 			}
 
 			let effect_code = `
-			public function cwk_before_render( $element ) {
+			public function captwiki_before_render( $element ) {
 
 				${return_check()}
 
@@ -188,13 +188,13 @@ const ElementorFile = async (section_data, widget_info, widget_code = {}, type =
 		}
 
 		if (type == 'construct') {
-			return `add_action( 'wp_enqueue_scripts', array( $this, 'cwk_enqueue_style' ) );`;
+			return `add_action( 'wp_enqueue_scripts', array( $this, 'captwiki_enqueue_style' ) );`;
 		} else if (type === 'enqueue') {
-			return `public function cwk_enqueue_style(){
+			return `public function captwiki_enqueue_style(){
 			$upload_dir = wp_upload_dir();
 
 			$custom_css_url = trailingslashit( $upload_dir['baseurl'] ) . 'captain-widgets-kit/${handleFileName(widget_info.name)}/${handleFileName(widget_info.name)}.css';
-			wp_enqueue_style( 'cwk-${UniqueID()}-${handleFileName(widget_info.name)}', $custom_css_url, array(), time() );
+			wp_enqueue_style( 'captwiki-${UniqueID()}-${handleFileName(widget_info.name)}', $custom_css_url, array(), time() );
 
 			}`;
 		}
@@ -208,20 +208,20 @@ const ElementorFile = async (section_data, widget_info, widget_code = {}, type =
 		}
 
 		if (type === 'construct') {
-			return `add_action( 'wp_enqueue_scripts', array( $this, 'cwk_enqueue_script' ) );`;
+			return `add_action( 'wp_enqueue_scripts', array( $this, 'captwiki_enqueue_script' ) );`;
 		} else if (type === 'enqueue') {
-			return `public function cwk_enqueue_script(){
+			return `public function captwiki_enqueue_script(){
 			$upload_dir = wp_upload_dir();
 
 			$custom_js_url = trailingslashit( $upload_dir['baseurl'] ) . 'captain-widgets-kit/${handleFileName(widget_info.name)}/${handleFileName(widget_info.name)}.js';
-			wp_enqueue_script('cwk-${UniqueID()}-${handleFileName(widget_info.name)}', $custom_js_url, array(), time(), true );
+			wp_enqueue_script('captwiki-${UniqueID()}-${handleFileName(widget_info.name)}', $custom_js_url, array(), time(), true );
 			}`;
 		}
 
 	}
 
 	const createHook = () => {
-		let cwk_sections = ['content', 'style', 'advanced']
+		let captwiki_sections = ['content', 'style', 'advanced']
 
 
 		if (widget_info?.effect_type == 'widget') {
@@ -229,7 +229,7 @@ const ElementorFile = async (section_data, widget_info, widget_code = {}, type =
 			var external_section_name = '';
 
 			if (!external_section_name) {
-				cwk_sections.map((section) => {
+				captwiki_sections.map((section) => {
 					if (Array.isArray(section_data[section]) && section_data[section]?.length > 0) {
 						section_data[section]?.map((inner_section) => {
 							if (inner_section?.isExternal && !external_section_name) {
@@ -241,21 +241,21 @@ const ElementorFile = async (section_data, widget_info, widget_code = {}, type =
 			}
 
 			if (external_section_name) {
-				return `add_action( 'elementor/element/${widget_info?.selected_widget?.id}/${external_section_name}/after_section_end', array( $this, 'cwk_register_controls' ), 10, 2 );`
+				return `add_action( 'elementor/element/${widget_info?.selected_widget?.id}/${external_section_name}/after_section_end', array( $this, 'captwiki_register_controls' ), 10, 2 );`
 			} else if (widget_info?.selected_widget?.external_sec_id) {
-				return `add_action( 'elementor/element/${widget_info?.selected_widget?.id}/${widget_info?.selected_widget?.external_sec_id}/after_section_end', array( $this, 'cwk_register_controls' ), 10, 2 );`
+				return `add_action( 'elementor/element/${widget_info?.selected_widget?.id}/${widget_info?.selected_widget?.external_sec_id}/after_section_end', array( $this, 'captwiki_register_controls' ), 10, 2 );`
 			} else {
-				return `add_action( 'elementor/element/${widget_info?.selected_widget?.id}/section_style/after_section_end', array( $this, 'cwk_register_controls' ), 10, 2 );`
+				return `add_action( 'elementor/element/${widget_info?.selected_widget?.id}/section_style/after_section_end', array( $this, 'captwiki_register_controls' ), 10, 2 );`
 			}
 
 		} else if (widget_info?.effect_type == 'container') {
-			return `add_action( 'elementor/element/container/section_layout/after_section_end', array( $this, 'cwk_register_controls' ), 10, 2 );`
+			return `add_action( 'elementor/element/container/section_layout/after_section_end', array( $this, 'captwiki_register_controls' ), 10, 2 );`
 		} else if (widget_info?.effect_type == 'section') {
-			return `add_action( 'elementor/element/section/section_layout/after_section_end', array( $this, 'cwk_register_controls' ), 10, 2 );`
+			return `add_action( 'elementor/element/section/section_layout/after_section_end', array( $this, 'captwiki_register_controls' ), 10, 2 );`
 		} else if (widget_info?.effect_type == 'column') {
-			return `add_action( 'elementor/element/column/section_advanced/after_section_end', array( $this, 'cwk_register_controls' ), 10, 2 );`
+			return `add_action( 'elementor/element/column/section_advanced/after_section_end', array( $this, 'captwiki_register_controls' ), 10, 2 );`
 		} else if (widget_info?.effect_type == 'common') {
-			return `add_action( 'elementor/element/column/section_advanced/after_section_end', array( $this, 'cwk_register_controls' ), 10, 2 );`;
+			return `add_action( 'elementor/element/column/section_advanced/after_section_end', array( $this, 'captwiki_register_controls' ), 10, 2 );`;
 		}
 
 		return '';
@@ -291,14 +291,14 @@ if ( ! defined( 'ABSPATH' ) ) {
 	exit;
 }
 
-if ( ! class_exists( 'Cwk_${handlePhpName(widget_info.name)}' ) ) {
+if ( ! class_exists( 'Captwiki_${handlePhpName(widget_info.name)}' ) ) {
 
 	/**
 	 * It is Main Class
 	 *
 	 * @since ${version_num}
 	 */
-	class Cwk_${handlePhpName(widget_info.name)} {
+	class Captwiki_${handlePhpName(widget_info.name)} {
 
 		/**
 		 * Member Variable
@@ -343,7 +343,7 @@ if ( ! class_exists( 'Cwk_${handlePhpName(widget_info.name)}' ) ) {
 		 * 
 		 * @since ${version_num}
 		 */
-		public function cwk_register_controls( $element, $section_id )
+		public function captwiki_register_controls( $element, $section_id )
 		{
 			${upload_section()}
 		}
@@ -354,7 +354,7 @@ if ( ! class_exists( 'Cwk_${handlePhpName(widget_info.name)}' ) ) {
 
 	}
 
-	Cwk_${handlePhpName(widget_info.name)}::get_instance();
+	Captwiki_${handlePhpName(widget_info.name)}::get_instance();
 }`;
 
 
@@ -402,9 +402,9 @@ if ( ! class_exists( 'Cwk_${handlePhpName(widget_info.name)}' ) ) {
 	}
 
 	let form = new FormData();
-	form.append('action', 'cwk_dashboard_ajax_call');
+	form.append('action', 'captwiki_dashboard_ajax_call');
 	form.append('type', 'set_create_file');
-	form.append('nonce', cwk_data.cwk_nonce);
+	form.append('nonce', captwiki_data.captwiki_nonce);
 	form.append('file_name', handleFileName(widget_info.name));
 	form.append('folder_name', handleFileName(widget_info.name));
 	form.append('elementor_php_file', encoded_data(php_variable));
@@ -412,7 +412,7 @@ if ( ! class_exists( 'Cwk_${handlePhpName(widget_info.name)}' ) ) {
 	form.append('elementor_css', encoded_data(widget_code?.css));
 	form.append('json_file', encoded_data(JSON.stringify(json_data)));
 
-	var response = await axios.post(cwk_data.ajax_url, form);
+	var response = await axios.post(captwiki_data.ajax_url, form);
 	return response;
 }
 

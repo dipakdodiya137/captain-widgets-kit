@@ -7,7 +7,7 @@ const initialState = {
     widget_info: getInitialReduxState('widget_info'),
     controller_section: getInitialReduxState('section_data'),
     widget_code: getInitialReduxState('widget_code'),
-    cwk_settings: {},
+    captwiki_settings: {},
     toast_message: '',
 };
 
@@ -37,7 +37,7 @@ const Slice = createSlice({
         },
         handleSettings: (state, action) => {
             const data = action.payload;
-            state.cwk_settings = data;
+            state.captwiki_settings = data;
         },
         handleToastMessage: (state, action) => {
             const data = action.payload;

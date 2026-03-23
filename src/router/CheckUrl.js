@@ -1,22 +1,18 @@
-import axios from 'axios';
 import { useEffect } from 'react';
 import { handlePluginInfo, setPluginDetails } from '../redux/slice.jsx';
 import { useDispatch } from 'react-redux';
+import { getMetaData } from '../services/get_meta_data.js';
 
 const CheckUrl = () => {
   const dispatch = useDispatch();
   useEffect(() => {
-    getMetaData();
+    setMetaData();
   }, []);
 
-  const getMetaData = async () => {
+  const setMetaData = async () => {
 
-    let form = new FormData();
-    form.append('action', 'cwk_dashboard_ajax_call');
-    form.append('type', 'get_addons_widgets_list');
-    form.append('nonce', cwk_data.cwk_nonce);
+    let response = await getMetaData();
 
-    var response = await axios.post(cwk_data.ajax_url, form);
     if (response.data.success) {
       dispatch(handlePluginInfo(response.data.data.addons));
       dispatch(setPluginDetails(response.data.data.plugin_list));

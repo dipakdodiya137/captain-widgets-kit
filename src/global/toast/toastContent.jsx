@@ -19,12 +19,12 @@ const ToastContent = ({ item, index, Remove_Notification, notificationIndex }) =
     }
     
     return (
-        <div className={`cwk-toast-content ${removedToast ? 'cwk-toast-content-removed' : ''} ${!(notificationIndex.includes(index)) ? 'cwk-toast-content-animation' : ''}`}>
-            <div className='cwk-toast-details'>
-                <span className='cwk-toast-details-title'>{item?.title}</span>
-                <span className='cwk-toast-details-description'>{item?.desc}</span>
+        <div className={`captwiki-toast-content ${removedToast ? 'captwiki-toast-content-removed' : ''} ${!(notificationIndex.includes(index)) ? 'captwiki-toast-content-animation' : ''}`}>
+            <div className='captwiki-toast-details'>
+                <span className='captwiki-toast-details-title'>{item?.title}</span>
+                <span className='captwiki-toast-details-description'>{item?.desc}</span>
             </div>
-            <span className='cwk-toast-close' onClick={Remove_toast}>X</span>
+            <span className='captwiki-toast-close' onClick={Remove_toast}>X</span>
         </div>
     )
 }

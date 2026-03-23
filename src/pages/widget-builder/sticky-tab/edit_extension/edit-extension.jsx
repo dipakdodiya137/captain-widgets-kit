@@ -47,11 +47,11 @@ const Edit_extension = (props) => {
   }
 
   return (
-    <div className='cwk-edit-extension'>
-      <div className='cwk-edit-extension-wrapper'>
-        <label htmlFor='cwk-edit-description' className='cwk-edit-extension-title cwk-edit-extension-label'>{__('Description', 'captain-widgets-kit')}</label>
+    <div className='captwiki-edit-extension'>
+      <div className='captwiki-edit-extension-wrapper'>
+        <label htmlFor='captwiki-edit-description' className='captwiki-edit-extension-title captwiki-edit-extension-label'>{__('Description', 'captain-widgets-kit')}</label>
         <Textarea
-          id='cwk-edit-description'
+          id='captwiki-edit-description'
           ref={description_ref}
           defaultValue={widget_info?.description || ''}
           placeholder={__('Enter description for extension', 'captain-widgets-kit')}
@@ -59,16 +59,16 @@ const Edit_extension = (props) => {
           uncontrolled={true}
         />
       </div>
-      <div className='cwk-edit-extension-wrapper'>
-        <span className='cwk-edit-extension-title'>{__('Select Required Plugins for Extension', 'captain-widgets-kit')}</span>
-        <div className='cwk-edit-extension-plugins-list'>
+      <div className='captwiki-edit-extension-wrapper'>
+        <span className='captwiki-edit-extension-title'>{__('Select Required Plugins for Extension', 'captain-widgets-kit')}</span>
+        <div className='captwiki-edit-extension-plugins-list'>
           {plugin_details?.map((plugin, index) => {
 
             let selected_verify = plugin?.plugin_slug == widget_info?.selected_plugin?.plugin_slug || 'elementor/elementor.php' == plugin?.plugin_slug;
-            let labelClassName = 'cwk-edit-extension-label'
+            let labelClassName = 'captwiki-edit-extension-label'
 
             if (selected_verify) {
-              labelClassName = 'cwk-edit-extension-label cwk-edit-extension-label-disabled'
+              labelClassName = 'captwiki-edit-extension-label captwiki-edit-extension-label-disabled'
             }
 
             const checked_verify = () => {
@@ -89,13 +89,13 @@ const Edit_extension = (props) => {
                   checked={checked_verify()}
                   disabled={selected_verify}
                   onChange={(e) => handleSelectPlugin(plugin)} />
-                <span className='cwk-edit-extension-text'>{plugin?.plugin_name}</span>
+                <span className='captwiki-edit-extension-text'>{plugin?.plugin_name}</span>
               </label>
             )
           })}
         </div>
       </div>
-      <div className='cwk-edit-extension-footer'>
+      <div className='captwiki-edit-extension-footer'>
         <Primary_button text={__('Save Changes', 'captain-widgets-kit')} onClick={() => handleSaveChanges()} loader={isLoading} />
       </div>
     </div>

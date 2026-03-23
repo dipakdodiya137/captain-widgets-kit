@@ -3,7 +3,7 @@ import './loader.scss';
 
 const Loader = () => {
     return (
-        <span className='cwk-loader-spin'></span>
+        <span className='captwiki-loader-spin'></span>
     )
 }
 

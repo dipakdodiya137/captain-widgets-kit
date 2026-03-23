@@ -1,16 +1,17 @@
 @font-face {
   font-family: 'captainwidgetkit';
-  src:  url('captainwidgetkit.eot?1m34ia');
-  src:  url('captainwidgetkit.eot?1m34ia#iefix') format('embedded-opentype'),
-    url('captainwidgetkit.ttf?1m34ia') format('truetype'),
-    url('captainwidgetkit.woff?1m34ia') format('woff'),
-    url('captainwidgetkit.svg?1m34ia#captainwidgetkit') format('svg');
+  src: url('captainwidgetkit.eot?f0hjpo');
+  src: url('captainwidgetkit.eot?f0hjpo#iefix') format('embedded-opentype'),
+    url('captainwidgetkit.ttf?f0hjpo') format('truetype'),
+    url('captainwidgetkit.woff?f0hjpo') format('woff'),
+    url('captainwidgetkit.svg?f0hjpo#captainwidgetkit') format('svg');
   font-weight: normal;
   font-style: normal;
   font-display: block;
 }
 
-[class^="cwk-i-"], [class*=" cwk-i-"] {
+[class^="captwiki-i-"],
+[class*=" captwiki-i-"] {
   /* use !important to prevent issues with browser extensions that change fonts */
   font-family: 'captainwidgetkit' !important;
   speak: never;
@@ -25,97 +26,126 @@
   -moz-osx-font-smoothing: grayscale;
 }
 
-.cwk-i-gap:before {
+.captwiki-i-gap:before {
   content: "\e91c";
 }
-.cwk-i-reload:before {
+
+.captwiki-i-reload:before {
   content: "\e91d";
 }
-.cwk-i-link:before {
+
+.captwiki-i-link:before {
   content: "\e91e";
 }
 
-.cwk-i-code:before {
+.captwiki-i-code:before {
   content: "\e919";
 }
-.cwk-i-animation:before {
+
+.captwiki-i-animation:before {
   content: "\e91a";
 }
-.cwk-i-drag:before {
+
+.captwiki-i-drag:before {
   content: "\e91b";
 }
-.cwk-i-arrow-down:before {
+
+.captwiki-i-arrow-down:before {
   content: "\e900";
 }
-.cwk-i-arrow-up:before {
+
+.captwiki-i-arrow-up:before {
   content: "\e901";
 }
-.cwk-i-background-controller:before {
+
+.captwiki-i-background-controller:before {
   content: "\e902";
 }
-.cwk-i-border-controller:before {
+
+.captwiki-i-border-controller:before {
   content: "\e903";
 }
-.cwk-i-boxshadow-controller:before {
+
+.captwiki-i-boxshadow-controller:before {
   content: "\e904";
 }
-.cwk-i-choose-controller:before {
+
+.captwiki-i-choose-controller:before {
   content: "\e905";
 }
-.cwk-i-close:before {
+
+.captwiki-i-close:before {
   content: "\e906";
 }
-.cwk-i-color-wheel-controller:before {
+
+.captwiki-i-color-wheel-controller:before {
   content: "\e907";
 }
-.cwk-i-delete:before {
+
+.captwiki-i-delete:before {
   content: "\e908";
 }
-.cwk-i-dimension-controller:before {
+
+.captwiki-i-dimension-controller:before {
   content: "\e909";
 }
-.cwk-i-divider-controller:before {
+
+.captwiki-i-divider-controller:before {
   content: "\e90a";
 }
-.cwk-i-down-arrow:before {
+
+.captwiki-i-down-arrow:before {
   content: "\e90b";
 }
-.cwk-i-edit:before {
+
+.captwiki-i-edit:before {
   content: "\e90c";
 }
-.cwk-i-information-1:before {
+
+.captwiki-i-information-1:before {
   content: "\e90d";
 }
-.cwk-i-normal-controller:before {
+
+.captwiki-i-normal-controller:before {
   content: "\e90e";
 }
-.cwk-i-number-controller:before {
+
+.captwiki-i-number-controller:before {
   content: "\e90f";
 }
-.cwk-i-plus:before {
+
+.captwiki-i-plus:before {
   content: "\e910";
 }
-.cwk-i-select-controller:before {
+
+.captwiki-i-select-controller:before {
   content: "\e911";
 }
-.cwk-i-setting:before {
+
+.captwiki-i-setting:before {
   content: "\e912";
 }
-.cwk-i-textarea-controller:before {
+
+.captwiki-i-textarea-controller:before {
   content: "\e913";
 }
-.cwk-i-text-controller:before {
+
+.captwiki-i-text-controller:before {
   content: "\e914";
 }
-.cwk-i-textshadow-controller:before {
+
+.captwiki-i-textshadow-controller:before {
   content: "\e915";
 }
-.cwk-i-toggle-controller:before {
+
+.captwiki-i-toggle-controller:before {
   content: "\e916";
 }
-.cwk-i-typo-controller:before {
+
+.captwiki-i-typo-controller:before {
   content: "\e917";
 }
-.cwk-i-up-arrow:before {
+
+.captwiki-i-up-arrow:before {
   content: "\e918";
 }

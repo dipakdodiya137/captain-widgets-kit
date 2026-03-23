@@ -2,7 +2,7 @@
 /**
  * Plugin Name: Captain Widgets Kit
  * Plugin URI: https://wordpress.org/plugins/captain-widgets-kit
- * Description: A powerful, user-friendly editor for adding custom CSS, JavaScript, and PHP to your site. Perfect for developers and designers who want complete control over their web projects.
+ * Description: Extend Elementor widgets with advanced controls and flexible customization options directly inside the Elementor editor.
  * Version: 0.0.1
  * Author: dipakdodiya
  * Author URI: https://profiles.wordpress.org/dipakdodiya
@@ -19,12 +19,11 @@ if ( ! defined( 'ABSPATH' ) ) {
 	exit;
 }
 
-define( 'CWK_VERSION', '0.0.1' );
-define( 'CWK_FILE', __FILE__ );
-define( 'CWK_PATH', plugin_dir_path( __FILE__ ) );
-define( 'CWK_URL', plugins_url( '/', __FILE__ ) );
-define( 'CWK_ASSETS', CWK_URL . 'assets/' );
-define( 'CWK_PBNAME', plugin_basename( __FILE__ ) );
-define( 'CWK_UPPATH', wp_upload_dir()['basedir'] . '/captain-widgets-kit' );
+define( 'CAPTWIKI_VERSION', '0.0.1' );
+define( 'CAPTWIKI_FILE', __FILE__ );
+define( 'CAPTWIKI_PATH', plugin_dir_path( __FILE__ ) );
+define( 'CAPTWIKI_URL', plugins_url( '/', __FILE__ ) );
+define( 'CAPTWIKI_ASSETS', CAPTWIKI_URL . 'assets/' );
+define( 'CAPTWIKI_UPPATH', wp_upload_dir()['basedir'] . '/captain-widgets-kit' );
 
-require CWK_PATH . 'includes/class-cwk-load.php';
+include CAPTWIKI_PATH . 'includes/class-captwiki-load.php';

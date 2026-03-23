@@ -18,7 +18,7 @@ const Textarea = forwardRef(({
     if (uncontrolled) {
         return (
             <textarea
-                className="cwk-textarea"
+                className="captwiki-textarea"
                 id={id}
                 placeholder={placeholder}
                 ref={ref}
@@ -34,7 +34,7 @@ const Textarea = forwardRef(({
 
     return (
         <textarea
-            className="cwk-textarea"
+            className="captwiki-textarea"
             id={id}
             placeholder={placeholder}
             ref={ref}

@@ -4,9 +4,9 @@ import axios from 'axios';
 //     let form = new FormData();
 //         form.append('action', 'codefa_get_snippet');
 //         form.append('type', 'codefa_get_list');
-//         form.append('nonce', cwk_data.codefa_nonce);
+//         form.append('nonce', captwiki_data.codefa_nonce);
 
-//     const response = await axios.post(cwk_data.ajax_url, form, {});
+//     const response = await axios.post(captwiki_data.ajax_url, form, {});
 
 //     return response;
 // };

@@ -1,6 +1,6 @@
 <?php
 /**
- * Cwk Dashboard Ajax
+ * Captwiki Dashboard Ajax
  *
  * @package   captain-widgets-kit
  **/
@@ -13,16 +13,16 @@ if ( ! defined( 'ABSPATH' ) ) {
 }
 
 /**
- * Cwk_Pages_Main
+ * Captwiki_Pages_Main
  * */
-if ( ! class_exists( 'Cwk_Pages_Main' ) ) {
+if ( ! class_exists( 'Captwiki_Pages_Main' ) ) {
 
 	/**
-	 * Cwk_Pages_Main
+	 * Captwiki_Pages_Main
 	 *
 	 * @since 1.0.0
 	 */
-	class Cwk_Pages_Main {
+	class Captwiki_Pages_Main {
 
 		/**
 		 * Member Variable
@@ -56,7 +56,7 @@ if ( ! class_exists( 'Cwk_Pages_Main' ) ) {
 		 * @since 1.0.0
 		 */
 		public function __construct() {
-			$this->cwk_pages_load();
+			$this->captwiki_pages_load();
 		}
 
 		/**
@@ -64,13 +64,13 @@ if ( ! class_exists( 'Cwk_Pages_Main' ) ) {
 		 *
 		 * @since 1.0.0
 		 */
-		public function cwk_pages_load() {
+		public function captwiki_pages_load() {
 
-			include CWK_PATH . 'includes/admin/pages/class-cwk-pages-utils.php';
-			include CWK_PATH . 'includes/admin/wp-menu/class-cwk-menu.php';
-			include CWK_PATH . 'includes/admin/pages/class-cwk-dashboard-ajax.php';
+			include CAPTWIKI_PATH . 'includes/admin/pages/class-captwiki-pages-utils.php';
+			include CAPTWIKI_PATH . 'includes/admin/wp-menu/class-captwiki-menu.php';
+			include CAPTWIKI_PATH . 'includes/admin/pages/class-captwiki-dashboard-ajax.php';
 		}
 	}
 
-	Cwk_Pages_Main::get_instance();
+	Captwiki_Pages_Main::get_instance();
 }

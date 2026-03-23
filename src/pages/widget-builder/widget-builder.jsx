@@ -1,4 +1,4 @@
-import React, { useEffect, useState } from 'react'
+import React, { useEffect, useRef, useState } from 'react'
 import './widget-builder.scss';
 import Editor from './editor/editor.jsx';
 import ControllerListing from './controller-listing/controller-listing.jsx';
@@ -20,6 +20,7 @@ const WidgetBuilder = () => {
     const widget_code = useSelector((state) => state?.widget_code);
     const dispatch = useDispatch();
     const navigate = useNavigate();
+    const controlsRef = useRef(null);
 
     useEffect(() => {
 
@@ -31,10 +32,29 @@ const WidgetBuilder = () => {
         fetchData();
     }, [id]);
 
+    useEffect(() => {
+        if (!controlsRef.current) {
+            return;
+        }
+
+        if (section_data?.editor_collapsed) {
+            controlsRef.current.classList.add('captwiki-wb-content-inner-expaned');
+        } else {
+            setTimeout(() => {
+                if (controlsRef.current.classList.contains('captwiki-wb-content-inner-expaned')) {
+                    controlsRef.current.classList.remove('captwiki-wb-content-inner-expaned');
+                }
+            }, 0);
+        }
+    }, [
+        section_data?.editor_collapsed,
+        controlsRef.current // remove after release because this is temporory solution
+    ])
+
     const default_redux = {
         section_collapsed: false,
         controller_collapsed: false,
-        editor_collapsed: false,
+        editor_collapsed: true,
         active_section: null,
         active_controller: null,
         active_field: null,
@@ -43,13 +63,13 @@ const WidgetBuilder = () => {
     const fetchData = async () => {
 
         let form = new FormData();
-        form.append('action', 'cwk_dashboard_ajax_call');
+        form.append('action', 'captwiki_dashboard_ajax_call');
         form.append('type', 'get_single_patch');
-        form.append('nonce', cwk_data.cwk_nonce);
+        form.append('nonce', captwiki_data.captwiki_nonce);
         form.append('folder_name', id);
         form.append('file_name', id);
 
-        let response = await axios.post(cwk_data.ajax_url, form);
+        let response = await axios.post(captwiki_data.ajax_url, form);
 
         if (response.data) {
             dispatch(handleWidgetInfo(response.data.data.widget_info));
@@ -82,10 +102,10 @@ const WidgetBuilder = () => {
     }
 
     const property_verify = (section_details) => {
-        let cwk_sections = ['content', 'layout', 'style', 'advanced']
+        let captwiki_sections = ['content', 'layout', 'style', 'advanced']
         let dummy_section_data = { ...section_details };
 
-        cwk_sections?.forEach((section) => {
+        captwiki_sections?.forEach((section) => {
 
             if (Array.isArray(dummy_section_data?.[section]) && dummy_section_data?.[section]?.length > 0) {
                 dummy_section_data?.[section]?.forEach((inner_section) => {
@@ -110,20 +130,20 @@ const WidgetBuilder = () => {
         }
 
         let form = new FormData();
-        form.append('action', 'cwk_dashboard_ajax_call');
+        form.append('action', 'captwiki_dashboard_ajax_call');
         form.append('type', 'get_widget_controls_structure');
-        form.append('nonce', cwk_data.cwk_nonce);
+        form.append('nonce', captwiki_data.captwiki_nonce);
         form.append('widget_name', widget_info.id);
 
-        let response = await axios.post(cwk_data.ajax_url, form);
+        let response = await axios.post(captwiki_data.ajax_url, form);
 
         if (response.data) {
-            let cwk_sections = ['content', 'layout', 'style', 'advanced']
+            let captwiki_sections = ['content', 'layout', 'style', 'advanced']
             let widget_section = response.data;
             let new_section = {};
             var sec_array = []
 
-            cwk_sections.map((section) => {
+            captwiki_sections.map((section) => {
                 if (widget_section[section]) {
 
                     let widget_section_array = Object.entries(widget_section[section] ?? {})
@@ -158,15 +178,15 @@ const WidgetBuilder = () => {
     const widget_builder_content = () => {
         if (isLoading) {
             return (
-                <div className='cwk-widget-builder-content cwk-widget-builder-loading'>
+                <div className='captwiki-widget-builder-content captwiki-widget-builder-loading'>
                     <Loader />
                 </div>
             )
         } else {
             return (
-                <div className='cwk-widget-builder-content'>
+                <div className='captwiki-widget-builder-content'>
                     <StickyTab />
-                    <div className='cwk-widget-builder-content-inner'>
+                    <div className='captwiki-widget-builder-content-inner' ref={controlsRef}>
                         <ControllerListing />
                         <SectionLayout />
                     </div>
@@ -177,7 +197,7 @@ const WidgetBuilder = () => {
     }
 
     return (
-        <div className='cwk-widget-builder'>
+        <div className='captwiki-widget-builder'>
             {widget_builder_content()}
         </div>
     )

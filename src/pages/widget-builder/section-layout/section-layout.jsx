@@ -24,9 +24,9 @@ const SectionLayout = () => {
         }
 
         if (section_data?.section_collapsed) {
-            layoutRef.current.classList.add('cwk-controller-layout-collapsed');
-            if (layoutRef.current.classList.contains('cwk-controller-layout-expaned')) {
-                layoutRef.current.classList.remove('cwk-controller-layout-expaned');
+            layoutRef.current.classList.add('captwiki-controller-layout-collapsed');
+            if (layoutRef.current.classList.contains('captwiki-controller-layout-expaned')) {
+                layoutRef.current.classList.remove('captwiki-controller-layout-expaned');
             }
             setTimeout(() => {
                 layoutRef.current.style.display = 'none';
@@ -34,9 +34,9 @@ const SectionLayout = () => {
         } else {
             layoutRef.current.style.display = 'flex';
             setTimeout(() => {
-                layoutRef.current.classList.remove('cwk-controller-layout-collapsed');
+                layoutRef.current.classList.remove('captwiki-controller-layout-collapsed');
                 if (section_data?.editor_collapsed) {
-                    layoutRef.current.classList.add('cwk-controller-layout-expaned');
+                    layoutRef.current.classList.add('captwiki-controller-layout-expaned');
                 }
             }, 0);
         }
@@ -48,12 +48,12 @@ const SectionLayout = () => {
         }
 
         if (section_data?.editor_collapsed) {
-            layoutRef.current.classList.add('cwk-controller-layout-expaned');
+            layoutRef.current.classList.add('captwiki-controller-layout-expaned');
         } else {
             layoutRef.current.style.display = 'flex';
             setTimeout(() => {
-                if (layoutRef.current.classList.contains('cwk-controller-layout-expaned')) {
-                    layoutRef.current.classList.remove('cwk-controller-layout-expaned');
+                if (layoutRef.current.classList.contains('captwiki-controller-layout-expaned')) {
+                    layoutRef.current.classList.remove('captwiki-controller-layout-expaned');
                 }
             }, 0);
         }
@@ -129,14 +129,14 @@ const SectionLayout = () => {
     }
 
     const handleDragEnter = (e) => {
-        if (e.target.classList.contains('cwk-controller-drop')) {
-            e.target.classList.add('cwk-controller-drop-show');
+        if (e.target.classList.contains('captwiki-controller-drop')) {
+            e.target.classList.add('captwiki-controller-drop-show');
         }
     }
 
     const handleDragLeave = (e) => {
-        if (e.target.classList.contains('cwk-controller-drop')) {
-            e.target.classList.remove('cwk-controller-drop-show');
+        if (e.target.classList.contains('captwiki-controller-drop')) {
+            e.target.classList.remove('captwiki-controller-drop-show');
         }
     }
 
@@ -163,20 +163,20 @@ const SectionLayout = () => {
 
     const handleDrop = (e, index) => {
 
-        const controller = drag_controller_data.get('cwk-controller');
+        const controller = drag_controller_data.get('captwiki-controller');
 
         if (controller) {
             AddController(controller, index);
         }
 
-        if (e.target.classList.contains('cwk-controller-drop')) {
-            e.target.classList.remove('cwk-controller-drop-show');
+        if (e.target.classList.contains('captwiki-controller-drop')) {
+            e.target.classList.remove('captwiki-controller-drop-show');
         }
     }
 
     const handleAddControllerDrop = (e) => {
 
-        const controller = drag_controller_data.get('cwk-controller');
+        const controller = drag_controller_data.get('captwiki-controller');
 
 
 
@@ -184,49 +184,49 @@ const SectionLayout = () => {
             AddController(controller, section_data?.[section_data?.active_tab][section_data.active_section]?.controllers?.length ?? 0);
         }
 
-        if (e.target.classList.contains('cwk-add-controller')) {
-            e.target.classList.remove('cwk-add-controller-show');
+        if (e.target.classList.contains('captwiki-add-controller')) {
+            e.target.classList.remove('captwiki-add-controller-show');
         }
     }
 
     const SectionDragEnter = (e) => {
-        if (e.target.classList.contains('cwk-add-layout')) {
-            e.target.classList.add('cwk-add-layout-show');
+        if (e.target.classList.contains('captwiki-add-layout')) {
+            e.target.classList.add('captwiki-add-layout-show');
         }
     }
 
     const SectionDragLeave = (e) => {
-        if (e.target.classList.contains('cwk-add-layout')) {
-            e.target.classList.remove('cwk-add-layout-show');
+        if (e.target.classList.contains('captwiki-add-layout')) {
+            e.target.classList.remove('captwiki-add-layout-show');
         }
     }
 
     const SectionDrop = (e) => {
 
-        const controller = drag_controller_data.get('cwk-controller');
+        const controller = drag_controller_data.get('captwiki-controller');
 
         if (controller) {
             AddSection(controller);
         }
 
-        if (e.target.classList.contains('cwk-add-layout')) {
-            e.target.classList.remove('cwk-add-layout-show');
+        if (e.target.classList.contains('captwiki-add-layout')) {
+            e.target.classList.remove('captwiki-add-layout-show');
         }
     }
 
     const section_header = (name, index) => {
 
         return (
-            <div className='cwk-section-header' onClick={(e) => { if (section_data.active_section !== index) handleActiveSection(index) }}>
-                <input type="text" value={name} className='cwk-section-name'
+            <div className='captwiki-section-header' onClick={(e) => { if (section_data.active_section !== index) handleActiveSection(index) }}>
+                <input type="text" value={name} className='captwiki-section-name'
                     onFocus={(e) => { e.stopPropagation(); }}
                     onChange={(e) => { e.stopPropagation(); updateSectionName(index, e.target.value) }} />
-                <div className='cwk-section-icons'>
-                    <span className='cwk-accordion-header-icon' onClick={(e) => { handleActiveSection(index) }}>
-                        <i className='cwk-i-arrow-down'></i>
+                <div className='captwiki-section-icons'>
+                    <span className='captwiki-accordion-header-icon' onClick={(e) => { handleActiveSection(index) }}>
+                        <i className='captwiki-i-arrow-down'></i>
                     </span>
-                    <span className='cwk-section-del-icon' onClick={(e) => { e.stopPropagation(); deleteSection(index) }}>
-                        <i className='cwk-i-delete'></i>
+                    <span className='captwiki-section-del-icon' onClick={(e) => { e.stopPropagation(); deleteSection(index) }}>
+                        <i className='captwiki-i-delete'></i>
                     </span>
                 </div>
             </div>
@@ -236,8 +236,8 @@ const SectionLayout = () => {
     const section_content = (section_details, index) => {
 
         return (
-            <div className='cwk-section-content'>
-                <span className='cwk-controller-drop'
+            <div className='captwiki-section-content'>
+                <span className='captwiki-controller-drop'
                     onDragEnter={(e) => { e.stopPropagation(); handleDragEnter(e) }}
                     onDragLeave={(e) => { e.stopPropagation(); handleDragLeave(e) }}
                     onDragOver={(e) => { e.preventDefault(); e.stopPropagation(); }}
@@ -248,7 +248,7 @@ const SectionLayout = () => {
                         return (
                             <Fragment key={controller_index}>
                                 <ControllerStructure controller={controller} index={controller_index} section_index={index} />
-                                <span className='cwk-controller-drop'
+                                <span className='captwiki-controller-drop'
                                     onDragEnter={(e) => { e.stopPropagation(); handleDragEnter(e) }}
                                     onDragLeave={(e) => { e.stopPropagation(); handleDragLeave(e) }}
                                     onDragOver={(e) => { e.preventDefault(); e.stopPropagation(); }}
@@ -258,14 +258,14 @@ const SectionLayout = () => {
                         )
                     })
                 }
-                <span className='cwk-add-controller'
-                    onDragEnter={(e) => { e.stopPropagation(); e.target.classList.add('cwk-add-controller-show'); }}
-                    onDragLeave={(e) => { e.stopPropagation(); e.target.classList.remove('cwk-add-controller-show'); }}
+                <span className='captwiki-add-controller'
+                    onDragEnter={(e) => { e.stopPropagation(); e.target.classList.add('captwiki-add-controller-show'); }}
+                    onDragLeave={(e) => { e.stopPropagation(); e.target.classList.remove('captwiki-add-controller-show'); }}
                     onDragOver={(e) => { e.preventDefault(); e.stopPropagation(); }}
                     onDrop={(e) => { e.stopPropagation(); handleAddControllerDrop(e, index) }}
                 >
                     {__('Add Controller', 'captain-widgets-kit')}
-                    <i className='cwk-i-plus'></i>
+                    <i className='captwiki-i-plus'></i>
                 </span>
             </div>
         )
@@ -279,14 +279,14 @@ const SectionLayout = () => {
         }
 
         return (
-            <div className='cwk-section-header'>
-                <input type="text" value={cleanText()} className='cwk-section-name' readOnly />
-                <div className='cwk-section-icons'>
-                    <div className='cwk-info-header-tooltip'>
+            <div className='captwiki-section-header'>
+                <input type="text" value={cleanText()} className='captwiki-section-name' readOnly />
+                <div className='captwiki-section-icons'>
+                    <div className='captwiki-info-header-tooltip'>
                         <Tooltip
                             content={
-                                <span className='cwk-info-header-icon'>
-                                    <i className='cwk-i-information-1'></i>
+                                <span className='captwiki-info-header-icon'>
+                                    <i className='captwiki-i-information-1'></i>
                                 </span>
                             }
                             tooltipText={__(`This is section of ${widget_info?.selected_widget?.name} you can't edit it from here.`, 'captain-widgets-kit')}
@@ -300,10 +300,10 @@ const SectionLayout = () => {
     const getClassName = (type) => {
 
         if (type == section_data?.active_tab) {
-            return 'cwk-controller-action-btn cwk-controller-action-btn-active';
+            return 'captwiki-controller-action-btn captwiki-controller-action-btn-active';
 
         }
-        return 'cwk-controller-action-btn';
+        return 'captwiki-controller-action-btn';
     }
 
     const handleActiveTab = (tab) => {
@@ -324,9 +324,9 @@ const SectionLayout = () => {
     }
 
     return (
-        <div className='cwk-controller-layout' ref={layoutRef}>
-            <div className='cwk-controller-layout-header-wrapper'>
-                <div className='cwk-controller-layout-header'>
+        <div className='captwiki-controller-layout' ref={layoutRef}>
+            <div className='captwiki-controller-layout-header-wrapper'>
+                <div className='captwiki-controller-layout-header'>
                     {'container' == widget_info?.effect_type ?
                         <span className={getClassName('layout')} onClick={() => { handleActiveTab('layout') }}>{__('Layout', 'captain-widgets-kit')}</span>
                         :
@@ -336,14 +336,14 @@ const SectionLayout = () => {
                     <span className={getClassName('advanced')} onClick={() => { handleActiveTab('advanced') }}>{__('Advanced', 'captain-widgets-kit')}</span>
                 </div>
             </div>
-            <div className='cwk-section-container'>
+            <div className='captwiki-section-container'>
                 {Array.isArray(section_data?.[section_data?.active_tab]) && section_data?.[section_data?.active_tab]?.length > 0 &&
-                    <div className='cwk-section-listing'>
+                    <div className='captwiki-section-listing'>
                         {
                             section_data?.[section_data?.active_tab]?.map((section_details, index) => {
                                 if (section_details?.isExternal || section_details?.isExternel) {
                                     return (
-                                        <div className='cwk-section-accordion' key={index}>
+                                        <div className='captwiki-section-accordion' key={index}>
                                             {external_section(section_details?.name, index)}
                                         </div>
                                     )
@@ -351,7 +351,7 @@ const SectionLayout = () => {
                                     return (
                                         <div
                                             key={index}
-                                            className={`cwk-section-accordion ${section_data?.active_section === index ? 'cwk-section-accordion-active' : ''}`}
+                                            className={`captwiki-section-accordion ${section_data?.active_section === index ? 'captwiki-section-accordion-active' : ''}`}
                                             onDragEnter={(e) => { handleActiveSection(index, true) }}>
                                             {section_header(section_details?.name, index)}
                                             {section_data?.active_section === index && section_content(section_details, index)}
@@ -363,7 +363,7 @@ const SectionLayout = () => {
                         }
                     </div>
                 }
-                <div className='cwk-add-layout'
+                <div className='captwiki-add-layout'
                     onClick={() => { AddSection() }}
                     onDragOver={(e) => { e.preventDefault(); e.stopPropagation(); }}
                     onDragEnter={(e) => { e.stopPropagation(); SectionDragEnter(e) }}
@@ -371,7 +371,7 @@ const SectionLayout = () => {
                     onDrop={(e) => { e.stopPropagation(); SectionDrop(e) }}
                 >
                     {__('Add Section', 'captain-widgets-kit')}
-                    <i className='cwk-i-plus'></i>
+                    <i className='captwiki-i-plus'></i>
                 </div>
             </div>
         </div>

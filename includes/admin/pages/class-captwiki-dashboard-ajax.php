@@ -1,6 +1,6 @@
 <?php
 /**
- * Captain Widgets Kit Dashboard Ajax
+ * Captwiki Dashboard Ajax
  *
  * @package    captain-widgets-kit
  * @subpackage captain-widgets-kit/includes
@@ -14,16 +14,16 @@ if ( ! defined( 'ABSPATH' ) ) {
 }
 
 /**
- * Cwk_Dashboard_Ajax
+ * Captwiki_Dashboard_Ajax
  * */
-if ( ! class_exists( 'Cwk_Dashboard_Ajax' ) ) {
+if ( ! class_exists( 'Captwiki_Dashboard_Ajax' ) ) {		
 
 	/**
-	 * Cwk_Dashboard_Ajax
+	 * Captwiki_Dashboard_Ajax
 	 *
 	 * @since 1.0.0
 	 */
-	class Cwk_Dashboard_Ajax {
+	class Captwiki_Dashboard_Ajax {
 
 		/**
 		 * Member Variable
@@ -57,7 +57,7 @@ if ( ! class_exists( 'Cwk_Dashboard_Ajax' ) ) {
 		 * @since 1.0.0
 		 */
 		public function __construct() {
-			add_action( 'wp_ajax_cwk_dashboard_ajax_call', array( $this, 'cwk_dashboard_ajax_call' ) );
+			add_action( 'wp_ajax_captwiki_dashboard_ajax_call', array( $this, 'captwiki_dashboard_ajax_call' ) );
 		}
 
 		/**
@@ -65,18 +65,18 @@ if ( ! class_exists( 'Cwk_Dashboard_Ajax' ) ) {
 		 *
 		 * @since 1.0.0
 		 */
-		public function cwk_dashboard_ajax_call() {
+		public function captwiki_dashboard_ajax_call() {
 
-			if ( ! check_ajax_referer( 'cwk_nonce', 'nonce', false ) ) {
+			if ( ! check_ajax_referer( 'captwiki_nonce', 'nonce', false ) ) {
 
-				$response = $this->cwk_set_response( false, 'Invalid nonce.', 'The security check failed. Please refresh the page and try again.' );
+				$response = $this->captwiki_set_response( false, 'Invalid nonce.', 'The security check failed. Please refresh the page and try again.' );
 
 				wp_send_json( $response );
 				wp_die();
 			}
 
 			if ( ! is_user_logged_in() || ! current_user_can( 'manage_options' ) ) {
-				$response = $this->cwk_set_response( false, 'Invalid Permission.', 'Something went wrong.' );
+				$response = $this->captwiki_set_response( false, 'Invalid Permission.', 'Something went wrong.' );
 
 				wp_send_json( $response );
 				wp_die();
@@ -84,7 +84,7 @@ if ( ! class_exists( 'Cwk_Dashboard_Ajax' ) ) {
 
 			$type = isset( $_POST['type'] ) ? strtolower( sanitize_text_field( wp_unslash( $_POST['type'] ) ) ) : false;
 			if ( ! $type ) {
-				$response = $this->cwk_set_response( false, 'Invalid type.', 'Something went wrong.' );
+				$response = $this->captwiki_set_response( false, 'Invalid type.', 'Something went wrong.' );
 
 				wp_send_json( $response );
 				wp_die();
@@ -106,8 +106,8 @@ if ( ! class_exists( 'Cwk_Dashboard_Ajax' ) ) {
 				case 'delete_single_patch':
 					$response = $this->delete_single_patch();
 					break;
-				case 'cwk_manage_setting':
-					$response = $this->cwk_manage_setting();
+				case 'captwiki_manage_setting':
+					$response = $this->captwiki_manage_setting();
 					break;
 				case 'save_settings':
 					$response = $this->save_settings();
@@ -153,7 +153,7 @@ if ( ! class_exists( 'Cwk_Dashboard_Ajax' ) ) {
 			}
 
 			if ( empty( $widgets ) ) {
-				$response = $this->cwk_set_response( false, 'No widgets found.', 'No widgets found.' );
+				$response = $this->captwiki_set_response( false, 'No widgets found.', 'No widgets found.' );
 
 				wp_send_json( $response );
 				return;
@@ -165,9 +165,9 @@ if ( ! class_exists( 'Cwk_Dashboard_Ajax' ) ) {
 
 			$all_plugins = get_plugins();
 
-			$addons = array();
+			$addons            = array();
 			$plugin_slug_array = array();
-			$added_plugins = array();
+			$added_plugins     = array();
 
 			foreach ( $widgets as $id => $widget_obj ) {
 				$class = get_class( $widget_obj );
@@ -176,7 +176,7 @@ if ( ! class_exists( 'Cwk_Dashboard_Ajax' ) ) {
 				$ref  = new ReflectionClass( $class );
 				$file = $ref->getFileName();
 
-				$plugin_name = 'Elementor core / Unknown';
+				$plugin_name   = 'Elementor core / Unknown';
 				$original_slug = '';
 				$plugin_slug   = '';
 
@@ -196,13 +196,13 @@ if ( ! class_exists( 'Cwk_Dashboard_Ajax' ) ) {
 						}
 					}
 				}
-				
+
 				if ( ! isset( $addons[ $plugin_name ] ) ) {
 					$addons[ $plugin_name ] = array();
 				}
 
 				if ( ! empty( $plugin_slug ) && ! in_array( $plugin_slug, $added_plugins, true ) ) {
-					$added_plugins[] = $plugin_slug;
+					$added_plugins[]     = $plugin_slug;
 					$plugin_slug_array[] = array(
 						'plugin_name'   => $plugin_name,
 						'original_slug' => $original_slug,
@@ -217,11 +217,11 @@ if ( ! class_exists( 'Cwk_Dashboard_Ajax' ) ) {
 			}
 
 			$result = array(
-				'addons' => $addons,
+				'addons'      => $addons,
 				'plugin_list' => $plugin_slug_array,
 			);
 
-			$response = $this->cwk_set_response( true, 'success.', 'success.', $result );
+			$response = $this->captwiki_set_response( true, 'success.', 'success.', $result );
 
 			wp_send_json( $response );
 		}
@@ -233,7 +233,7 @@ if ( ! class_exists( 'Cwk_Dashboard_Ajax' ) ) {
 		 */
 		public function set_create_file() {
 
-			$base_dir = CWK_UPPATH;
+			$base_dir = CAPTWIKI_UPPATH;
 
 			$file_name   = ! empty( $_POST['file_name'] ) ? sanitize_text_field( wp_unslash( $_POST['file_name'] ) ) : '';
 			$folder_name = ! empty( $_POST['folder_name'] ) ? sanitize_text_field( wp_unslash( $_POST['folder_name'] ) ) : '';
@@ -260,7 +260,7 @@ if ( ! class_exists( 'Cwk_Dashboard_Ajax' ) ) {
 			global $wp_filesystem;
 
 			if ( ! $wp_filesystem ) {
-				$response = $this->cwk_set_response( false, 'Filesystem error.', 'Could not access the filesystem.' );
+				$response = $this->captwiki_set_response( false, 'Filesystem error.', 'Could not access the filesystem.' );
 				wp_send_json( $response );
 				return;
 			}
@@ -323,10 +323,10 @@ if ( ! class_exists( 'Cwk_Dashboard_Ajax' ) ) {
 				WP_Filesystem();
 			}
 
-			$base_dir = CWK_UPPATH;
+			$base_dir = CAPTWIKI_UPPATH;
 
 			if ( ! is_dir( $base_dir ) ) {
-				$response = $this->cwk_set_response( false, 'No folder found.', 'No folder found.' );
+				$response = $this->captwiki_set_response( false, 'No folder found.', 'No folder found.' );
 
 				wp_send_json( $response );
 				return;
@@ -385,7 +385,7 @@ if ( ! class_exists( 'Cwk_Dashboard_Ajax' ) ) {
 				}
 			}
 
-			$response = $this->cwk_set_response( true, 'Patch list fetched successfully.', 'Patch list fetched successfully.', $result );
+			$response = $this->captwiki_set_response( true, 'Patch list fetched successfully.', 'Patch list fetched successfully.', $result );
 
 			wp_send_json( $response );
 		}
@@ -404,15 +404,15 @@ if ( ! class_exists( 'Cwk_Dashboard_Ajax' ) ) {
 			$unique      = ! empty( $_POST['unique'] ) ? sanitize_file_name( wp_unslash( $_POST['unique'] ) ) : '';
 
 			if ( empty( $folder_name ) || empty( $file_name ) ) {
-				$response = $this->cwk_set_response( true, 'Folder name or file name missing.', 'Folder name or file name missing.', array() );
+				$response = $this->captwiki_set_response( true, 'Folder name or file name missing.', 'Folder name or file name missing.', array() );
 				wp_send_json( $response );
 			}
 
-			$base_dir  = CWK_UPPATH;
+			$base_dir  = CAPTWIKI_UPPATH;
 			$file_path = trailingslashit( $base_dir ) . trailingslashit( $folder_name ) . $file_name . '.json';
 
 			if ( ! file_exists( $file_path ) ) {
-				$response = $this->cwk_set_response( true, 'File not found.', 'File not found.', array() );
+				$response = $this->captwiki_set_response( true, 'File not found.', 'File not found.', array() );
 				wp_send_json( $response );
 			}
 
@@ -424,7 +424,7 @@ if ( ! class_exists( 'Cwk_Dashboard_Ajax' ) ) {
 			$json_content = $wp_filesystem->get_contents( $file_path );
 
 			if ( ! $json_content ) {
-				$response = $this->cwk_set_response( true, 'Could not read file.', 'Could not read file', array() );
+				$response = $this->captwiki_set_response( true, 'Could not read file.', 'Could not read file', array() );
 				wp_send_json( $response );
 			}
 
@@ -457,11 +457,11 @@ if ( ! class_exists( 'Cwk_Dashboard_Ajax' ) ) {
 			$file_name   = ! empty( $_POST['file'] ) ? sanitize_file_name( wp_unslash( $_POST['file'] ) ) : '';
 
 			if ( empty( $folder_name ) || empty( $file_name ) ) {
-				$response = $this->cwk_set_response( true, 'Folder name or file name missing.', 'Folder name or file name missing.', array() );
+				$response = $this->captwiki_set_response( true, 'Folder name or file name missing.', 'Folder name or file name missing.', array() );
 				wp_send_json( $response );
 			}
 
-			$base_dir    = CWK_UPPATH;
+			$base_dir    = CAPTWIKI_UPPATH;
 			$folder_path = trailingslashit( $base_dir ) . $folder_name;
 			$file_path   = trailingslashit( $base_dir ) . trailingslashit( $folder_name ) . $file_name;
 
@@ -469,7 +469,7 @@ if ( ! class_exists( 'Cwk_Dashboard_Ajax' ) ) {
 			$real_file = realpath( $file_path );
 
 			if ( ! $real_file || strpos( $real_file, $real_base ) !== 0 ) {
-				$response = $this->cwk_set_response( true, 'Invalid file path.', 'Invalid file path.', array() );
+				$response = $this->captwiki_set_response( true, 'Invalid file path.', 'Invalid file path.', array() );
 				wp_send_json( $response );
 			}
 
@@ -479,14 +479,14 @@ if ( ! class_exists( 'Cwk_Dashboard_Ajax' ) ) {
 			}
 
 			if ( ! $wp_filesystem->is_dir( $folder_path ) ) {
-				$response = $this->cwk_set_response( true, 'Folder does not exist.', 'Folder does not exist.', array() );
+				$response = $this->captwiki_set_response( true, 'Folder does not exist.', 'Folder does not exist.', array() );
 				wp_send_json( $response );
 			}
 
 			$deleted = $wp_filesystem->rmdir( $folder_path, true );
 
 			if ( ! $deleted ) {
-				$response = $this->cwk_set_response( true, 'Failed to delete folder.', 'Failed to delete folder.', array() );
+				$response = $this->captwiki_set_response( true, 'Failed to delete folder.', 'Failed to delete folder.', array() );
 				wp_send_json( $response );
 			}
 
@@ -515,7 +515,7 @@ if ( ! class_exists( 'Cwk_Dashboard_Ajax' ) ) {
 			$update_theme  = array();
 
 			if ( empty( $plugins ) || ! is_array( $plugins ) ) {
-				$this->cwk_set_response( false, 'No Plugins', 'No Plugins', array() );
+				$this->captwiki_set_response( false, 'No Plugins', 'No Plugins', array() );
 			}
 
 			if ( ! function_exists( 'get_plugins' ) ) {
@@ -583,7 +583,7 @@ if ( ! class_exists( 'Cwk_Dashboard_Ajax' ) ) {
 				'theme'   => $update_theme,
 			);
 
-			return $this->cwk_set_response( true, 'Plugins status checked successfully.', 'Plugins status checked successfully.', $response );
+			return $this->captwiki_set_response( true, 'Plugins status checked successfully.', 'Plugins status checked successfully.', $response );
 		}
 
 		/**
@@ -591,10 +591,10 @@ if ( ! class_exists( 'Cwk_Dashboard_Ajax' ) ) {
 		 *
 		 * @since 1.0.0
 		 */
-		public function cwk_manage_setting() {
+		public function captwiki_manage_setting() {
 			$setting_data = ! empty( $_POST['setting_data'] ) ? stripslashes( sanitize_text_field( wp_unslash( $_POST['setting_data'] ) ) ) : array();
 			$setting_data = json_decode( $setting_data, true );
-			update_option( 'cwk_settings', $setting_data );
+			update_option( 'captwiki_settings', $setting_data );
 
 			$response = array(
 				'data'    => $setting_data,
@@ -663,10 +663,10 @@ if ( ! class_exists( 'Cwk_Dashboard_Ajax' ) ) {
 				WP_Filesystem();
 			}
 
-			$base_dir = CWK_PATH . 'includes/admin/browse-page';
+			$base_dir = CAPTWIKI_PATH . 'includes/admin/browse-page';
 
 			if ( ! is_dir( $base_dir ) ) {
-				$response = $this->cwk_set_response( false, 'No folder found.', 'No folder found.' );
+				$response = $this->captwiki_set_response( false, 'No folder found.', 'No folder found.' );
 
 				wp_send_json( $response );
 				return;
@@ -717,11 +717,14 @@ if ( ! class_exists( 'Cwk_Dashboard_Ajax' ) ) {
 				}
 			}
 
-			usort( $result, function ( $a, $b ) {
-				return strtotime( $b['time'] ?? 0 ) <=> strtotime( $a['time'] ?? 0 );
-			});
+			usort(
+				$result,
+				function ( $a, $b ) {
+					return strtotime( $b['time'] ?? 0 ) <=> strtotime( $a['time'] ?? 0 );
+				}
+			);
 
-			$response = $this->cwk_set_response( true, 'Success.', 'Success.', $result );
+			$response = $this->captwiki_set_response( true, 'Success.', 'Success.', $result );
 
 			wp_send_json( $response );
 			wp_die();
@@ -878,7 +881,7 @@ if ( ! class_exists( 'Cwk_Dashboard_Ajax' ) ) {
 		}
 
 		/**
-		 * Cwk Set Response
+		 * Captwiki Set Response
 		 *
 		 * @since 1.0.0
 		 * @param bool   $success    Success.
@@ -886,7 +889,7 @@ if ( ! class_exists( 'Cwk_Dashboard_Ajax' ) ) {
 		 * @param string $description Description.
 		 * @param string $data       Data.
 		 */
-		public function cwk_set_response( $success = false, $message = '', $description = '', $data = '' ) {
+		public function captwiki_set_response( $success = false, $message = '', $description = '', $data = '' ) {
 
 			$response = array(
 				'success'     => $success,
@@ -899,5 +902,5 @@ if ( ! class_exists( 'Cwk_Dashboard_Ajax' ) ) {
 		}
 	}
 
-	Cwk_Dashboard_Ajax::get_instance();
+	Captwiki_Dashboard_Ajax::get_instance();
 }

@@ -23,20 +23,20 @@ const Navigation = () => {
     ]
 
     const check_active_route = (path) => {
-        return location.pathname === path ? 'cwk-navigation-active-page' : '';
+        return location.pathname === path ? 'captwiki-navigation-active-page' : '';
     }
 
     if (location.pathname.includes('edit')) {
         return;
     }
     return (
-        <div className='cwk-navigation-menu'>
-            <span className='cwk-navigation-menu-logo'>
-                <img src={cwk_data.CWK_PD_URL + 'assets/svg/logo-section.svg'} alt='Cwk Logo' />
+        <div className='captwiki-navigation-menu'>
+            <span className='captwiki-navigation-menu-logo'>
+                <img src={captwiki_data.captwiki_url + 'assets/svg/logo-section.svg'} alt='Captwiki Logo' />
             </span>
-            <div className='cwk-navigation-menu-list'>
+            <div className='captwiki-navigation-menu-list'>
                 {navigation_list.map((item, index) => (
-                    <Link to={item.path} key={index} className={`cwk-navigation-item-link ${check_active_route(item.path)}`}>
+                    <Link to={item.path} key={index} className={`captwiki-navigation-item-link ${check_active_route(item.path)}`}>
                         {item.name}
                     </Link>
                 ))}

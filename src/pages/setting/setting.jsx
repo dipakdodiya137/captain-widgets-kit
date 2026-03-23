@@ -9,7 +9,7 @@ import { __ } from '@wordpress/i18n';
 const Setting = () => {
 
     const [showPopup, setShowPopup] = useState('')
-    const [setting_data, setSettingData] = useState(cwk_data.cwk_settings);
+    const [setting_data, setSettingData] = useState(captwiki_data.captwiki_settings);
 
     const setting_cards_data = [
         // switcher_type always depends on the name which we store in the database.
@@ -50,21 +50,21 @@ const Setting = () => {
     }
 
     return (
-        <div className='cwk-setting-page'>
-            <div className='cwk-setting-item'>
+        <div className='captwiki-setting-page'>
+            <div className='captwiki-setting-item'>
                 {setting_cards_data.map((data, index) => {
                     return (
-                        <div className='cwk-setting-card' key={index}>
-                            <div className='cwk-setting-card-content'>
-                                <span className='cwk-setting-card-title'>{data.title}</span>
-                                <span className='cwk-setting-card-desc'>{data.desc}</span>
+                        <div className='captwiki-setting-card' key={index}>
+                            <div className='captwiki-setting-card-content'>
+                                <span className='captwiki-setting-card-title'>{data.title}</span>
+                                <span className='captwiki-setting-card-desc'>{data.desc}</span>
                             </div>
                             {'switcher' == data?.type &&
                                 <Switcher checked={setting_data[data?.switcher_type] ?? false} onChange={(e) => handleSwitcher(data?.switcher_type, e.target.checked)} />
                             }
                             {'popup' == data?.type &&
-                                <span className='cwk-setting-card-icon' onClick={() => handlePopup(data?.popup_type)}>
-                                    <i className='cwk-i-setting'></i>
+                                <span className='captwiki-setting-card-icon' onClick={() => handlePopup(data?.popup_type)}>
+                                    <i className='captwiki-i-setting'></i>
                                 </span>
                             }
                         </div>

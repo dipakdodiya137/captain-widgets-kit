@@ -327,10 +327,10 @@
     },
     "external_link": "",
     "widget_code": {
-        "php": "$element_id = $element->get_id();\n$dd_style = isset( $settings['switcher_2yk6e525'] ) ? $settings['switcher_2yk6e525'] : '';\n\nif( $dd_style == 'Yes' ){\n  $element->add_render_attribute( '_wrapper', 'class', 'cwk-animated-border-four' );\n  $element->add_render_attribute( 'button', 'style', 'position: relative;' );\n}",
+        "php": "$element_id = $element->get_id();\n$dd_style = isset( $settings['switcher_2yk6e525'] ) ? $settings['switcher_2yk6e525'] : '';\n\nif( $dd_style == 'Yes' ){\n  $element->add_render_attribute( '_wrapper', 'class', 'captwiki-animated-border-four' );\n  $element->add_render_attribute( 'button', 'style', 'position: relative;' );\n}",
         "js": "",
         "php_after": "",
         "selected_lang": "php",
-        "css": ".cwk-animated-border-four .elementor-button::after {\n  content: \"\";\n  display: block;\n  position: absolute;\n  width: 0;\n  left: 0;\n  bottom: 0;\n}"
+        "css": ".captwiki-animated-border-four .elementor-button::after {\n  content: \"\";\n  display: block;\n  position: absolute;\n  width: 0;\n  left: 0;\n  bottom: 0;\n}"
     }
 }

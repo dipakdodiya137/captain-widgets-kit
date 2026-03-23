@@ -15,14 +15,14 @@ if ( ! defined( 'ABSPATH' ) ) {
 	exit;
 }
 
-if ( ! class_exists( 'Cwk_Load' ) ) {
+if ( ! class_exists( 'Captwiki_Load' ) ) {
 
 	/**
 	 * It is captain-widgets-kit Main Class
 	 *
 	 * @since 1.0.0
 	 */
-	class Cwk_Load {
+	class Captwiki_Load {
 
 		/**
 		 * Member Variable
@@ -50,11 +50,10 @@ if ( ! class_exists( 'Cwk_Load' ) ) {
 		 */
 		public function __construct() {
 
-			register_activation_hook( CWK_FILE, array( __CLASS__, 'cwk_activation' ) );
-			register_deactivation_hook( CWK_FILE, array( __CLASS__, 'cwk_deactivation' ) );
+			register_activation_hook( CAPTWIKI_FILE, array( __CLASS__, 'captwiki_activation' ) );
+			register_deactivation_hook( CAPTWIKI_FILE, array( __CLASS__, 'captwiki_deactivation' ) );
 
-			add_action( 'init', array( $this, 'cwk_i18n' ) );
-			add_action( 'plugins_loaded', array( $this, 'cwk_plugin_loaded' ) );
+			add_action( 'plugins_loaded', array( $this, 'captwiki_plugin_loaded' ) );
 		}
 
 		/**
@@ -63,7 +62,7 @@ if ( ! class_exists( 'Cwk_Load' ) ) {
 		 * @since 1.0.0
 		 * @return void
 		 */
-		public static function cwk_activation() {}
+		public static function captwiki_activation() {}
 
 		/**
 		 * Plugin deactivation.
@@ -71,17 +70,7 @@ if ( ! class_exists( 'Cwk_Load' ) ) {
 		 * @since 1.0.0
 		 * @return void
 		 */
-		public static function cwk_deactivation() {}
-
-		/**
-		 * Load Text Domain.
-		 * Text Domain : captain-widgets-kit
-		 *
-		 * @since 1.0.0
-		 */
-		public function cwk_i18n() {
-			load_plugin_textdomain( 'captain-widgets-kit' );
-		}
+		public static function captwiki_deactivation() {}
 
 		/**
 		 * Files load plugin loaded.
@@ -89,9 +78,9 @@ if ( ! class_exists( 'Cwk_Load' ) ) {
 		 * @since 1.0.0
 		 * @return void
 		 */
-		public function cwk_plugin_loaded() {
+		public function captwiki_plugin_loaded() {
 
-			$this->cwk_load_dependencies();
+			$this->captwiki_load_dependencies();
 		}
 
 		/**
@@ -99,7 +88,7 @@ if ( ! class_exists( 'Cwk_Load' ) ) {
 		 *
 		 * @since 1.0.0
 		 */
-		public function cwk_elementor_install() {
+		public function captwiki_elementor_install() {
 			$plugin = 'elementor/elementor.php';
 
 			$installed_plugins = get_plugins();
@@ -132,16 +121,16 @@ if ( ! class_exists( 'Cwk_Load' ) ) {
 		 *
 		 * @since 1.0.0
 		 */
-		public function cwk_load_dependencies() {
+		public function captwiki_load_dependencies() {
 
-			include CWK_PATH . 'includes/admin/hooks/class-cwk-hooks.php';
-			do_action( 'cwk_set_settings' );
+			include CAPTWIKI_PATH . 'includes/admin/hooks/class-captwiki-hooks.php';
+			do_action( 'captwiki_set_settings' );
 
-			include CWK_PATH . 'includes/admin/pages/class-cwk-pages-main.php';
+			include CAPTWIKI_PATH . 'includes/admin/pages/class-captwiki-pages-main.php';
 
-			include CWK_PATH . 'includes/patch-load/class-cwk-patch-load.php';
+			include CAPTWIKI_PATH . 'includes/patch-load/class-captwiki-patch-load.php';
 		}
 	}
 
-	Cwk_Load::get_instance();
+	Captwiki_Load::get_instance();
 }

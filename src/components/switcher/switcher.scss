@@ -1,17 +1,17 @@
 @use '/src/style/variables.scss' as *;
 
-.cwk-switcher {
+.captwiki-switcher {
     position: relative;
     display: inline-block;
     min-width: 44px;
     min-height: 24px;
     border-radius: 12px;
 
-    input[type='checkbox'].cwk-switcher-input {
+    input[type='checkbox'].captwiki-switcher-input {
         display: none;
     }
 
-    .cwk-switcher-slider {
+    .captwiki-switcher-slider {
         position: absolute;
         cursor: pointer;
         top: 0;
@@ -21,7 +21,7 @@
         -webkit-transition: 0.4s;
         transition: 0.4s;
         border-radius: 35px;
-        background-color: $cwk_component_bg;
+        background-color: $captwiki_component_bg;
 
         &::before {
             position: absolute;
@@ -39,14 +39,14 @@
             height: 15px;
             border-radius: 8px;
             filter: drop-shadow(0px 5px 2.5px rgba(40, 40, 40, 0.35));
-            background-color: $cwk_white_color;
-            border: 1px solid $cwk_white_color;
+            background-color: $captwiki_white_color;
+            border: 1px solid $captwiki_white_color;
             box-shadow: $switcher_shadow;
         }
 
     }
 
-    input[type='checkbox'].cwk-switcher-input:checked+.cwk-switcher-slider {
+    input[type='checkbox'].captwiki-switcher-input:checked+.captwiki-switcher-slider {
         background-color: $primary_color;
 
         &::before {

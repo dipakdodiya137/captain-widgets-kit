@@ -1,11 +1,11 @@
-.cwk-el-section:after {
+.captwiki-el-section:after {
     content: "";
     position: absolute;
     height: 23px;
     width: 23px;
     top: 13px;
     right: 20px;
-    background-image: url(../svg/cwk-logo-sw.svg);
+    background-image: url(../svg/captwiki-logo-sw.svg);
     background-position: center center;
     background-size: cover;
     z-index: 1;

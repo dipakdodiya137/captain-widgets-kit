@@ -1,10 +1,10 @@
 @use '/src/style/variables.scss' as *;
 
-input[type='radio'].cwk-input-radio {
+input[type='radio'].captwiki-input-radio {
     display: flex;
     align-items: center;
     justify-content: center;
-    border: 1px solid $cwk_border_color;
+    border: 1px solid $captwiki_border_color;
     border-radius: 50%;
     background-color: #fff;
     width: 20px;

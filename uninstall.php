@@ -13,8 +13,8 @@ if ( ! defined( 'WP_UNINSTALL_PLUGIN' ) ) {
 	exit;
 }
 
-$get_setting = get_option( 'cwk_settings', false );
+$get_setting = get_option( 'captwiki_settings', false );
 
 if ( ! empty( $get_setting['cleanup_db'] ) && $get_setting['cleanup_db'] == true ) {
-    delete_option( 'cwk_settings' );
+    delete_option( 'captwiki_settings' );
 }

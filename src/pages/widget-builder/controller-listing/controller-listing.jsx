@@ -28,9 +28,9 @@ const ControllerListing = () => {
         }
 
         if (section_data?.controller_collapsed) {
-            listingRef.current.classList.add('cwk-controller-listing-collapsed');
-            if (listingRef.current.classList.contains('cwk-controller-listing-expaned')) {
-                listingRef.current.classList.remove('cwk-controller-listing-expaned');
+            listingRef.current.classList.add('captwiki-controller-listing-collapsed');
+            if (listingRef.current.classList.contains('captwiki-controller-listing-expaned')) {
+                listingRef.current.classList.remove('captwiki-controller-listing-expaned');
             }
             setTimeout(() => {
                 listingRef.current.style.display = 'none';
@@ -38,10 +38,10 @@ const ControllerListing = () => {
         } else {
             listingRef.current.style.display = 'flex';
             setTimeout(() => {
-                if (listingRef.current.classList.contains('cwk-controller-listing-collapsed')) {
-                    listingRef.current.classList.remove('cwk-controller-listing-collapsed');
+                if (listingRef.current.classList.contains('captwiki-controller-listing-collapsed')) {
+                    listingRef.current.classList.remove('captwiki-controller-listing-collapsed');
                     if (section_data?.editor_collapsed) {
-                        listingRef.current.classList.add('cwk-controller-listing-expaned');
+                        listingRef.current.classList.add('captwiki-controller-listing-expaned');
                     }
                 }
             }, 0);
@@ -54,12 +54,12 @@ const ControllerListing = () => {
         }
 
         if (section_data?.editor_collapsed) {
-            listingRef.current.classList.add('cwk-controller-listing-expaned');
+            listingRef.current.classList.add('captwiki-controller-listing-expaned');
         } else {
             listingRef.current.style.display = 'flex';
             setTimeout(() => {
-                if (listingRef.current.classList.contains('cwk-controller-listing-expaned')) {
-                    listingRef.current.classList.remove('cwk-controller-listing-expaned');
+                if (listingRef.current.classList.contains('captwiki-controller-listing-expaned')) {
+                    listingRef.current.classList.remove('captwiki-controller-listing-expaned');
                 }
             }, 0);
         }
@@ -106,27 +106,27 @@ const ControllerListing = () => {
         }
 
         const handleDragStart = (controller) => {
-            drag_controller_data.set('cwk-controller', controller);
+            drag_controller_data.set('captwiki-controller', controller);
         }
 
         const handleDragEnd = () => {
-            drag_controller_data.delete('cwk-controller');
+            drag_controller_data.delete('captwiki-controller');
         }
 
         return (
-            <div className='cwk-controller-content'>
+            <div className='captwiki-controller-content'>
                 {data.map((controller, index) => {
                     return (
-                        <div className='cwk-controller-content-item' key={index}
+                        <div className='captwiki-controller-content-item' key={index}
                             onClick={() => { AddController(controller) }}
                             onDragStart={() => { handleDragStart(controller) }}
                             onDragEnd={() => { handleDragEnd() }}
                             draggable={true}
                         >
-                            <span className='cwk-controller-icon'>
+                            <span className='captwiki-controller-icon'>
                                 <i className={controller.icon}></i>
                             </span>
-                            <span className='cwk-controller-label'>{controller.label}</span>
+                            <span className='captwiki-controller-label'>{controller.label}</span>
                         </div>
                     )
                 })}
@@ -136,8 +136,8 @@ const ControllerListing = () => {
 
     const controller_header = (label, index) => {
         return (
-            <div className='cwk-controller-header'>
-                <span className='cwk-controller-header-label'>{label}</span>
+            <div className='captwiki-controller-header'>
+                <span className='captwiki-controller-header-label'>{label}</span>
             </div>
         )
     }
@@ -164,7 +164,7 @@ const ControllerListing = () => {
             });
             
             return (
-                <div className='cwk-controller-listing-accordion'>
+                <div className='captwiki-controller-listing-accordion'>
                     <Accordion header={'Searched Controllers'} content={controller_content(filtered_controller)} open={true} />
                 </div>
             )
@@ -172,7 +172,7 @@ const ControllerListing = () => {
             return (
                 controller_record.Elementor.map((controller, index) => {
                     return (
-                        <div className='cwk-controller-listing-accordion' key={index}>
+                        <div className='captwiki-controller-listing-accordion' key={index}>
                             <Accordion header={controller_header(controller.Name, index)} content={controller_content(controller.data)} open={index === 0} />
                         </div>
                     )
@@ -200,30 +200,30 @@ const ControllerListing = () => {
     const getClassName = (type) => {
         if ('edit' == type) {
             if (section_data?.active_controller || section_data?.active_controller == 0) {
-                return 'cwk-controller-action-btn cwk-controller-action-btn-active';
+                return 'captwiki-controller-action-btn captwiki-controller-action-btn-active';
             } else {
-                return 'cwk-controller-action-btn cwk-controller-action-btn-disable';
+                return 'captwiki-controller-action-btn captwiki-controller-action-btn-disable';
             }
         } else if ('controls' == type) {
             if (!section_data?.active_controller && section_data?.active_controller !== 0) {
-                return 'cwk-controller-action-btn cwk-controller-action-btn-active';
+                return 'captwiki-controller-action-btn captwiki-controller-action-btn-active';
             } else {
-                return 'cwk-controller-action-btn';
+                return 'captwiki-controller-action-btn';
             }
         } else {
-            return 'cwk-controller-action-btn';
+            return 'captwiki-controller-action-btn';
         }
     }
 
     return (
-        <div className='cwk-controller-listing' ref={listingRef}>
-            <div className='cwk-controller-listing-header-wrapper'>
-                <div className='cwk-controller-listing-header'>
+        <div className='captwiki-controller-listing' ref={listingRef}>
+            <div className='captwiki-controller-listing-header-wrapper'>
+                <div className='captwiki-controller-listing-header'>
                     <span className={getClassName('edit')}>{__('Edit', 'captain-widgets-kit')}</span>
                     <span className={getClassName('controls')} onClick={() => { handleActiveController() }}>{__('Controls', 'captain-widgets-kit')}</span>
                 </div>
             </div>
-            <div className='cwk-controller-listing-content'>
+            <div className='captwiki-controller-listing-content'>
                 {panel_content()}
             </div>
         </div>

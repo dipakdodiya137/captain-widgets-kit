@@ -1,15 +1,15 @@
 @use '../../style/variables.scss' as *;
 
-.cwk-navigation-menu {
+.captwiki-navigation-menu {
     display: flex;
     justify-content: space-between;
     align-items: center;
     padding: 10px;
-    background-color: $cwk_white_color;
-    border: 1px solid $cwk_border_color;
+    background-color: $captwiki_white_color;
+    border: 1px solid $captwiki_border_color;
     border-radius: $rs_large;
 
-    .cwk-navigation-menu-logo {
+    .captwiki-navigation-menu-logo {
 
         padding-left: 10px;
 
@@ -19,16 +19,16 @@
         }
     }
 
-    .cwk-navigation-menu-list {
+    .captwiki-navigation-menu-list {
         display: flex;
         gap: 10px;
         align-items: center;
 
-        .cwk-navigation-item-link {
+        .captwiki-navigation-item-link {
             padding: 10px 15px;
             border-radius: 6px;
             text-decoration: none;
-            color: $cwk_black_color;
+            color: $captwiki_black_color;
             font-size: 14px;
             font-weight: 600;
             cursor: pointer;
@@ -38,11 +38,11 @@
             box-shadow: none;
 
             &:hover {
-                background-color: $cwk_white_hover;
+                background-color: $captwiki_white_hover;
             }
 
-            &.cwk-navigation-active-page {
-                background-color: $cwk_white_hover;
+            &.captwiki-navigation-active-page {
+                background-color: $captwiki_white_hover;
             }
 
         }

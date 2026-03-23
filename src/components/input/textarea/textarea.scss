@@ -1,26 +1,26 @@
 @use '/src/style/variables.scss' as *;
 
 
-textarea.cwk-textarea {
+textarea.captwiki-textarea {
     width: 100%;
     padding: 10px;
-    border: 1px solid $cwk_border_color;
+    border: 1px solid $captwiki_border_color;
     border-radius: $rs_small;
     font-size: 14px;
-    color: $cwk_black_color;
-    background-color: $cwk_input_bg;
+    color: $captwiki_black_color;
+    background-color: $captwiki_input_bg;
     box-shadow: none;
     outline: none;
     transition: $transition;
 
     &::placeholder {
-        color: $cwk_black_color;
+        color: $captwiki_black_color;
         opacity: 0.5;
         transition: $transition;
     }
 
     &:focus {
-        border-color: $cwk_black_color;
+        border-color: $captwiki_black_color;
         box-shadow: none;
         outline: none;
 

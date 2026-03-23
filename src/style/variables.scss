@@ -5,15 +5,15 @@ $rs_medium : 8px;
 $rs_normal : 10px;
 $rs_large : 15px;
 
-$cwk_white_color : var(--cwk_white_color);
-$cwk_white_hover : var(--cwk_white_hover);
-$cwk_black_color : var(--cwk_black_color);
-$cwk_border_color : var(--cwk_border_color);
-$cwk_grey_color : var(--cwk_grey_color);
-$cwk_grey_bg : var(--cwk_grey_bg);
-$cwk_overlay_bg : var(--cwk_overlay_bg);
-$cwk_component_bg : var(--cwk_component_bg);
-$cwk_input_bg : var(--cwk_input_bg);
+$captwiki_white_color : var(--captwiki_white_color);
+$captwiki_white_hover : var(--captwiki_white_hover);
+$captwiki_black_color : var(--captwiki_black_color);
+$captwiki_border_color : var(--captwiki_border_color);
+$captwiki_grey_color : var(--captwiki_grey_color);
+$captwiki_grey_bg : var(--captwiki_grey_bg);
+$captwiki_overlay_bg : var(--captwiki_overlay_bg);
+$captwiki_component_bg : var(--captwiki_component_bg);
+$captwiki_input_bg : var(--captwiki_input_bg);
 $switcher_shadow : var(--switcher_shadow);
 $theme_cr : #085F63;
 $background_blue : #085F63;
@@ -25,7 +25,7 @@ $primary_btn_color : #4A745B;
 $primary_btn_color_hover : #2f573f;
 
 /********************* skeleton effect *********************/
-$animation: cwk-skeleton-effect 1.5s infinite ease-in-out;
+$animation: captwiki-skeleton-effect 1.5s infinite ease-in-out;
 $skeleton_bg: var(--skeleton_bg);
 $skeleton_start: var(--skeleton_start);
 $skeleton_end: var(--skeleton_end);

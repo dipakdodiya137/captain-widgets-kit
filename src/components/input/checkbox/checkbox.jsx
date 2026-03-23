@@ -4,7 +4,7 @@ import './checkbox.scss';
 const Checkbox = ({ checked = false, onChange, id, disabled = false }) => {
     return (
         <input
-            className='cwk-checkbox'
+            className='captwiki-checkbox'
             type='checkbox'
             disabled={disabled}
             checked={checked}

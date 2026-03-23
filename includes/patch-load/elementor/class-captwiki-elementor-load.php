@@ -1,6 +1,6 @@
 <?php
 /**
- * Cwk Patch Load
+ * Captwiki Patch Load
  *
  * @package    captain-widgets-kit
  * @subpackage captain-widgets-kit/includes
@@ -14,16 +14,15 @@ if ( ! defined( 'ABSPATH' ) ) {
 }
 
 /**
- * Cwk_Elementor_Load
+ * Captwiki_Elementor_Load
  * */
-if ( ! class_exists( 'Cwk_Elementor_Load' ) ) {
+if ( ! class_exists( 'Captwiki_Elementor_Load' ) ) {	
 
 	/**
-	 * Cwk_Elementor_Load
-	 *
+	 * Captwiki_Elementor_Load
 	 * @since 1.0.0
 	 */
-	class Cwk_Elementor_Load {
+	class Captwiki_Elementor_Load {	
 
 		/**
 		 * Member Variable
@@ -57,9 +56,9 @@ if ( ! class_exists( 'Cwk_Elementor_Load' ) ) {
 		 * @since 1.0.0
 		 */
 		public function __construct() {
-			add_action( 'elementor/init', array( $this, 'cwk_init' ) );
-			add_action( 'elementor/editor/after_enqueue_scripts', array( $this, 'cwk_editor_preview_js' ) );
-			add_action( 'elementor/editor/after_enqueue_styles', array( $this, 'cwk_register_styles_editor' ) );
+			add_action( 'elementor/init', array( $this, 'captwiki_init' ) );
+			add_action( 'elementor/editor/after_enqueue_scripts', array( $this, 'captwiki_editor_preview_js' ) );
+			add_action( 'elementor/editor/after_enqueue_styles', array( $this, 'captwiki_register_styles_editor' ) );
 		}
 
 		/**
@@ -67,15 +66,15 @@ if ( ! class_exists( 'Cwk_Elementor_Load' ) ) {
 		 *
 		 * @since 1.0.0
 		 */
-		public function cwk_init() {
-			$this->cwk_widget_load();
+		public function captwiki_init() {
+			$this->captwiki_widget_load();
 		}
 
 		/**
 		 * Load Elementor Widget Files
 		 */
-		public function cwk_widget_load() {
-			$base_dir = trailingslashit( CWK_UPPATH );
+		public function captwiki_widget_load() {
+			$base_dir = trailingslashit( CAPTWIKI_UPPATH );
 
 			if ( ! is_dir( $base_dir ) ) {
 				return false;
@@ -103,17 +102,17 @@ if ( ! class_exists( 'Cwk_Elementor_Load' ) ) {
 		/**
 		 * Enqueue Editor Preview JS
 		 */
-		public function cwk_editor_preview_js() {
-			wp_enqueue_script( 'cwk-editor-preview', CWK_URL . '/assets/js/cwk-editor-preview.js', array( 'jquery', 'elementor-editor' ), CWK_VERSION, true );
+		public function captwiki_editor_preview_js() {
+			wp_enqueue_script( 'captwiki-editor-preview', CAPTWIKI_URL . '/assets/js/captwiki-editor-preview.js', array( 'jquery', 'elementor-editor' ), CAPTWIKI_VERSION, true );		
 		}
 
 		/**
 		 * Enqueue Editor Preview CSS
 		 */
-		public function cwk_register_styles_editor() {
-			wp_enqueue_style( 'cwk-editor-preview-css', CWK_URL . 'assets/css/cwk-editor-preview.css', array( 'elementor-editor' ), CWK_VERSION, false );
+		public function captwiki_register_styles_editor() {
+			wp_enqueue_style( 'captwiki-editor-preview-css', CAPTWIKI_URL . 'assets/css/captwiki-editor-preview.css', array( 'elementor-editor' ), CAPTWIKI_VERSION, false );
 		}
 	}
 
-	Cwk_Elementor_Load::get_instance();
+	Captwiki_Elementor_Load::get_instance();
 }

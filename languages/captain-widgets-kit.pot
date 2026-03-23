@@ -9,14 +9,14 @@ msgstr ""
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
-"POT-Creation-Date: 2026-02-11T13:03:02+00:00\n"
+"POT-Creation-Date: 2026-03-23T15:56:57+00:00\n"
 "PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
 "X-Generator: WP-CLI 2.12.0\n"
 "X-Domain: captain-widgets-kit\n"
 
 #. Plugin Name of the plugin
 #: captain-widgets-kit.php
-#: includes/admin/wp-menu/class-cwk-menu.php:64
+#: includes/admin/wp-menu/class-captwiki-menu.php:64
 msgid "Captain Widgets Kit"
 msgstr ""
 
@@ -27,7 +27,7 @@ msgstr ""
 
 #. Description of the plugin
 #: captain-widgets-kit.php
-msgid "A powerful, user-friendly editor for adding custom CSS, JavaScript, and PHP to your site. Perfect for developers and designers who want complete control over their web projects."
+msgid "Extend Elementor widgets with advanced controls and flexible customization options directly inside the Elementor editor."
 msgstr ""
 
 #. Author of the plugin
@@ -40,63 +40,63 @@ msgstr ""
 msgid "https://profiles.wordpress.org/dipakdodiya"
 msgstr ""
 
-#: includes/admin/pages/class-cwk-dashboard-ajax.php:307
+#: includes/admin/pages/class-captwiki-dashboard-ajax.php:307
 msgid "All files created successfully."
 msgstr ""
 
-#: includes/admin/pages/class-cwk-dashboard-ajax.php:359
-#: includes/admin/pages/class-cwk-dashboard-ajax.php:693
+#: includes/admin/pages/class-captwiki-dashboard-ajax.php:359
+#: includes/admin/pages/class-captwiki-dashboard-ajax.php:693
 msgid "Empty JSON file."
 msgstr ""
 
-#: includes/admin/pages/class-cwk-dashboard-ajax.php:371
-#: includes/admin/pages/class-cwk-dashboard-ajax.php:705
+#: includes/admin/pages/class-captwiki-dashboard-ajax.php:371
+#: includes/admin/pages/class-captwiki-dashboard-ajax.php:705
 msgid "Success"
 msgstr ""
 
-#: includes/admin/pages/class-cwk-dashboard-ajax.php:440
-#: includes/admin/pages/class-cwk-dashboard-ajax.php:441
+#: includes/admin/pages/class-captwiki-dashboard-ajax.php:440
+#: includes/admin/pages/class-captwiki-dashboard-ajax.php:441
 msgid "success"
 msgstr ""
 
-#: includes/admin/pages/class-cwk-dashboard-ajax.php:499
-#: includes/admin/pages/class-cwk-dashboard-ajax.php:500
+#: includes/admin/pages/class-captwiki-dashboard-ajax.php:499
+#: includes/admin/pages/class-captwiki-dashboard-ajax.php:500
 msgid "success."
 msgstr ""
 
-#: includes/admin/pages/class-cwk-dashboard-ajax.php:601
+#: includes/admin/pages/class-captwiki-dashboard-ajax.php:601
 msgid "Captain Widgets Kit Settings Updated"
 msgstr ""
 
-#: includes/admin/pages/class-cwk-dashboard-ajax.php:741
+#: includes/admin/pages/class-captwiki-dashboard-ajax.php:744
 msgid "You do not have permission to install plugins."
 msgstr ""
 
-#: includes/admin/pages/class-cwk-dashboard-ajax.php:759
+#: includes/admin/pages/class-captwiki-dashboard-ajax.php:762
 msgid "Plugin is already active."
 msgstr ""
 
-#: includes/admin/pages/class-cwk-dashboard-ajax.php:783
+#: includes/admin/pages/class-captwiki-dashboard-ajax.php:786
 msgid "Plugin activated successfully."
 msgstr ""
 
-#: includes/admin/pages/class-cwk-dashboard-ajax.php:875
+#: includes/admin/pages/class-captwiki-dashboard-ajax.php:878
 msgid "Redirect bypassed successfully."
 msgstr ""
 
-#: includes/class-cwk-load.php:114
+#: includes/class-captwiki-load.php:103
 msgid "Elementor is missing. You need to activate your installed Elementor."
 msgstr ""
 
-#: includes/class-cwk-load.php:115
+#: includes/class-captwiki-load.php:104
 msgid "Activate Elementor Now"
 msgstr ""
 
-#: includes/class-cwk-load.php:123
+#: includes/class-captwiki-load.php:112
 msgid "Elementor Required. You need to install & activate."
 msgstr ""
 
-#: includes/class-cwk-load.php:124
+#: includes/class-captwiki-load.php:113
 msgid "Install Elementor Now"
 msgstr ""
 
@@ -314,6 +314,14 @@ msgstr ""
 
 #: build/index.js:1
 msgid "Search Widget"
+msgstr ""
+
+#: build/index.js:1
+msgid "Please install and active the elementor plugin"
+msgstr ""
+
+#: build/index.js:1
+msgid "Install Now"
 msgstr ""
 
 #: build/index.js:1
@@ -962,10 +970,6 @@ msgstr ""
 
 #: build/index.js:1
 msgid "Controllers"
-msgstr ""
-
-#: build/index.js:1
-msgid "Editor"
 msgstr ""
 
 #: build/index.js:1

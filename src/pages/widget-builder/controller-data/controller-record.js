@@ -9,19 +9,19 @@ export const controller_record = {
                 {
                     "name": "text",
                     "label": "Text",
-                    "icon": 'cwk-i-text-controller',
+                    "icon": 'captwiki-i-text-controller',
                     "keyword": ["text"]
                 },
                 {
                     "name": "number",
                     "label": "Number",
-                    "icon": 'cwk-i-number-controller',
+                    "icon": 'captwiki-i-number-controller',
                     "keyword": ["number"]
                 },
                 {
                     "name": "textarea",
                     "label": "Textarea",
-                    "icon": 'cwk-i-textarea-controller',
+                    "icon": 'captwiki-i-textarea-controller',
                     "keyword": ["textarea"]
                 },
                 // {
@@ -36,31 +36,31 @@ export const controller_record = {
                 {
                     "name": "switcher",
                     "label": "Switcher",
-                    "icon": 'cwk-i-toggle-controller',
+                    "icon": 'captwiki-i-toggle-controller',
                     "keyword": ["toggle", "switcher", "checkbox"]
                 },
                 {
                     "name": "code",
                     "label": "Code",
-                    "icon": 'cwk-i-code',
+                    "icon": 'captwiki-i-code',
                     "keyword": ["code", "html", "css", "javascript"]
                 },
                 {
                     "name": "select",
                     "label": "Select",
-                    "icon": 'cwk-i-select-controller',
+                    "icon": 'captwiki-i-select-controller',
                     "keyword": ["select", "dropdown"]
                 },
                 {
                     "name": "rawhtml",
                     "label": "RAW HTML",
-                    "icon": 'cwk-i-color-wheel-controller',
+                    "icon": 'captwiki-i-color-wheel-controller',
                     "keyword": ["html", "rawhtml", 'description']
                 },
                 {
                     "name": "color",
                     "label": "Color",
-                    "icon": 'cwk-i-color-wheel-controller',
+                    "icon": 'captwiki-i-color-wheel-controller',
                     "keyword": ["color"]
                 },
                 // {
@@ -84,7 +84,7 @@ export const controller_record = {
                 {
                     "name": "choose",
                     "label": "Choose",
-                    "icon": 'cwk-i-choose-controller',
+                    "icon": 'captwiki-i-choose-controller',
                     "keyword": ["choose", "radioadvanced", "align", "justify"]
                 },
                 // {
@@ -124,37 +124,37 @@ export const controller_record = {
                 {
                     "name": "typography",
                     "label": "Typography",
-                    "icon": 'cwk-i-typo-controller',
+                    "icon": 'captwiki-i-typo-controller',
                     "keyword": ["typography"]
                 },
                 {
                     "name": "textshadow",
                     "label": "TextShadow",
-                    "icon": 'cwk-i-textshadow-controller',
+                    "icon": 'captwiki-i-textshadow-controller',
                     "keyword": ["textshadow", "shadow"]
                 },
                 {
                     "name": "boxshadow",
                     "label": "BoxShadow",
-                    "icon": 'cwk-i-boxshadow-controller',
+                    "icon": 'captwiki-i-boxshadow-controller',
                     "keyword": ["boxshadow", "shadow"]
                 },
                 {
                     "name": "border",
                     "label": "Border",
-                    "icon": 'cwk-i-border-controller',
+                    "icon": 'captwiki-i-border-controller',
                     "keyword": ["border"]
                 },
                 {
                     "name": "background",
                     "label": "Background",
-                    "icon": 'cwk-i-background-controller',
+                    "icon": 'captwiki-i-background-controller',
                     "keyword": ["background"]
                 },
                 {
                     "name": "cssfilter",
                     "label": "CSS Filter",
-                    "icon": 'cwk-i-color-wheel-controller',
+                    "icon": 'captwiki-i-color-wheel-controller',
                     "keyword": ["cssfilter", "filtercss"]
                 }
             ]
@@ -166,19 +166,19 @@ export const controller_record = {
                 {
                     "name": "slider",
                     "label": "Slider",
-                    "icon": 'cwk-i-dimension-controller',
+                    "icon": 'captwiki-i-dimension-controller',
                     "keyword": ["slider", "range"]
                 },
                 {
                     "name": "dimension",
                     "label": "Dimension",
-                    "icon": 'cwk-i-dimension-controller',
+                    "icon": 'captwiki-i-dimension-controller',
                     "keyword": ["padding", "margin", "dimension"]
                 },
                 {
                     "name": "normalhover",
                     "label": "Tabs",
-                    "icon": 'cwk-i-normal-controller',
+                    "icon": 'captwiki-i-normal-controller',
                     "keyword": ["hover", "normalhover"]
                 }
             ]
@@ -190,7 +190,7 @@ export const controller_record = {
                 {
                     "name": "divider",
                     "label": "Divider",
-                    "icon": 'cwk-i-divider-controller',
+                    "icon": 'captwiki-i-divider-controller',
                     "keyword": ["divider", "separator"]
                 },
                 // {
@@ -214,7 +214,7 @@ export const controller_record = {
                 {
                     "name": "preview",
                     "label": "Preview",
-                    "icon": 'cwk-i-reload',
+                    "icon": 'captwiki-i-reload',
                     "keyword": ["preview"]
                 }
             ]
@@ -268,7 +268,7 @@ export const controller_record = {
                 {
                     "name": "url",
                     "label": "URL",
-                    "icon": 'cwk-i-link',
+                    "icon": 'captwiki-i-link',
                     "keyword": ["url", "link"]
                 },
                 // {
@@ -307,19 +307,19 @@ export const controller_record = {
                 {
                     "name": "hover_animation",
                     "label": "Hover Animation",
-                    "icon": 'cwk-i-animation',
+                    "icon": 'captwiki-i-animation',
                     "keyword": ["hover_animation", "hover", "animation", "hover animation"]
                 },
                 {
                     "name": "exit_animation",
                     "label": "Exit Animation",
-                    "icon": 'cwk-i-animation',
+                    "icon": 'captwiki-i-animation',
                     "keyword": ["exit_animation", "exit", "animation", "exit animation"]
                 },
                 {
                     "name": "animation",
                     "label": "Entrance Animation",
-                    "icon": 'cwk-i-animation',
+                    "icon": 'captwiki-i-animation',
                     "keyword": ["animation", "entrance", "animation", "entrance animation"]
                 },
             ]

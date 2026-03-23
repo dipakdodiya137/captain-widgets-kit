@@ -16,16 +16,16 @@ if ( ! defined( 'ABSPATH' ) ) {
 }
 
 /**
- * Cwk_Hooks
+ * Captwiki_Hooks
  * */
-if ( ! class_exists( 'Cwk_Hooks' ) ) {
+if ( ! class_exists( 'Captwiki_Hooks' ) ) {
 
 	/**
-	 * Cwk_Hooks
+	 * Captwiki_Hooks
 	 *
 	 * @since 1.0.0
 	 */
-	class Cwk_Hooks {
+	class Captwiki_Hooks {
 
 		/**
 		 * Member Variable
@@ -49,7 +49,7 @@ if ( ! class_exists( 'Cwk_Hooks' ) ) {
 		 * Define the core functionality of the plugin.
 		 */
 		public function __construct() {
-			add_action( 'cwk_set_settings', array( $this, 'cwk_set_settings' ), 10 );
+			add_action( 'captwiki_set_settings', array( $this, 'captwiki_set_settings' ), 10 );
 		}
 
 		/**
@@ -57,20 +57,20 @@ if ( ! class_exists( 'Cwk_Hooks' ) ) {
 		 *
 		 * @since 1.0.0
 		 */
-		public function cwk_set_settings() {
+		public function captwiki_set_settings() {
 
-			$cwk_settings = get_option( 'cwk_settings', false );
-			if ( empty( $cwk_settings ) ) {
+			$captwiki_settings = get_option( 'captwiki_settings', false );
+			if ( empty( $captwiki_settings ) ) {
 				$settings_options = array(
-					'cwk_theme'  => 'default',
-					'cleanup_db' => false,
-					'storage'    => 'files',
+					'captwiki_theme' => 'default',
+					'cleanup_db'     => false,
+					'storage'        => 'files',
 				);
 
-				add_option( 'cwk_settings', $settings_options );
+				add_option( 'captwiki_settings', $settings_options );
 			}
 		}
 	}
 
-	Cwk_Hooks::get_instance();
+	Captwiki_Hooks::get_instance();
 }

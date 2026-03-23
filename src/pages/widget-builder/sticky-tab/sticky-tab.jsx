@@ -64,12 +64,12 @@ const StickyTab = () => {
 
         if (!section_data?.[type]) {
             if (collapse_check) {
-                return 'cwk-sticky-tab-title cwk-sticky-tab-title-active cwk-sticky-tab-title-disabled';
+                return 'captwiki-sticky-tab-title captwiki-sticky-tab-title-active captwiki-sticky-tab-title-disabled';
             } else {
-                return 'cwk-sticky-tab-title cwk-sticky-tab-title-active';
+                return 'captwiki-sticky-tab-title captwiki-sticky-tab-title-active';
             }
         } else {
-            return 'cwk-sticky-tab-title';
+            return 'captwiki-sticky-tab-title';
         }
 
     }
@@ -108,16 +108,16 @@ const StickyTab = () => {
 
     return (
         <>
-            <div className='cwk-sticky-tab' style={{ bottom: tabPosition.bottom, left: tabPosition.left }}>
-                <span className='cwk-sticky-tab-icon' onMouseDown={(e) => { handleMouseDown(e) }}>
-                    <i className='cwk-i-drag'></i>
+            <div className='captwiki-sticky-tab' style={{ bottom: tabPosition.bottom, left: tabPosition.left }}>
+                <span className='captwiki-sticky-tab-icon' onMouseDown={(e) => { handleMouseDown(e) }}>
+                    <i className='captwiki-i-drag'></i>
                 </span>
                 <span className={getClassName('controller_collapsed')} onClick={() => handleCollapse('controller_collapsed')}>{__('Controllers', 'captain-widgets-kit')}</span>
                 <span className={getClassName('section_collapsed')} onClick={() => handleCollapse('section_collapsed')}>{__('Layout', 'captain-widgets-kit')}</span>
-                <span className={getClassName('editor_collapsed')} onClick={() => handleCollapse('editor_collapsed')}>{__('Editor', 'captain-widgets-kit')}</span>
-                <hr className='cwk-sticky-tab-divider' />
-                <span className='cwk-sticky-tab-action' onClick={() => handlePopup('edit')}>
-                    <i className='cwk-i-edit'></i>
+                {/* <span className={getClassName('editor_collapsed')} onClick={() => handleCollapse('editor_collapsed')}>{__('Editor', 'captain-widgets-kit')}</span> */}
+                <hr className='captwiki-sticky-tab-divider' />
+                <span className='captwiki-sticky-tab-action' onClick={() => handlePopup('edit')}>
+                    <i className='captwiki-i-edit'></i>
                 </span>
             </div>
             {showPopup &&

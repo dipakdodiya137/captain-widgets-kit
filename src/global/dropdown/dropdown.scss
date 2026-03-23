@@ -1,29 +1,29 @@
 @use '/src/style/variables.scss' as *;
 
-.cwk-dropdown-container {
+.captwiki-dropdown-container {
     position: relative;
     display: flex;
     width: 100%;
 
-    .cwk-dropdown-header {
+    .captwiki-dropdown-header {
         display: flex;
         justify-content: space-between;
         align-items: center;
         width: 100%;
-        border: 1px solid $cwk_border_color;
+        border: 1px solid $captwiki_border_color;
         border-radius: $rs_small;
         padding: 5px 15px;
         font-size: 14px;
-        color: $cwk_black_color;
+        color: $captwiki_black_color;
         transition: $transition;
         cursor: pointer;
 
-        .cwk-dropdown-header-icon {
+        .captwiki-dropdown-header-icon {
             display: flex;
             transition: $transition;
 
             i {
-                color: $cwk_black_color;
+                color: $captwiki_black_color;
                 font-size: 12px;
                 transition: $transition;
             }
@@ -31,11 +31,11 @@
         }
     }
 
-    .cwk-dropdown-content {
+    .captwiki-dropdown-content {
         position: fixed;
         display: none;
-        background-color: $cwk_white_color;
-        border: 1px solid $cwk_border_color;
+        background-color: $captwiki_white_color;
+        border: 1px solid $captwiki_border_color;
         border-radius: $rs_normal;
         padding: 5px 15px;
         box-shadow: 1px 5px 2px #0000004d;
@@ -48,19 +48,19 @@
         }
 
         &::-webkit-scrollbar-thumb {
-            background-color: $cwk_border_color;
+            background-color: $captwiki_border_color;
             border-radius: $rs_normal;
         }
 
     }
 
-    &.cwk-dropdown-content-show {
+    &.captwiki-dropdown-content-show {
 
-        .cwk-dropdown-content {
+        .captwiki-dropdown-content {
             display: flex;
         }
 
-        .cwk-dropdown-header-icon {
+        .captwiki-dropdown-header-icon {
             transform: rotate(-180deg);
             transition: $transition;
         }

@@ -1,6 +1,6 @@
 @use '/src/style/variables.scss' as *;
 
-.cwk-sticky-tab {
+.captwiki-sticky-tab {
     position: fixed;
     display: flex;
     transform: translateX(-50%);
@@ -8,12 +8,12 @@
     align-items: center;
     gap: 5px;
     padding: 5px;
-    background-color: $cwk_white_color;
-    border: 1px solid $cwk_border_color;
+    background-color: $captwiki_white_color;
+    border: 1px solid $captwiki_border_color;
     border-radius: $rs_small;
     z-index: 1;
 
-    .cwk-sticky-tab-icon {
+    .captwiki-sticky-tab-icon {
         display: flex;
         justify-content: center;
         align-items: center;
@@ -21,16 +21,16 @@
 
         i {
             font-size: 16px;
-            color: $cwk_black_color;
+            color: $captwiki_black_color;
         }
 
     }
 
-    .cwk-sticky-tab-title {
+    .captwiki-sticky-tab-title {
         font-size: 16px;
         font-weight: 600;
-        color: $cwk_black_color;
-        background-color: $cwk_white_color;
+        color: $captwiki_black_color;
+        background-color: $captwiki_white_color;
         padding: 5px 10px;
         min-width: 95px;
         text-align: center;
@@ -52,31 +52,31 @@
         //     transition: $transition;
         // }
 
-        &.cwk-sticky-tab-title-active {
+        &.captwiki-sticky-tab-title-active {
             position: relative;
             background-color: $primary_color;
-            color: $cwk_white_color;
+            color: $captwiki_white_color;
 
             &::after {
                 opacity: 1;
             }
         }
 
-        &.cwk-sticky-tab-title-disabled {
+        &.captwiki-sticky-tab-title-disabled {
             opacity: 0.7;
             cursor: not-allowed;
         }
 
     }
 
-    .cwk-sticky-tab-divider {
+    .captwiki-sticky-tab-divider {
         width: 1px;
         height: 20px;
         background-color: #a8a8a8;
         margin: 0 5px;
     }
 
-    .cwk-sticky-tab-action {
+    .captwiki-sticky-tab-action {
         display: flex;
         justify-content: center;
         align-items: center;
@@ -84,7 +84,7 @@
 
         i {
             font-size: 16px;
-            color: $cwk_black_color;
+            color: $captwiki_black_color;
         }
     }
 

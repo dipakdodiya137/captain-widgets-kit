@@ -5,7 +5,7 @@ import Loader from '../../loader/loader.jsx';
 const Primary_button = ({ text = '', loader = false, onClick, disabled = false }) => {
 
     return (
-        <button className='cwk-primary-button' onClick={() => { if (onClick) onClick() }} disabled={disabled || loader}>
+        <button className='captwiki-primary-button' onClick={() => { if (onClick) onClick() }} disabled={disabled || loader}>
             {text}
             {loader &&
                 <Loader />

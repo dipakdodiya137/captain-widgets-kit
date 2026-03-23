@@ -1,6 +1,8 @@
 <?php
 /**
- * Cwk Patch Load
+ * The file that defines the core plugin class
+ *
+ * @since      1.0.0
  *
  * @package    captain-widgets-kit
  * @subpackage captain-widgets-kit/includes
@@ -14,16 +16,16 @@ if ( ! defined( 'ABSPATH' ) ) {
 }
 
 /**
- * Cwk_Patch_Load
+ * Captwiki_Pages_Utils
  * */
-if ( ! class_exists( 'Cwk_Patch_Load' ) ) {
+if ( ! class_exists( 'Captwiki_Pages_Utils' ) ) {
 
 	/**
-	 * Cwk_Patch_Load
+	 * Captwiki_Pages_Utils
 	 *
 	 * @since 1.0.0
 	 */
-	class Cwk_Patch_Load {
+	class Captwiki_Pages_Utils {
 
 		/**
 		 * Member Variable
@@ -57,19 +59,27 @@ if ( ! class_exists( 'Cwk_Patch_Load' ) ) {
 		 * @since 1.0.0
 		 */
 		public function __construct() {
-			$this->cwk_elementor_load();
 		}
 
 		/**
-		 * This function is called to load Elementor files.
+		 * Captwiki Set Response
 		 *
 		 * @since 1.0.0
+		 * @param bool   $success    Success.
+		 * @param string $message    Message.
+		 * @param string $description Description.
+		 * @param mixed  $data       Data.
+		 * @return array
 		 */
-		public function cwk_elementor_load() {
-
-			include CWK_PATH . 'includes/patch-load/elementor/class-cwk-elementor-load.php';
+		public function captwiki_set_response( $success = false, $message = '', $description = '', $data = '' ) {
+			return array(
+				'success'     => $success,
+				'message'     => esc_html( $message ),
+				'description' => esc_html( $description ),
+				'data'        => $data,
+			);
 		}
 	}
 
-	Cwk_Patch_Load::get_instance();
+	Captwiki_Pages_Utils::get_instance();
 }

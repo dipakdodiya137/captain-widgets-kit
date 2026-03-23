@@ -44,7 +44,7 @@ const Toast = () => {
 
     if (Array.isArray(notificationData) && notificationData.length > 0) {
         return (
-            <div className="cwk-toast-container"
+            <div className="captwiki-toast-container"
             style={{ position: 'fixed', top: '50px' }}
             >
                 {notificationData.map((item, index) => {

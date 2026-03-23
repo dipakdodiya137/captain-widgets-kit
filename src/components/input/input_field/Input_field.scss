@@ -1,27 +1,27 @@
 @use '/src/style/variables.scss' as *;
 
 
-input[type='text'].cwk-input-field {
+input[type='text'].captwiki-input-field {
     width: 100%;
-    border: 1px solid $cwk_border_color;
+    border: 1px solid $captwiki_border_color;
     border-radius: $rs_small;
     padding: 5px 15px;
     font-size: 14px;
-    background-color: $cwk_white_color;
-    color: $cwk_black_color;
+    background-color: $captwiki_white_color;
+    color: $captwiki_black_color;
     box-shadow: none;
     outline: none;
     line-height: 0;
     transition: $transition;
 
     &::placeholder {
-        color: $cwk_black_color;
+        color: $captwiki_black_color;
         opacity: 0.5;
         transition: $transition;
     }
 
     &:focus {
-        border-color: $cwk_black_color;
+        border-color: $captwiki_black_color;
         box-shadow: none;
         outline: none;
 

@@ -70,8 +70,8 @@
     "widget_code": {
         "php": "",
         "js": "",
-        "php_after": "$element_id = $element->get_id();\n$dd_style = isset( $settings['switcher_1ibu1s25'] ) ? $settings['switcher_1ibu1s25'] : '';\n\nif( $dd_style == 'Yes' ){\n  $element->add_render_attribute( '_wrapper', 'class', 'cwk-animated-border-two' );\n  $element->add_render_attribute( 'button', 'style', 'position: relative;' );\n}",
+        "php_after": "$element_id = $element->get_id();\n$dd_style = isset( $settings['switcher_1ibu1s25'] ) ? $settings['switcher_1ibu1s25'] : '';\n\nif( $dd_style == 'Yes' ){\n  $element->add_render_attribute( '_wrapper', 'class', 'captwiki-animated-border-two' );\n  $element->add_render_attribute( 'button', 'style', 'position: relative;' );\n}",
         "selected_lang": "php",
-        "css": ".cwk-animated-border-two .elementor-button {\n  color: #FFFFFF;\n}\n.cwk-animated-border-two .elementor-button:after, \n.cwk-animated-border-two .elementor-button:before {\n  content: \"\";\n  display: block;\n  position: absolute;\n  top: 100%;\n  left: 0;\n  width: 100%;\n  height: 2px;\n  background-color: #FFF;\n  transition: all 0.3s ease;\n  transform: scale(0.85);\n}\n.cwk-animated-border-two .elementor-button:hover:before {\n  top: 0;\n  transform: scale(1);\n}\n.cwk-animated-border-two .elementor-button:hover:after {\n  transform: scale(1);\n}"
+        "css": ".captwiki-animated-border-two .elementor-button {\n  color: #FFFFFF;\n}\n.captwiki-animated-border-two .elementor-button:after, \n.captwiki-animated-border-two .elementor-button:before {\n  content: \"\";\n  display: block;\n  position: absolute;\n  top: 100%;\n  left: 0;\n  width: 100%;\n  height: 2px;\n  background-color: #FFF;\n  transition: all 0.3s ease;\n  transform: scale(0.85);\n}\n.captwiki-animated-border-two .elementor-button:hover:before {\n  top: 0;\n  transform: scale(1);\n}\n.captwiki-animated-border-two .elementor-button:hover:after {\n  transform: scale(1);\n}"
     }
 }

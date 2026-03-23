@@ -1,7 +1,7 @@
 @use '/src/style/variables.scss' as *;
 
 
-.cwk-toast-container {
+.captwiki-toast-container {
     position: fixed;
     top: 50px;
     right: 25px;
@@ -11,55 +11,55 @@
     align-items: center;
     gap: 10px;
 
-    .cwk-toast-content {
+    .captwiki-toast-content {
         display: flex;
         justify-content: space-between;
         align-items: center;
         width: 400px;
         gap: 5px;
-        background-color: $cwk_white_color;
-        border: 1px solid $cwk_border_color;
+        background-color: $captwiki_white_color;
+        border: 1px solid $captwiki_border_color;
         border-radius: $rs_small;
         box-shadow: 0 10px 15px -3px rgba(0, 0, 0, 0.10), 0 4px 6px -4px rgba(0, 0, 0, 0.10);
         padding: 10px;
 
-        .cwk-toast-details {
+        .captwiki-toast-details {
             display: flex;
             flex-direction: column;
             gap: 5px;
         }
 
-        .cwk-toast-details-title {
+        .captwiki-toast-details-title {
             font-size: 14px;
-            color: $cwk_black_color;
+            color: $captwiki_black_color;
         }
 
-        .cwk-toast-details-description {
+        .captwiki-toast-details-description {
             font-size: 12px;
-            color: $cwk_black_color;
+            color: $captwiki_black_color;
             opacity: 0.5;
         }
 
-        .cwk-toast-close {
+        .captwiki-toast-close {
             padding: 5px 10px;
             border-radius: $rs_small;
-            border: 1px solid $cwk_border_color;
+            border: 1px solid $captwiki_border_color;
             font-size: 14px;
-            color: $cwk_black_color;
+            color: $captwiki_black_color;
             transition: $transition;
             cursor: pointer;
 
             &:hover {
-                background-color: $cwk_input_bg;
+                background-color: $captwiki_input_bg;
             }
 
         }
 
-        &.cwk-toast-content-animation {
+        &.captwiki-toast-content-animation {
             animation: slideIn 0.5s ease-in-out;
         }
 
-        &.cwk-toast-content-removed {
+        &.captwiki-toast-content-removed {
             animation: slideOut 0.5s ease-in-out;
         }
 
