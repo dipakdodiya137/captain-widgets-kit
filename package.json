@@ -26,7 +26,8 @@
   },
   "homepage": "https://github.com/monsteraddons/craft-patch-addon/#readme",
   "devDependencies": {
-    "@wordpress/scripts": "^19.2.4"
+    "@wordpress/scripts": "^19.2.4",
+    "baseline-browser-mapping": "^2.9.11"
   },
   "dependencies": {
     "@codemirror/lang-css": "^6.3.1",

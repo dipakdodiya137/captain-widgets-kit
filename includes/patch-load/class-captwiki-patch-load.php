@@ -57,7 +57,7 @@ if ( ! class_exists( 'Captwiki_Patch_Load' ) ) {
 		 * @since 1.0.0
 		 */
 		public function __construct() {
-			$this->captwiki_elementor_load();	
+			$this->captwiki_elementor_load();
 		}
 
 		/**

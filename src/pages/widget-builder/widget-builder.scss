@@ -7,7 +7,7 @@
 
     .captwiki-widget-builder-content {
         display: flex;
-        height: calc(100vh - 90px);
+        height: calc(100vh - 125px);
         width: 100%;
         gap: 20px;
 
@@ -27,11 +27,6 @@
             display: flex;
             gap: 20px;
             height: 100%;
-
-            &.captwiki-wb-content-inner-expaned {
-                width: 100%;
-            }
-
         }
 
     }

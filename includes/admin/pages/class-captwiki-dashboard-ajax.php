@@ -16,7 +16,7 @@ if ( ! defined( 'ABSPATH' ) ) {
 /**
  * Captwiki_Dashboard_Ajax
  * */
-if ( ! class_exists( 'Captwiki_Dashboard_Ajax' ) ) {		
+if ( ! class_exists( 'Captwiki_Dashboard_Ajax' ) ) {
 
 	/**
 	 * Captwiki_Dashboard_Ajax
@@ -183,14 +183,14 @@ if ( ! class_exists( 'Captwiki_Dashboard_Ajax' ) ) {
 				if ( $file ) {
 					$file = wp_normalize_path( $file );
 					foreach ( $all_plugins as $plugin_path => $plugin_data ) {
-						$plugin_dir = wp_normalize_path( WP_PLUGIN_DIR . '/' . dirname( $plugin_path ) );
+						$plugin_dir = wp_normalize_path( trailingslashit( WP_PLUGIN_DIR ) . dirname( $plugin_path ) );
 						if ( strpos( $file, $plugin_dir ) === 0 ) {
 							$plugin_name = $plugin_data['Name'] ?? $plugin_path;
 
-							// Folder name = original slug
+							// Folder name = original slug.
 							$original_slug = dirname( $plugin_path );
 
-							// Full plugin slug
+							// Full plugin slug.
 							$plugin_slug = $plugin_path;
 							break;
 						}
@@ -233,20 +233,26 @@ if ( ! class_exists( 'Captwiki_Dashboard_Ajax' ) ) {
 		 */
 		public function set_create_file() {
 
+			if ( ! check_ajax_referer( 'captwiki_nonce', 'nonce', false ) ) {
+
+				$response = $this->captwiki_set_response( false, 'Invalid nonce.', 'The security check failed. Please refresh the page and try again.' );
+
+				wp_send_json( $response );
+				wp_die();
+			}
+
 			$base_dir = CAPTWIKI_UPPATH;
 
 			$file_name   = ! empty( $_POST['file_name'] ) ? sanitize_text_field( wp_unslash( $_POST['file_name'] ) ) : '';
 			$folder_name = ! empty( $_POST['folder_name'] ) ? sanitize_text_field( wp_unslash( $_POST['folder_name'] ) ) : '';
 
-			$php_code  = ! empty( $_POST['elementor_php_file'] ) ? sanitize_text_field( wp_unslash( $_POST['elementor_php_file'] ) ) : '';
+			$php_code  = ! empty( $_POST['elementor_php_file'] ) ? wp_unslash( $_POST['elementor_php_file'] ) : '';
 			$js_code   = ! empty( $_POST['elementor_js'] ) ? sanitize_text_field( wp_unslash( $_POST['elementor_js'] ) ) : '';
 			$css_code  = ! empty( $_POST['elementor_css'] ) ? sanitize_text_field( wp_unslash( $_POST['elementor_css'] ) ) : '';
 			$json_file = ! empty( $_POST['json_file'] ) ? sanitize_text_field( wp_unslash( $_POST['json_file'] ) ) : '';
 
-			$php_code  = base64_decode( $php_code );
-			$js_code   = base64_decode( $js_code );
-			$css_code  = base64_decode( $css_code );
-			$json_file = base64_decode( $json_file );
+			$file_name   = sanitize_file_name( $file_name );
+			$folder_name = sanitize_file_name( $folder_name );
 
 			if ( ! is_dir( $base_dir ) ) {
 				wp_mkdir_p( $base_dir );
@@ -254,7 +260,7 @@ if ( ! class_exists( 'Captwiki_Dashboard_Ajax' ) ) {
 
 			$folder_path = trailingslashit( $base_dir ) . $folder_name;
 
-			include_once ABSPATH . 'wp-admin/includes/file.php';
+			require_once ABSPATH . 'wp-admin/includes/file.php';
 			WP_Filesystem();
 
 			global $wp_filesystem;
@@ -275,21 +281,30 @@ if ( ! class_exists( 'Captwiki_Dashboard_Ajax' ) ) {
 			$widget_json_path = trailingslashit( $folder_path ) . $file_name . '.json';
 
 			if ( ! empty( $php_code ) ) {
-				$wp_filesystem->put_contents( $widget_file_path, $php_code, FS_CHMOD_FILE );
-			} elseif ( $wp_filesystem->exists( $widget_file_path ) ) {
+
+				if ( $wp_filesystem->exists( $widget_file_path ) ) {
 					$wp_filesystem->delete( $widget_file_path );
+				}
+
+				$wp_filesystem->put_contents( $widget_file_path, $php_code, FS_CHMOD_FILE );
 			}
 
 			if ( ! empty( $js_code ) ) {
-				$wp_filesystem->put_contents( $widget_js_path, $js_code, FS_CHMOD_FILE );
-			} elseif ( $wp_filesystem->exists( $widget_js_path ) ) {
+
+				if ( $wp_filesystem->exists( $widget_js_path ) ) {
 					$wp_filesystem->delete( $widget_js_path );
+				}
+
+				$wp_filesystem->put_contents( $widget_js_path, $js_code, FS_CHMOD_FILE );
 			}
 
 			if ( ! empty( $css_code ) ) {
+
+				if ( $wp_filesystem->exists( $css_code ) ) {
+						$wp_filesystem->delete( $css_code );
+				}
+
 				$wp_filesystem->put_contents( $widget_css_path, $css_code, FS_CHMOD_FILE );
-			} elseif ( $wp_filesystem->exists( $css_code ) ) {
-					$wp_filesystem->delete( $css_code );
 			}
 
 			if ( ! empty( $json_file ) ) {
@@ -397,11 +412,18 @@ if ( ! class_exists( 'Captwiki_Dashboard_Ajax' ) ) {
 		 */
 		public function get_single_patch() {
 
+			if ( ! check_ajax_referer( 'captwiki_nonce', 'nonce', false ) ) {
+
+				$response = $this->captwiki_set_response( false, 'Invalid nonce.', 'The security check failed. Please refresh the page and try again.' );
+
+				wp_send_json( $response );
+				wp_die();
+			}
+
 			global $wp_filesystem;
 
 			$folder_name = ! empty( $_POST['folder_name'] ) ? sanitize_file_name( wp_unslash( $_POST['folder_name'] ) ) : '';
 			$file_name   = ! empty( $_POST['file_name'] ) ? sanitize_file_name( wp_unslash( $_POST['file_name'] ) ) : '';
-			$unique      = ! empty( $_POST['unique'] ) ? sanitize_file_name( wp_unslash( $_POST['unique'] ) ) : '';
 
 			if ( empty( $folder_name ) || empty( $file_name ) ) {
 				$response = $this->captwiki_set_response( true, 'Folder name or file name missing.', 'Folder name or file name missing.', array() );
@@ -450,9 +472,17 @@ if ( ! class_exists( 'Captwiki_Dashboard_Ajax' ) ) {
 		 * @since 1.0.0
 		 */
 		public function delete_single_patch() {
+
+			if ( ! check_ajax_referer( 'captwiki_nonce', 'nonce', false ) ) {
+
+				$response = $this->captwiki_set_response( false, 'Invalid nonce.', 'The security check failed. Please refresh the page and try again.' );
+
+				wp_send_json( $response );
+				wp_die();
+			}
+
 			global $wp_filesystem;
 
-			// === Get arguments from POST ===
 			$folder_name = ! empty( $_POST['folder'] ) ? sanitize_file_name( wp_unslash( $_POST['folder'] ) ) : '';
 			$file_name   = ! empty( $_POST['file'] ) ? sanitize_file_name( wp_unslash( $_POST['file'] ) ) : '';
 
@@ -752,7 +782,7 @@ if ( ! class_exists( 'Captwiki_Dashboard_Ajax' ) ) {
 			require_once ABSPATH . 'wp-admin/includes/plugin.php';
 			require_once ABSPATH . 'wp-admin/includes/file.php';
 			require_once ABSPATH . 'wp-admin/includes/class-wp-upgrader.php';
-			include_once ABSPATH . 'wp-admin/includes/plugin-install.php';
+			require_once ABSPATH . 'wp-admin/includes/plugin-install.php';
 
 			if ( file_exists( WP_PLUGIN_DIR . '/' . $path ) ) {
 

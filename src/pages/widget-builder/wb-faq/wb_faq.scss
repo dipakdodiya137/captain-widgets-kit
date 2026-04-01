@@ -1,0 +1,86 @@
+@use '/src/style/variables.scss' as *;
+
+.captwiki-wb-faq {
+    display: flex;
+    flex-direction: column;
+    gap: 20px;
+    height: 100%;
+    width: 100%;
+    background: $captwiki_white_color;
+    border-radius: $rs_large;
+    border: 1px solid $captwiki_border_color;
+    padding: 10px;
+    overflow: auto;
+    transition: $transition;
+
+    &::-webkit-scrollbar {
+        width: 3px;
+    }
+
+    &::-webkit-scrollbar-thumb {
+        background-color: $captwiki_border_color;
+        border-radius: $rs_normal;
+    }
+
+    .captwiki-wb-faq-header {
+        display: flex;
+        gap: 10px;
+        background: $primary_color;
+        border-radius: $rs_medium;
+        padding: 8px;
+
+        .captwiki-wb-faq-header-title {
+            display: flex;
+            padding: 5px;
+            width: 100%;
+            justify-content: center;
+            align-items: center;
+            font-weight: 600;
+            font-size: 16px;
+            border-radius: $rs_small;
+            background: $captwiki_white_color;
+            color: $primary_color;
+            border: 1px solid transparent;
+            cursor: pointer;
+            transition: $transition;
+
+        }
+
+    }
+
+    .captwiki-wb-faq-content {
+        display: flex;
+        flex-direction: column;
+        padding: 10px;
+
+        .captwiki-accordion-container {
+            border-bottom: 1px solid $captwiki_border_color;
+            padding: 20px 0;
+
+            &:last-child {
+                border-bottom: none;
+            }
+
+            .captwiki-accordion-content {
+                padding: 10px;
+                background: $captwiki_grey_color;
+                border-radius: $rs_small;
+            }
+
+        }
+
+        .captwiki-wb-faq-title {
+            font-size: 16px;
+            font-weight: 600;
+            color: $captwiki_black_color;
+        }
+
+        .captwiki-wb-faq-answer {
+            font-size: 14px;
+            font-weight: 500;
+            color: $captwiki_black_color;
+        }
+
+    }
+
+}

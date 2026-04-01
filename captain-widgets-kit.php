@@ -22,8 +22,8 @@ if ( ! defined( 'ABSPATH' ) ) {
 define( 'CAPTWIKI_VERSION', '0.0.1' );
 define( 'CAPTWIKI_FILE', __FILE__ );
 define( 'CAPTWIKI_PATH', plugin_dir_path( __FILE__ ) );
-define( 'CAPTWIKI_URL', plugins_url( '/', __FILE__ ) );
+define( 'CAPTWIKI_URL', plugin_dir_url( __FILE__ )  );
 define( 'CAPTWIKI_ASSETS', CAPTWIKI_URL . 'assets/' );
 define( 'CAPTWIKI_UPPATH', wp_upload_dir()['basedir'] . '/captain-widgets-kit' );
 
-include CAPTWIKI_PATH . 'includes/class-captwiki-load.php';
+require_once CAPTWIKI_PATH . 'includes/class-captwiki-load.php';

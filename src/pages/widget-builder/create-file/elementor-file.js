@@ -359,10 +359,7 @@ if ( ! class_exists( 'Captwiki_${handlePhpName(widget_info.name)}' ) ) {
 
 
 	let encoded_data = (data) => {
-		if (data) {
-			return btoa(unescape(encodeURIComponent(data)))
-		}
-		return '';
+		return data;
 	}
 
 	let new_section_data = {};

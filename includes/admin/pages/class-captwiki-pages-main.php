@@ -66,9 +66,9 @@ if ( ! class_exists( 'Captwiki_Pages_Main' ) ) {
 		 */
 		public function captwiki_pages_load() {
 
-			include CAPTWIKI_PATH . 'includes/admin/pages/class-captwiki-pages-utils.php';
-			include CAPTWIKI_PATH . 'includes/admin/wp-menu/class-captwiki-menu.php';
-			include CAPTWIKI_PATH . 'includes/admin/pages/class-captwiki-dashboard-ajax.php';
+			require_once CAPTWIKI_PATH . 'includes/admin/pages/class-captwiki-pages-utils.php';
+			require_once CAPTWIKI_PATH . 'includes/admin/wp-menu/class-captwiki-menu.php';
+			require_once CAPTWIKI_PATH . 'includes/admin/pages/class-captwiki-dashboard-ajax.php';
 		}
 	}
 

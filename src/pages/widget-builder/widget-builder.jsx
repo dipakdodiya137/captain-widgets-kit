@@ -1,6 +1,5 @@
 import React, { useEffect, useRef, useState } from 'react'
 import './widget-builder.scss';
-import Editor from './editor/editor.jsx';
 import ControllerListing from './controller-listing/controller-listing.jsx';
 import SectionLayout from './section-layout/section-layout.jsx';
 import { useNavigate, useParams } from 'react-router-dom';
@@ -10,6 +9,7 @@ import { handleSectionData, handleWidgetCode, handleWidgetInfo } from '../../red
 import StickyTab from './sticky-tab/sticky-tab.jsx';
 import { controller_array } from './controller-data/controller-array.js';
 import Loader from '../../components/loader/loader.jsx';
+import Wb_faq from './wb-faq/wb_faq.jsx';
 
 const WidgetBuilder = () => {
 
@@ -190,7 +190,7 @@ const WidgetBuilder = () => {
                         <ControllerListing />
                         <SectionLayout />
                     </div>
-                    <Editor />
+                    <Wb_faq />
                 </div>
             )
         }

@@ -16,13 +16,14 @@ if ( ! defined( 'ABSPATH' ) ) {
 /**
  * Captwiki_Elementor_Load
  * */
-if ( ! class_exists( 'Captwiki_Elementor_Load' ) ) {	
+if ( ! class_exists( 'Captwiki_Elementor_Load' ) ) {
 
 	/**
 	 * Captwiki_Elementor_Load
+	 *
 	 * @since 1.0.0
 	 */
-	class Captwiki_Elementor_Load {	
+	class Captwiki_Elementor_Load {
 
 		/**
 		 * Member Variable
@@ -103,7 +104,7 @@ if ( ! class_exists( 'Captwiki_Elementor_Load' ) ) {
 		 * Enqueue Editor Preview JS
 		 */
 		public function captwiki_editor_preview_js() {
-			wp_enqueue_script( 'captwiki-editor-preview', CAPTWIKI_URL . '/assets/js/captwiki-editor-preview.js', array( 'jquery', 'elementor-editor' ), CAPTWIKI_VERSION, true );		
+			wp_enqueue_script( 'captwiki-editor-preview', CAPTWIKI_URL . '/assets/js/captwiki-editor-preview.js', array( 'jquery', 'elementor-editor' ), CAPTWIKI_VERSION, true );
 		}
 
 		/**
