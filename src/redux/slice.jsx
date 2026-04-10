@@ -7,7 +7,7 @@ const initialState = {
     widget_info: getInitialReduxState('widget_info'),
     controller_section: getInitialReduxState('section_data'),
     widget_code: getInitialReduxState('widget_code'),
-    captwiki_settings: {},
+    captwiki_settings: captwiki_data.captwiki_settings,
     toast_message: '',
 };
 

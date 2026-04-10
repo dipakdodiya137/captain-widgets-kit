@@ -5,18 +5,22 @@
  * @since      1.0.0
  *
  * @package    craftpaaddons
- * @subpackage craftpaaddons/includes
+ * @subpackage craftpaaddons/hooks
  */
 
 /**
  * Exit if accessed directly.
+ *
+ * @since 1.0.0
  * */
 if ( ! defined( 'ABSPATH' ) ) {
 	exit;
 }
 
 /**
- * Captwiki_Hooks
+ * Main class to load Hooks Files
+ *
+ * @since 1.0.0
  * */
 if ( ! class_exists( 'Captwiki_Hooks' ) ) {
 

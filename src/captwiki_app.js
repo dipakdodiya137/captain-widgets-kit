@@ -1,7 +1,6 @@
 import React, { useEffect } from 'react';
 import { HashRouter, Routes, Route } from 'react-router-dom';
 import routes from './router/routes.js';
-import CheckUrl from './router/CheckUrl.js';
 import Navigation from './pages/navigation/navigation.jsx';
 import { handleSettings } from './redux/slice.jsx';
 import { useDispatch } from 'react-redux';
@@ -52,7 +51,6 @@ const Captwiki_app = () => {
 
     return (
         <HashRouter>
-            <CheckUrl />
             <div className='captwiki-app' onClick={(e) => { handleCloseEvent(e) }}>
                 <Navigation />
                 <Routes>

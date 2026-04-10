@@ -13,10 +13,6 @@ const Navigation = () => {
             path: '/',
         },
         {
-            name: __('Create Library', 'captain-widgets-kit'),
-            path: '/listing',
-        },
-        {
             name: __('Setting Page', 'captain-widgets-kit'),
             path: '/setting',
         },

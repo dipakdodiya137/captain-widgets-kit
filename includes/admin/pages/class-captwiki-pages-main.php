@@ -3,17 +3,24 @@
  * Captwiki Dashboard Ajax
  *
  * @package   captain-widgets-kit
+ * @subpackage captain-widgets-kit/pages
+ *
+ * @since 1.0.0
  **/
 
 /**
  * Exit if accessed directly.
+ *
+ * @since 1.0.0
  * */
 if ( ! defined( 'ABSPATH' ) ) {
 	exit;
 }
 
 /**
- * Captwiki_Pages_Main
+ * Main class to load Pages Files
+ *
+ * @since 1.0.0
  * */
 if ( ! class_exists( 'Captwiki_Pages_Main' ) ) {
 
@@ -65,8 +72,6 @@ if ( ! class_exists( 'Captwiki_Pages_Main' ) ) {
 		 * @since 1.0.0
 		 */
 		public function captwiki_pages_load() {
-
-			require_once CAPTWIKI_PATH . 'includes/admin/pages/class-captwiki-pages-utils.php';
 			require_once CAPTWIKI_PATH . 'includes/admin/wp-menu/class-captwiki-menu.php';
 			require_once CAPTWIKI_PATH . 'includes/admin/pages/class-captwiki-dashboard-ajax.php';
 		}

@@ -12,6 +12,7 @@ import Radio from '../../components/input/radio/radio.jsx';
 import Primary_button from '../../components/button/primary_button/primary_button.jsx';
 import Filter_search from '../../global/filter_search/filter_search.jsx';
 import Filter_panel from '../../global/filter_panel/filter_panel.jsx';
+import { browse_extensions } from '../../services/browse_extensions.js';
 import { __ } from '@wordpress/i18n';
 
 const Home = (props) => {
@@ -27,31 +28,11 @@ const Home = (props) => {
         search: '',
         alphabet: ''
     });
-    const plugin_info = useSelector((state) => state.plugin_info);
 
-    useEffect(() => {
-        fetchData();
-    }, []);
+    const plugin_info = useSelector((state) => state.plugin_info);
 
     const url_filter = (data) => {
         return Object.fromEntries(Object.entries(data).filter(([key, value]) => value != 1 && value != false && value !== "[]" && value !== "all"));
-    }
-
-    const fetchData = async () => {
-
-        setLoading(true);
-        let form = new FormData();
-        form.append('action', 'captwiki_dashboard_ajax_call');
-        form.append('type', 'get_browse_list');
-        form.append('nonce', captwiki_data.captwiki_nonce);
-
-        let response = await axios.post(captwiki_data.ajax_url, form);
-
-        if (response.data.success) {
-            setPatchData(response.data.data);
-            setPatchList(response.data.data);
-        }
-        setLoading(false);
     }
 
     const handleFilter = () => {
@@ -122,31 +103,27 @@ const Home = (props) => {
             extensionListClass = 'captwiki-patch-list captwiki-patch-list-collapse';
         }
 
-        if (loading) {
+        // if (loading) {
+        //     return (
+        //         <div className={extensionListClass}>
+        //             {getArray(10).map((nnn, index) => {
+        //                 return (
+        //                     <Fragment key={index}>
+        //                         <SkeletonPatchCard />
+        //                     </Fragment>
+        //                 )
+        //             })}
+        //         </div>
+        //     )
+        // } else 
+        if (browse_extensions.length > 0) {
             return (
                 <div className={extensionListClass}>
-                    {getArray(10).map((nnn, index) => {
-                        return (
-                            <Fragment key={index}>
-                                <SkeletonPatchCard />
-                            </Fragment>
-                        )
-                    })}
-                </div>
-            )
-        } else if (patchList.length > 0) {
-            return (
-                <div className={extensionListClass}>
-                    {patchList.map((data, index) => {
+                    {browse_extensions.map((data, index) => {
                         return (
                             <Fragment key={index}>
                                 <PatchCard
-                                    widget_info={data?.data?.widget_info}
-                                    section={data?.data?.section}
-                                    widget_code={data?.data?.widget_code}
-                                    folder={data?.folder}
-                                    file={data?.file}
-                                    fetchData={fetchData}
+                                    widget_info={data}
                                     type='browse_page'
                                 />
                             </Fragment>

@@ -2,7 +2,7 @@
 /**
  * Plugin Name: Captain Widgets Kit
  * Plugin URI: https://wordpress.org/plugins/captain-widgets-kit
- * Description: Extend Elementor widgets with advanced controls and flexible customization options directly inside the Elementor editor.
+ * Description: Enhanced Elementor widgets with advanced features and flexible customization options for a more powerful design experience.
  * Version: 0.0.1
  * Author: dipakdodiya
  * Author URI: https://profiles.wordpress.org/dipakdodiya

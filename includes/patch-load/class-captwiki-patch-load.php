@@ -4,17 +4,23 @@
  *
  * @package    captain-widgets-kit
  * @subpackage captain-widgets-kit/includes
+ *
+ * @since 1.0.0
  **/
 
 /**
  * Exit if accessed directly.
+ *
+ * @since 1.0.0
  * */
 if ( ! defined( 'ABSPATH' ) ) {
 	exit;
 }
 
 /**
- * Captwiki_Patch_Load
+ * Main Captwiki_Elementor_Load Class.
+ *
+ * @since 1.0.0
  * */
 if ( ! class_exists( 'Captwiki_Patch_Load' ) ) {
 
@@ -66,7 +72,6 @@ if ( ! class_exists( 'Captwiki_Patch_Load' ) ) {
 		 * @since 1.0.0
 		 */
 		public function captwiki_elementor_load() {
-
 			include CAPTWIKI_PATH . 'includes/patch-load/elementor/class-captwiki-elementor-load.php';
 		}
 	}
